@@ -67,10 +67,9 @@ function Footer() {
 							Change your membership
 						</a>
 						<br />
-						<p className='note'>
-							DWBC NYC is a 501(c)(3) volunteer-led, charitable entity in the
-							USA
-						</p>
+					</p>
+					<p className='note'>
+						DWBC NYC is a 501(c)(3) volunteer-led, charitable entity in the USA
 					</p>
 				</div>
 			</div>
@@ -94,9 +93,9 @@ function Footer() {
 							114 E 28th St Suite 1, New York, NY 10016
 							<br />
 							<a href='mailto:newyork@diamondway.org'>newyork@diamondway.org</a>
-							<p className='note'>
-								© {currentYear()} Diamond Way Buddhist Centers USA
-							</p>
+						</p>
+						<p className='note'>
+							© {currentYear()} Diamond Way Buddhist Centers USA
 						</p>
 					</div>
 					<div
