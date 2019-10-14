@@ -1,0 +1,10 @@
+.bg {
+	position: absolute;
+	top: 100px;
+	left: 0;
+	width: 100%;
+	height: 78%;
+	background-size: cover;
+	background-position: top;
+	will-change: opacity;
+}

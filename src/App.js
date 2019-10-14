@@ -1,26 +1,27 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import Header from './Components/Header.jsx'
+// import Slides from './Components/Slides.jsx'
+import Buddhism from './Components/Buddhism.jsx'
+import Program from './Components/Program.jsx'
+import Teachers from './Components/Teachers.jsx'
+import Center from './Components/Center.jsx'
+import Footer from './Components/Footer.jsx'
+import Slides2 from './Components/Slides2.jsx'
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	return (
+		<div>
+			<Header />
+			<Slides2 />
+			<div style={{ padding: '0 10vmin' }}>
+				<Buddhism />
+				<Program />
+				<Teachers />
+				<Center />
+			</div>
+			<Footer />
+		</div>
+	)
 }
 
-export default App;
+export default App

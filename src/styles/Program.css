@@ -1,0 +1,47 @@
+.title_style {
+	padding: 0 0 5px;
+	font-size: 3vmax;
+	margin: 0;
+}
+.subtitle_style {
+	font-size: 1.5vmax;
+	margin: 0 0 15px;
+	color: #d22238;
+}
+.info_style {
+	font-size: 1.2vmax;
+	color: #4e4e4e;
+}
+.date_time_style {
+	font-size: 1.3vmax;
+	margin: 15px 0 0;
+	text-transform: uppercase;
+}
+.lecture_name_style {
+	font-size: 2vmax;
+	margin: 0;
+}
+.myButton {
+	width: 100%;
+	background-color: #636363;
+	border: 1px solid #f3f1f1;
+	display: inline-block;
+	cursor: pointer;
+	color: white;
+	font-size: 1.3vmax;
+	font-weight: 500;
+	padding: 16px 32px;
+	text-decoration: none;
+	transition: 0.3s;
+	opacity: 0.8;
+}
+
+.myButton:hover {
+	opacity: 1;
+	/* background: linear-gradient(to bottom, #8c8c8c 100%, #636363 5%);
+	background-color: #8c8c8c; */
+}
+.myButton:active {
+	position: relative;
+	top: 1px;
+}
