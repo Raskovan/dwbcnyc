@@ -13,7 +13,8 @@ function Teacher(props) {
 			</div>
 			<div style={{ width: '65%' }}>
 				<a
-					href='http://#'
+					href={props.link}
+					target='_new'
 					style={{
 						fontSize: '1.6vmax',
 						color: '#d22238',
