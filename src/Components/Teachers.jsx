@@ -46,6 +46,24 @@ function Teachers() {
 				style={{
 					display: 'flex',
 					width: '100%',
+					marginBottom: '35px',
+					justifyContent: 'space-between'
+				}}>
+				<Teacher
+					name={'Ole Nydahl'}
+					description={`Lama Ole Nydahl is a Buddhist teacher in the tradition of the Karma Kagyu lineage, and founder of over 650 Buddhist centers worldwide.`}
+					image={require(`../assets/ole.jpg`)}
+				/>
+				<Teacher
+					name={'Hannah Nydahl'}
+					description={`Hannah Nydahl was a student of H.H. the 16th Karmapa Rangjung Rigpe Dorje, the great Lopön Tsechu Rinpoche, and many other teachers. \nTogether with her husband Lama Ole, she helped to bring the authentic teachings of the Karma Kagyu to the West.`}
+					image={require(`../assets/hannah.jpg`)}
+				/>
+			</div>
+			{/* <div
+				style={{
+					display: 'flex',
+					width: '100%',
 					marginBottom: '15px',
 					justifyContent: 'space-between'
 				}}>
@@ -103,7 +121,7 @@ function Teachers() {
 						authentic teachings of the Karma Kagyu to the West.
 					</p>
 				</div>
-			</div>
+			</div> */}
 		</div>
 	)
 }

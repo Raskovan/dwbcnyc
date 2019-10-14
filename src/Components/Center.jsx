@@ -1,7 +1,7 @@
 import React from 'react'
 import Subtitle from './Subtitle'
 
-function Center(props) {
+function Center() {
 	return (
 		<div style={{ marginBottom: '65px' }}>
 			<Subtitle text={'OUR CENTER'} />
@@ -44,7 +44,7 @@ function Center(props) {
 							height='100%'
 							frameBorder='0'
 							style={{ border: '0' }}
-							src='https://www.google.com/maps/embed/v1/place?q=place_id:ChIJHdOJgadZwokReTcfF04Wu4g&key=AIzaSyCA7Z-O2hq7zGCKW9unu-5cZRnTM7VS_s8'
+							src={`https://www.google.com/maps/embed/v1/place?q=place_id:ChIJHdOJgadZwokReTcfF04Wu4g&key=${process.env.REACT_APP_GOOGLE_MAPS}`}
 							allowFullScreen></iframe>
 					</div>
 				</div>
