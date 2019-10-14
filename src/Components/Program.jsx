@@ -8,7 +8,8 @@ function Program() {
 
 	useEffect(() => {
 		fetch(
-			'https://firewheel.herokuapp.com/widgets/79/full_events.json?callback=jQuery18203743304502847564_1570990678398&hostname=www.diamondway.org&version=1.0.1&_=1570990678529'
+			'https://firewheel.herokuapp.com/widgets/79/full_events.json?callback=jQuery18203743304502847564_1570990678398&hostname=www.diamondway.org&version=1.0.1&_=1570990678529',
+			{ mode: 'cors' }
 		)
 			.then(res => res.text())
 			.then(response => {
