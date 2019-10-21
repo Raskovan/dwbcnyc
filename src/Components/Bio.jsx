@@ -33,7 +33,6 @@ function Bio(props) {
 			className={transition}
 			style={{
 				background: '#f3f3f3',
-				boxShadow: 'inset 0px 5px 10px -5px #b3b3b3',
 				maxHeight: showBio ? height : null
 			}}>
 			<div
