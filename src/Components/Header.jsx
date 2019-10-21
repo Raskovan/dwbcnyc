@@ -9,22 +9,23 @@ function Header() {
 				background: 'white',
 				width: '100%',
 				paddingBottom: '20px',
-				zIndex: '1'
+				zIndex: '2'
 			}}>
 			<header
 				style={{
 					height: '57px',
 					borderBottom: 'solid 1px #d22238',
 					padding: '0 10vmin',
-					position: 'relative'
+					position: 'relative',
+					display: 'flex',
+					justifyContent: 'space-between'
 				}}>
 				<div
 					style={{
-						position: 'absolute',
-						bottom: '3px',
 						color: '#4c4b4b',
 						fontSize: '2.5vmin',
-						fontWeight: '300'
+						fontWeight: '300',
+						alignSelf: 'flex-end'
 					}}>
 					Diamond Way Buddhist Center NYC
 				</div>

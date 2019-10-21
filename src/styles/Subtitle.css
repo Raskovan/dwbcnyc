@@ -1,0 +1,19 @@
+.subtitle_container {
+	display: flex;
+	height: 100%;
+	margin: 3vmax 0 3vmax;
+	align-items: baseline;
+	font-weight: 200;
+}
+
+.subtitle_text {
+	font-size: 3.3vmax;
+	color: var(--main-color-red);
+	margin: 0;
+	padding-right: 15px;
+}
+
+.subtitle_line {
+	border-bottom: solid 1px var(--main-color-red);
+	flex-grow: 1;
+}

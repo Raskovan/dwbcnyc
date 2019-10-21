@@ -1,0 +1,35 @@
+.buddhism_container {
+	max-width: 100%;
+	margin: 25px 0 0;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.buddhism_text {
+	width: 60%;
+}
+.buddhism_img {
+	width: 35%;
+}
+
+.buddhism_text_p {
+	font-size: var(--main-font-size);
+	line-height: var(--main-line-height);
+	color: var(--main-text-color);
+	font-weight: var(--main-font-weight);
+	margin: 0;
+}
+
+@media only screen and (max-width: 414px) {
+	.buddhism_container {
+		flex-direction: column;
+	}
+	.buddhism_text {
+		width: auto;
+		margin-bottom: 15px;
+	}
+	.buddhism_img {
+		width: auto;
+	}
+}

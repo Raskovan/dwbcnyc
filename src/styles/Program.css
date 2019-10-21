@@ -6,19 +6,26 @@
 .subtitle_style {
 	font-size: 1.5vmax;
 	margin: 0 0 15px;
-	color: #d22238;
+	color: var(--main-color-red);
 }
 .info_style {
 	font-size: 1.2vmax;
 	color: #4e4e4e;
+	margin: 10px 0 0 0;
 }
 .date_time_style {
 	font-size: 1.3vmax;
-	margin: 15px 0 0;
+	margin: 0;
 	text-transform: uppercase;
 }
+
+.day {
+	margin: 0 0 15px 0;
+}
+
 .lecture_name_style {
-	font-size: 2vmax;
+	font-size: 1.8vmax;
+	line-height: 2.2vmax;
 	margin: 0;
 }
 .myButton {
@@ -44,4 +51,80 @@
 .myButton:active {
 	position: relative;
 	top: 1px;
+}
+
+.link_add {
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+.program {
+	display: flex;
+	justify-content: flex-end;
+}
+
+.program_about {
+	width: 30%;
+	padding: 0 45px 0 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.program_about_p {
+	font-size: var(--main-font-size);
+	line-height: var(--main-line-height);
+	color: var(--main-text-color);
+	font-weight: var(--main-font-weight);
+	margin: 0;
+}
+
+.program_daily {
+	width: 25%;
+	border-right: solid 1px #797979;
+	padding: 0 25px 0 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.program_event {
+	width: 35%;
+	padding: 0 0 0 25px;
+	display: flex;
+	flex-direction: column;
+}
+
+.no_bio_container {
+	padding: 0 10vmin 25px;
+	z-index: 1;
+	position: relative;
+	background: white;
+}
+
+.program_container {
+	font-weight: 200;
+	margin: 0 -10vmin 55px;
+}
+
+@media only screen and (max-width: 414px) {
+	.program {
+		flex-direction: column;
+	}
+	.program_about {
+		width: 100%;
+		padding: 0;
+	}
+	.program_daily {
+		width: auto;
+		padding: 15px;
+		border: solid 1px #797979;
+		margin-top: 25px;
+	}
+	.program_event {
+		width: auto;
+		padding: 15px;
+		border: solid 1px #797979;
+		margin-top: 25px;
+	}
 }

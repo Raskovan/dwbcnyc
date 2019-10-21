@@ -1,0 +1,75 @@
+.teachers {
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+	margin-bottom: 35px;
+	justify-content: space-between;
+}
+
+.teacher {
+	display: flex;
+	flex: 1;
+}
+
+.teacher:first-child {
+	margin-right: 30px;
+}
+
+.teacher_description {
+	font-size: 1.3vmax;
+	line-height: 2vmax;
+	margin: 10px 0 0 0;
+	color: var(--main-text-color);
+	font-weight: 300;
+	white-space: pre-wrap;
+}
+
+.teacher_name {
+	font-size: 1.5vmax;
+	color: var(--main-color-red);
+	font-weight: 500;
+}
+
+.teacher_homepage {
+	font-size: 1.2vmax;
+	text-decoration: none;
+	color: var(--main-text-color);
+}
+
+.teacher_homepage:hover {
+	color: var(--main-color-red);
+}
+
+.teacher_homepage:before {
+	content: '› ';
+	font-weight: 700;
+	color: var(--main-text-color);
+}
+
+.teacher_image_container {
+	width: 35%;
+	margin-right: 15px;
+}
+
+.teacher_description_container {
+	width: 65%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+@media only screen and (max-width: 414px) {
+	.teachers {
+		flex-direction: column;
+		margin-bottom: 0;
+	}
+	.teacher:first-child {
+		margin-right: 0;
+	}
+	.teacher_description {
+		margin: 0;
+	}
+	.teacher {
+		margin-bottom: 25px;
+	}
+}

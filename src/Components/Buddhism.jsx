@@ -1,24 +1,12 @@
 import React from 'react'
 import dorjeChang from '../assets/dorje_chang.jpg'
+import '../styles/Buddhism.css'
 
 function Buddhism() {
 	return (
-		<div
-			style={{
-				maxWidth: '100%',
-				margin: '25px 0 0',
-				display: 'flex',
-				justifyContent: 'space-between',
-				alignItems: 'center'
-			}}>
-			<div style={{ width: '60%' }}>
-				<p
-					style={{
-						fontSize: '1.5vmax',
-						lineHeight: '2.4vmax',
-						color: '#2b2b2b',
-						fontWeight: '200'
-					}}>
+		<div className='buddhism_container'>
+			<div className='buddhism_text'>
+				<p className='buddhism_text_p'>
 					The teachings of Buddhism have remained a liberating gift to mankind
 					for the last 2500 years. Non-dogmatic and without any gods or
 					commandments, it has enabled people to benefit both others and
@@ -34,7 +22,7 @@ function Buddhism() {
 					Trinley Thaye Dorje.
 				</p>
 			</div>
-			<div style={{ width: '35%' }}>
+			<div className='buddhism_img'>
 				<img src={dorjeChang} alt='Dorje Chang' width='100%' />
 			</div>
 		</div>

@@ -1,27 +1,21 @@
 import React from 'react'
 import Subtitle from './Subtitle'
+import '../styles/Center.css'
 
 function Center() {
 	return (
 		<div style={{ marginBottom: '65px' }}>
-			<Subtitle text={'OUR CENTER'} />
-			<div style={{ margin: '0 -10vmin 45px' }}>
+			<Subtitle text={'CENTER'} />
+			<div className='center_image'>
 				<img
 					src={require(`../assets/center.jpg`)}
 					width='100%'
 					alt='NYC Center'
 				/>
 			</div>
-			<div style={{ display: 'flex', justifyContent: 'space-between' }}>
-				<div style={{ width: '58%', padding: '0 15px 0 0' }}>
-					<p
-						style={{
-							fontSize: '1.5vmax',
-							lineHeight: '2.3vmax',
-							color: '#2b2b2b',
-							fontWeight: '200',
-							margin: '0'
-						}}>
+			<div className='center_about'>
+				<div className='center_text'>
+					<p className='center_text_p'>
 						Diamond Way Buddhist Center New York is part of an international
 						network of over 600 meditation centers in the Karma Kagyu tradition
 						of Tibetan Buddhism. The centers were started due to the unique
@@ -35,9 +29,13 @@ function Center() {
 						answering questions, and giving explanations about Buddhism; their
 						work is unpaid, and based on idealism and friendship.
 					</p>
+					<p className='center_address'>
+						Our Center Location: 114 East 28th Street, Suite #1 New York, NY
+						10016
+					</p>
 				</div>
-				<div style={{ width: '38%' }}>
-					<div style={{ position: 'relative', width: '100%', height: '100%' }}>
+				<div className='center_map'>
+					<div className='center_map_iframe'>
 						<iframe
 							title='GMap'
 							width='100%'

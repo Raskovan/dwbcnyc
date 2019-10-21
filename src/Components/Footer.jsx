@@ -1,5 +1,5 @@
 import React from 'react'
-import flames from '../assets/flames.svg'
+// import flames from '../assets/flames.svg'
 import '../styles/Footer.css'
 
 function Footer() {
@@ -8,18 +8,9 @@ function Footer() {
 		return today.getFullYear()
 	}
 	return (
-		<div
-			style={{
-				height: '40vh',
-				background: '#353535',
-				display: 'flex',
-				flexDirection: 'row',
-				justifyContent: 'space-between',
-				padding: '5vmin 10vmin',
-				backgroundImage: `url(${flames})`
-			}}>
+		<div className='footer_container'>
 			<div className='footer-column'>
-				<div>
+				<div className='footer_links'>
 					<p className='links'>Usefull Links</p>
 					<p className='link'>
 						<a href='https://www.karmapa.org/' target='_new'>
@@ -46,7 +37,7 @@ function Footer() {
 						</a>
 					</p>
 				</div>
-				<div>
+				<div className='footer_donations'>
 					<p className='links'>Make a Donation</p>
 					<p className='link'>
 						<a href='https://horatio.herokuapp.com/forms/30' target='_new'>
@@ -74,7 +65,7 @@ function Footer() {
 				</div>
 			</div>
 			<div className='footer-column'>
-				<div>
+				<div className='subscribe_form'>
 					<p className='subscribe'>Subscribe to our Newsletter</p>
 					<form action='/action_page.php'>
 						<input type='text' id='email' placeholder='Your email' />

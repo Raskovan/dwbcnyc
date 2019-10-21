@@ -1,3 +1,13 @@
+.footer_container {
+	height: auto;
+	background: #353535;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	padding: 5vmin 10vmin;
+	background-image: url('../assets/flames.svg');
+}
+
 .footer-column {
 	width: 50%;
 	display: flex;
@@ -119,4 +129,24 @@ form {
 
 .mp-logo:hover {
 	box-shadow: 0 0 10px #767676;
+}
+
+.footer_donations {
+	margin-top: 25px;
+}
+
+@media only screen and (max-width: 414px) {
+	.footer_container {
+		flex-direction: column-reverse;
+	}
+	.footer-column {
+		width: auto;
+		margin-bottom: 25px;
+	}
+	.subscribe_form {
+		margin-bottom: 25px;
+	}
+	.footer_links {
+		margin-bottom: 25px;
+	}
 }
