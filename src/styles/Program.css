@@ -81,7 +81,6 @@
 
 .program_daily {
 	width: 25%;
-	border-right: solid 1px #797979;
 	padding: 0 25px 0 0;
 	display: flex;
 	flex-direction: column;
@@ -93,6 +92,15 @@
 	padding: 0 0 0 25px;
 	display: flex;
 	flex-direction: column;
+	border-left: solid 1px #797979;
+}
+
+.program > .program_event {
+	padding: 0 25px 0 25px;
+}
+
+.program > .program_event ~ .program_event {
+	padding: 0 0 0 25px;
 }
 
 .no_bio_container {

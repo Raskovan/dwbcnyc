@@ -13,8 +13,10 @@ import './styles/App.css'
 
 function App() {
 	const [showBio, setShowBio] = useState(false)
-	const bioModal = () => {
+	const [bioIndex, setBioIndex] = useState()
+	const bioModal = index => {
 		setShowBio(!showBio)
+		setBioIndex(index)
 	}
 
 	return (
@@ -24,7 +26,7 @@ function App() {
 			<div style={{ padding: '0 10vmin' }}>
 				<Buddhism />
 				<Center />
-				<Program showBio={showBio} bioModal={bioModal} />
+				<Program showBio={showBio} bioModal={bioModal} bioIndex={bioIndex} />
 				<Teachings />
 				<Teachers />
 				<Quote />

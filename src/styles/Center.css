@@ -1,11 +1,11 @@
 .center_about {
 	display: flex;
-	flex-direction: row;
+	flex-direction: column;
 	justify-content: space-between;
+	width: 57%;
 }
 
 .center_text {
-	width: 58%;
 	padding: 0 15px 0 0;
 }
 
@@ -18,13 +18,16 @@
 }
 
 .center_map {
-	width: 38%;
+	width: 40%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
 }
 
 .center_map_iframe {
 	position: relative;
 	width: 100%;
-	height: 100%;
+	height: 80%;
 }
 
 .center_image {
@@ -33,6 +36,8 @@
 
 .center_address {
 	margin: 25px 0 0;
+	line-height: 2vmax;
+	color: var(--main-text-color);
 }
 
 @media only screen and (max-width: 414px) {

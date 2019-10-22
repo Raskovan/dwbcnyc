@@ -1,20 +1,20 @@
 import React from 'react'
 import Subtitle from './Subtitle'
-import '../styles/Center.css'
+import '../styles/Teachings.css'
 
 function Center() {
 	return (
 		<div style={{ marginBottom: '65px' }}>
 			<Subtitle text={'TEACHINGS'} />
-			<div className='center_image'>
+			<div className='teachings_image'>
 				<img
 					src={require(`../assets/teachings.jpg`)}
 					width='100%'
 					alt='NYC Center'
 				/>
 			</div>
-			<div className='center_about'>
-				<p className='center_text_p'>
+			<div className='teachings_about'>
+				<p className='teachings_text_p'>
 					In Buddhism, meditation means “effortlessly remaining in what is.”
 					This state may be brought about by calming and holding the mind, by
 					realizing compassion and wisdom, or by working with the body’s energy

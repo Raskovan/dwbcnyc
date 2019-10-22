@@ -8,7 +8,6 @@ function Teacher(props) {
 				<img
 					src={props.image}
 					width='100%'
-					height='100%'
 					alt={props.name}
 					style={{ filter: 'grayscale(100%)' }}
 				/>
