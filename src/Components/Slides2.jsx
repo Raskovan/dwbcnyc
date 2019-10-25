@@ -13,7 +13,7 @@ function Slides2() {
 	return (
 		<div className='fadein' width='100%' style={{ height: `${imgHeight}px` }}>
 			<div id='f1'>
-				<img src={karmapa} alt='17th Karmapa' />
+				<img className='img_karmapa' src={karmapa} alt='17th Karmapa' />
 				<p
 					style={{
 						whiteSpace: 'pre-wrap',
@@ -29,7 +29,7 @@ function Slides2() {
 				</p>
 			</div>
 			<div id='f2'>
-				<img src={buddha} alt='Buddha' />
+				<img className='img_buddha' src={buddha} alt='Buddha' />
 			</div>
 			<div id='f3'>
 				<img src={ole} alt='Lama Ole' />

@@ -23,7 +23,7 @@ function App() {
 		<div style={{ margin: '0' }}>
 			<Header />
 			<Slides />
-			<div style={{ padding: '0 10vmin' }}>
+			<div className='window_pad'>
 				<Buddhism />
 				<Center />
 				<Program showBio={showBio} bioModal={bioModal} bioIndex={bioIndex} />

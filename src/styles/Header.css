@@ -1,0 +1,12 @@
+.center_name {
+	color: #4c4b4b;
+	font-size: 2.5vmin;
+	font-weight: 300;
+	align-self: flex-end;
+}
+
+@media only screen and (max-width: 414px) {
+	.center_name {
+		display: none;
+	}
+}

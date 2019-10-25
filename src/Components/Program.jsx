@@ -4,7 +4,7 @@ import Bio from './Bio'
 import '../styles/Program.css'
 
 function Program(props) {
-	const [nycEvents, setNycEvents] = useState({})
+	const [nycEvents, setNycEvents] = useState([])
 	// const [majorEvents, setMajorEvents] = useState([])
 	const { bioModal, showBio, bioIndex } = props
 	useEffect(() => {
@@ -109,11 +109,31 @@ function Program(props) {
 		}
 		return fullDate
 	}
-
+	console.log(nycEvents)
 	return (
 		<div className='program_container'>
 			<div className='no_bio_container'>
 				<Subtitle text={'PROGRAM'} />
+				{nycEvents.length >= 2 && (
+					<div className='program_about_wide'>
+						<div>
+							<p className='program_about_p'>
+								Each weekday night at 8pm, there is a guided meditation on the
+								16th Karmapa, our main meditation practice. A short introduction
+								will be provided for all newcomers. <br />
+								<br />
+								Every first Tuesday of a month, at 7:30pm, join us for a short
+								talk on Diamond Way Buddhism. The lecture is followed by a
+								guided meditation. All are welcome to join.
+							</p>
+						</div>
+						<div>
+							<p className='info_style'>
+								All events are offered free of charge unless otherwise noted.
+							</p>
+						</div>
+					</div>
+				)}
 				<div className='program'>
 					{nycEvents.length < 2 && (
 						<div className='program_about'>
@@ -160,8 +180,8 @@ function Program(props) {
 										<span
 											className='subtitle_style link_add'
 											onClick={() => bioModal(index)}>
-											{event.title.toUpperCase()}{' '}
-										</span>
+											{event.title.toUpperCase()}
+										</span>{' '}
 										{getDates(event)}
 									</p>
 									<div style={{ flexGrow: '1', lineHeight: '2vmax' }}>
@@ -184,8 +204,13 @@ function Program(props) {
 										))}
 									</div>
 								</>
-								<div style={{ transition: 'opacity 0.6s' }}>
+								{/* <div style={{ transition: 'opacity 0.6s' }}>
 									<p className='info_style'>Suggested donation</p>
+								</div> */}
+								<div>
+									<button className='myButton' onClick={handleClick}>
+										Reserve a Spot
+									</button>
 								</div>
 							</div>
 						))}

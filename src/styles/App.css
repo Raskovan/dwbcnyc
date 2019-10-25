@@ -5,3 +5,20 @@
 	--main-font-weight: 200;
 	--main-color-red: #d22238;
 }
+
+.window_pad {
+	padding: 0 10vmin;
+}
+
+@media only screen and (max-width: 414px) {
+	:root {
+		--main-font-size: 2vmax;
+		--main-line-height: 3.1vmax;
+		--main-text-color: #393939;
+		--main-font-weight: 200;
+		--main-color-red: #d22238;
+	}
+	.window_pad {
+		padding: 0 7vmin;
+	}
+}

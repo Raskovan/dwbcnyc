@@ -13,12 +13,7 @@ function Center() {
 					alt='NYC Center'
 				/>
 			</div>
-			<div
-				style={{
-					display: 'flex',
-					flexDirection: 'row',
-					justifyContent: 'space-between'
-				}}>
+			<div className='center_container'>
 				<div className='center_about'>
 					<div className='center_text'>
 						<p className='center_text_p'>

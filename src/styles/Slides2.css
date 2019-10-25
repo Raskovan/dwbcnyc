@@ -71,3 +71,12 @@
 #f3 {
 	-webkit-animation-delay: -6s;
 }
+
+@media only screen and (max-width: 414px) {
+	.img_karmapa {
+		object-position: 90%;
+	}
+	.img_buddha {
+		object-position: 33%;
+	}
+}
