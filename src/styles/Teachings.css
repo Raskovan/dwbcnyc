@@ -1,34 +1,4 @@
-.teachings_image {
-	margin: 0px -10vmin 45px;
-}
-
-.teachings_about {
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-	width: 100%;
-}
-
-.teachings_text_p {
-	font-size: var(--main-font-size);
-	line-height: var(--main-line-height);
-	color: var(--main-text-color);
-	font-weight: var(--main-font-weight);
-	margin: 0;
-}
-
 @media only screen and (max-width: 414px) {
-	.teachings_about {
-		flex-direction: column;
-		width: 100%;
-	}
-	.teachings_image {
-		margin: 0px -7vmin 45px;
-
-		height: 70vw;
-		width: 100vw;
-		overflow: hidden;
-	}
 	.teachings_image img {
 		right: 50%;
 		transform: translate(-50%);

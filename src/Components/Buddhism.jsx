@@ -3,11 +3,11 @@ import dorjeChang from '../assets/dorje_chang.jpg'
 import '../styles/Buddhism.css'
 import { buddhismText } from '../texts.js'
 
-function Buddhism() {
+export default function Buddhism() {
 	return (
-		<div className='buddhism_container'>
-			<div className='buddhism_text'>
-				<p className='buddhism_text_p'>{buddhismText}</p>
+		<div className='container'>
+			<div className='container_text'>
+				<p className='body_text'>{buddhismText}</p>
 			</div>
 			<div className='buddhism_img'>
 				<img src={dorjeChang} alt='Dorje Chang' width='100%' />
@@ -15,5 +15,3 @@ function Buddhism() {
 		</div>
 	)
 }
-
-export default Buddhism

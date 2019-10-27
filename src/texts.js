@@ -1,11 +1,21 @@
+import React from 'react'
+
 export const buddhismText =
 	'The teachings of Buddhism have remained a liberating gift to mankind for the last 2500 years. Non-dogmatic and without any gods or commandments, it has enabled people to benefit both others and themselves. Especially today, with the many independent thinkers and new communication techniques, it has become possible to collect, organize and distribute Buddhist teachings, old as new, in attractive and fresh ways.  \n\n“Diamond Way Buddhism” offers a rich access to all levels of these resources. Selected from the most essential instructions by qualified teachers to be useful to modern people, this website focuses on the Diamond Way teachings of the Karma Kagyu school headed by H.H. Karmapa Trinley Thaye Dorje.'
 
 export const centerText =
 	'Diamond Way Buddhist Center New York is part of an international network of over 600 meditation centers in the Karma Kagyu tradition of Tibetan Buddhism. The centers were started due to the unique inspiration of Lama Ole Nydahl according to the wishes of H.H. 16th Karmapa. They are now under the spiritual guidance of H.H. 17th Gyalwa Karmapa Trinley Thaye Dorje.\n\nOur centers consist of people and families working full-time jobs, and incorporating Diamond Way teachings and meditations into their daily lives. Members share responsibility for guiding meditations, answering questions, and giving explanations about Buddhism; their work is unpaid, and based on idealism and friendship.'
 
-export const mpText =
-	'We are planning to buy property to make a permanent base for our center. Please visit the page of the Manhattan Project for more details.'
+export const mpText = (
+	<>
+		We are planning to buy property to make a permanent base for our center.
+		Please visit the page of the{' '}
+		<a href='http://www.diamondway.org/manhattan-project/' target='_new'>
+			Manhattan Project
+		</a>{' '}
+		for more details.
+	</>
+)
 
 export const programText =
 	'Each weekday night at 8pm, there is a guided meditation on the 16th Karmapa, our main meditation practice. A short introduction will be provided for all newcomers.\n\nEvery first Tuesday of a month, at 7:30pm, join us for a short talk on Diamond Way Buddhism. The lecture is followed by a guided meditation. All are welcome to join.'

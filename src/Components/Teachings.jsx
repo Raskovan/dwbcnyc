@@ -3,22 +3,20 @@ import Subtitle from './Subtitle'
 import '../styles/Teachings.css'
 import { teachingsText } from '../texts.js'
 
-function Center() {
+export default function Center() {
 	return (
-		<div>
+		<>
 			<Subtitle text={'TEACHINGS'} />
-			<div className='teachings_image'>
+			<div className='section_img teachings_image'>
 				<img
 					src={require(`../assets/teachings.jpg`)}
 					width='100%'
 					alt='NYC Center'
 				/>
 			</div>
-			<div className='teachings_about'>
-				<p className='teachings_text_p'>{teachingsText}</p>
+			<div className='container'>
+				<p className='body_text'>{teachingsText}</p>
 			</div>
-		</div>
+		</>
 	)
 }
-
-export default Center
