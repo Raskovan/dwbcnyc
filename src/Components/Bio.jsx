@@ -40,27 +40,27 @@ function Bio(props) {
 				background: '#f3f3f3',
 				maxHeight: showBio ? height : null
 			}}>
-			<div
-				id='bioBox'
-				className={transitionText}
-				style={{
-					padding: '40px 10vmin',
-					display: 'flex',
-					flexDirection: 'row'
-				}}>
+			<div id='bioBox' className={transitionText}>
 				<div>
-					<p
-						style={{
-							fontSize: '1.5vmax',
-							margin: '0 0 5px 0',
-							color: '#d22238'
-						}}>
-						ABOUT {name.toUpperCase()}
-					</p>
+					{portrait !== '' && (
+						<div
+							className='mobile_only'
+							style={{ float: 'right', marginLeft: '15px', width: '150px' }}>
+							<img
+								src={image}
+								width='100%'
+								alt={name}
+								style={{ borderRadius: '50%' }}
+							/>
+						</div>
+					)}
+					<p className='sub_sub_title'>ABOUT {name.toUpperCase()}</p>
 					<p className='bio_p'>{bio}</p>
 				</div>
 				{portrait !== '' && (
-					<div style={{ width: '75%', marginLeft: '15px' }}>
+					<div
+						className='desktop_only'
+						style={{ width: '75%', marginLeft: '15px' }}>
 						<img
 							src={image}
 							width='100%'

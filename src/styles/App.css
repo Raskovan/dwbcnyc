@@ -6,8 +6,19 @@
 	--main-color-red: #d22238;
 }
 
+p {
+	white-space: pre-line;
+}
+
 .window_pad {
 	padding: 0 10vmin;
+}
+
+.sub_sub_title {
+	font-size: 1.5vmax;
+	margin: 0 0 5px 0;
+	color: var(--main-color-red);
+	font-weight: 200;
 }
 
 @media only screen and (max-width: 414px) {
@@ -17,6 +28,10 @@
 		--main-text-color: #393939;
 		--main-font-weight: 200;
 		--main-color-red: #d22238;
+	}
+	.sub_sub_title {
+		font-size: 2vmax;
+		margin: 0 0 15px 0;
 	}
 	.window_pad {
 		padding: 0 7vmin;

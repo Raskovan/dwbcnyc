@@ -45,8 +45,8 @@
 
 .myButton:hover {
 	opacity: 1;
-	/* background: linear-gradient(to bottom, #8c8c8c 100%, #636363 5%);
-	background-color: #8c8c8c; */
+	/* background: linear-gradient(to bottom, #8c8c8c 100%, #636363 5%); */
+	background-color: #e4e4e4;
 }
 .myButton:active {
 	position: relative;
@@ -116,7 +116,7 @@
 
 .program_container {
 	font-weight: 200;
-	margin: 0 -10vmin 55px;
+	margin: 0 -10vmin 0;
 }
 
 @media only screen and (max-width: 414px) {
@@ -126,6 +126,9 @@
 	.program_about {
 		width: 100%;
 		padding: 0;
+	}
+	.program_about_wide {
+		margin-bottom: 0;
 	}
 	.program_daily {
 		width: auto;
@@ -138,5 +141,29 @@
 		padding: 15px;
 		border: solid 1px #797979;
 		margin-top: 25px;
+	}
+	.program > .program_event {
+		padding: 15px;
+	}
+	.program > .program_event ~ .program_event {
+		padding: 15px;
+	}
+	.no_bio_container {
+		padding: 0 7vmin 25px;
+	}
+	.program_container {
+		margin: 0 -7vmin 0;
+	}
+	.date_time_style {
+		font-size: 1.6vmax;
+		line-height: 2vmax;
+	}
+	.lecture_name_style {
+		font-size: 2.1vmax;
+		line-height: 2.5vmax;
+	}
+	.myButton {
+		margin-top: 15px;
+		font-size: 1.8vmax;
 	}
 }

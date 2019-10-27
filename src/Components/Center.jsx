@@ -1,10 +1,11 @@
 import React from 'react'
 import Subtitle from './Subtitle'
 import '../styles/Center.css'
+import { centerText, mpText } from '../texts.js'
 
 function Center() {
 	return (
-		<div style={{ marginBottom: '65px' }}>
+		<div>
 			<Subtitle text={'CENTER'} />
 			<div className='center_image'>
 				<img
@@ -16,29 +17,10 @@ function Center() {
 			<div className='center_container'>
 				<div className='center_about'>
 					<div className='center_text'>
-						<p className='center_text_p'>
-							Diamond Way Buddhist Center New York is part of an international
-							network of over 600 meditation centers in the Karma Kagyu
-							tradition of Tibetan Buddhism. The centers were started due to the
-							unique inspiration of Lama Ole Nydahl according to the wishes of
-							H.H. 16th Karmapa. They are now under the spiritual guidance of
-							H.H. 17th Gyalwa Karmapa Trinley Thaye Dorje. <br />
-							<br />
-							Our centers consist of people and families working full-time jobs,
-							and incorporating Diamond Way teachings and meditations into their
-							daily lives. Members share responsibility for guiding meditations,
-							answering questions, and giving explanations about Buddhism; their
-							work is unpaid, and based on idealism and friendship.
-						</p>
+						<p className='center_text_p'>{centerText}</p>
 					</div>
-					<div
-						className='center_text'
-						style={{
-							marginTop: '35px',
-							display: 'flex',
-							alignItems: 'center'
-						}}>
-						<div style={{ width: '55%', marginRight: '25px' }}>
+					<div className='center_text mp_container'>
+						<div className='mp_img_container'>
 							<img
 								width='100%'
 								src={require('../assets/mp_logo_black.png')}
@@ -46,20 +28,8 @@ function Center() {
 							/>
 						</div>
 						<div>
-							<p
-								style={{
-									fontSize: '1.5vmax',
-									margin: '0 0 5px 0',
-									color: '#d22238',
-									fontWeight: '200'
-								}}>
-								THE MANHATTAN PROJECT
-							</p>
-							<p className='center_text_p'>
-								We are planning to buy property to make a permanent base for our
-								center. Please visit the page of the Manhattan Project for more
-								details.
-							</p>
+							<p className='sub_sub_title'>THE MANHATTAN PROJECT</p>
+							<p className='center_text_p'>{mpText}</p>
 						</div>
 					</div>
 				</div>

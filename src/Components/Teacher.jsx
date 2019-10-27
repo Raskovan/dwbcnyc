@@ -14,7 +14,7 @@ function Teacher(props) {
 			</div>
 			<div className='teacher_description_container'>
 				<div>
-					<a href={props.link} target='_new' className='teacher_name'>
+					<a href={props.link} target='_new' className='sub_sub_title link_add'>
 						{props.name}
 					</a>
 					<p className='teacher_description'>{props.description}</p>

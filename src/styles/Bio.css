@@ -20,7 +20,26 @@
 .section_text {
 	transition: transform 0.6s;
 	transform: translate3d(0%, -100%, 0);
+	padding: 40px 10vmin;
+	display: flex;
+	flex-direction: row;
 }
 .section_text.show_text {
 	transform: translate3d(0%, 0, 0);
+}
+.mobile_only {
+	display: none;
+}
+
+@media only screen and (max-width: 414px) {
+	.section_text {
+		display: block;
+	}
+	.mobile_only {
+		float: right;
+		display: block;
+	}
+	.desktop_only {
+		display: none;
+	}
 }

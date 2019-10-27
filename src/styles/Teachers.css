@@ -1,17 +1,19 @@
 .teachers {
 	display: flex;
-	flex-direction: row;
+	flex-wrap: wrap;
+	/* flex-direction: row;
 	width: 100%;
 	margin-bottom: 35px;
-	justify-content: space-between;
+	justify-content: space-between; */
 }
 
 .teacher {
 	display: flex;
-	flex: 1;
+	flex: 1 0 35%;
+	margin: 0 0 25px 0;
 }
 
-.teacher:first-child {
+.teacher:nth-child(odd) {
 	margin-right: 30px;
 }
 
@@ -63,13 +65,17 @@
 		flex-direction: column;
 		margin-bottom: 0;
 	}
-	.teacher:first-child {
+	.teacher:nth-child(odd) {
 		margin-right: 0;
 	}
 	.teacher_description {
-		margin: 0;
+		font-size: 1.6vmax;
+		line-height: 2.2vmax;
 	}
 	.teacher {
 		margin-bottom: 25px;
+	}
+	.teacher_homepage {
+		font-size: 1.3vmax;
 	}
 }
