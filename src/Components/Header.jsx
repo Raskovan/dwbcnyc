@@ -4,22 +4,8 @@ import '../styles/Header.css'
 
 function Header() {
 	return (
-		<div
-			style={{
-				position: 'fixed',
-				background: 'white',
-				width: '100%',
-				paddingBottom: '20px',
-				zIndex: '2'
-			}}>
-			<header
-				style={{
-					height: '57px',
-					borderBottom: 'solid 1px #d22238',
-					padding: '0 10vmin',
-					position: 'relative',
-					display: 'flex'
-				}}>
+		<div className='header_container'>
+			<header className='content_container'>
 				<div className='center_name'>Diamond Way Buddhist Center NYC</div>
 				<div
 					style={{
@@ -34,6 +20,7 @@ function Header() {
 					}}
 				/>
 			</header>
+			<div className='center_name_mobile'>Diamond Way Buddhist Center NYC</div>
 		</div>
 	)
 }

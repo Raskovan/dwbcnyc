@@ -7,7 +7,9 @@ import '../styles/Program.css'
 
 function Program(props) {
 	const [nycEvents, setNycEvents] = useState([])
+	const [ttImages, setTtImages] = useState({})
 	const { bioModal, showBio, bioIndex } = props
+
 	// const [majorEvents, setMajorEvents] = useState([])
 
 	useEffect(() => {
@@ -20,11 +22,28 @@ function Program(props) {
 				// setMajorEvents(majorEvents)
 			})
 			.catch(error => console.error('Error fetching:', error))
+		fetch('https://res.cloudinary.com/diamondway/image/list/tt.json')
+			.then(res => res.json())
+			.then(response => {
+				setTtImages(response)
+			})
+			.catch(error => console.error('Error fetching images:', error))
 	}, [])
 
 	const handleClick = () => {
 		window.location.href =
 			'https://www.eventbrite.com/e/introduction-to-diamond-way-buddhism-tickets-75976221925'
+	}
+
+	const getImageId = index => {
+		let name = nycEvents[index].title
+			.split(' ')
+			.slice(2)
+			.join(' ')
+		let ttImage = ttImages.resources.filter(
+			image => image.context.custom.caption === name
+		)
+		return ttImage[0].public_id
 	}
 
 	return (
@@ -56,7 +75,12 @@ function Program(props) {
 							</div>
 						</div>
 					)}
-					<div className='program_daily'>
+					<div
+						className={
+							nycEvents.length > 0
+								? 'program_daily add_padding'
+								: 'program_daily'
+						}>
 						<div>
 							<p className='title_style'>Daily Meditation</p>
 							<p className='sub_sub_title'>MONDAY-FRIDAY @ 8PM</p>
@@ -121,7 +145,7 @@ function Program(props) {
 			{nycEvents[bioIndex] && nycEvents[bioIndex].title && (
 				<Bio
 					showBio={showBio}
-					portrait={bioIndex === 0 ? 'me.jpg' : 'trak_p.jpg'}
+					imageId={getImageId(bioIndex)}
 					bio={nycEvents[bioIndex].description.bio}
 					title={nycEvents[bioIndex].title}
 				/>

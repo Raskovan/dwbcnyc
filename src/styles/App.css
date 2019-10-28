@@ -8,6 +8,7 @@
 
 p {
 	white-space: pre-line;
+	margin: 0;
 }
 
 a {
@@ -75,9 +76,6 @@ a:hover {
 	:root {
 		--main-font-size: 2vmax;
 		--main-line-height: 3.1vmax;
-		--main-text-color: #393939;
-		--main-font-weight: 200;
-		--main-color-red: #d22238;
 	}
 	.container {
 		flex-direction: column;
