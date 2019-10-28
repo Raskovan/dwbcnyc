@@ -141,6 +141,7 @@
 		margin-bottom: 0;
 	}
 	.program_daily {
+		flex-basis: 1;
 		width: auto;
 		padding: 15px;
 		border: solid 1px #797979;

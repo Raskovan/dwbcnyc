@@ -24,6 +24,7 @@ input[type='text'] {
 input[type='button'],
 input[type='submit'],
 input[type='reset'] {
+	-webkit-appearance: none;
 	font-size: 1.3vmax;
 	background-color: #949494;
 	border: none;
