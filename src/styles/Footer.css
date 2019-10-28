@@ -16,6 +16,7 @@
 }
 
 input[type='text'] {
+	-webkit-appearance: none;
 	padding: 14px 10px;
 	font-size: 1.3vmax;
 	flex-grow: 2;
