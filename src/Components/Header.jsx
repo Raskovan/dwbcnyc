@@ -13,10 +13,8 @@ function Header() {
 						background: `url(${logo}) no-repeat left top`,
 						backgroundSize: '235px 47px',
 						width: '235px',
-						// height: '47px',
 						position: 'relative',
 						top: '23px'
-						// float: 'right'
 					}}
 				/>
 			</header>

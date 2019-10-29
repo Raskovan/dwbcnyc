@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import Header from './Components/Header.jsx'
-// import Slides from './Components/Slides.jsx'
 import Buddhism from './Components/Buddhism.jsx'
 import Program from './Components/Program.jsx'
 import Teachers from './Components/Teachers.jsx'

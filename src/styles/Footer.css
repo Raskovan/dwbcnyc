@@ -56,7 +56,7 @@ form {
 }
 
 .address a:hover {
-	color: #d22238 !important;
+	color: var(--main-color-red) !important;
 }
 
 .links {
@@ -73,6 +73,9 @@ form {
 .note:before {
 	content: '' !important;
 }
+.note:hover {
+	content: '' !important;
+}
 
 .caption {
 	color: var(--main-color-off-white);
@@ -87,6 +90,9 @@ form {
 .footer_link {
 	color: var(--main-color-off-white) !important;
 	line-height: 2vmax !important;
+}
+.footer_link:hover {
+	color: var(--main-color-red) !important;
 }
 
 @media only screen and (max-width: 414px) {

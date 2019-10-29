@@ -111,9 +111,5 @@ export const donationLinks = [
 	{
 		link: 'https://horatio.herokuapp.com/forms/2',
 		text: 'Become a member'
-	},
-	{
-		link: 'https://horatio.herokuapp.com/organizations/1/lookups/new',
-		text: 'Diamond Way Buddhism Worldwide'
 	}
 ]

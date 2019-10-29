@@ -58,6 +58,9 @@
 	text-decoration: underline;
 	cursor: pointer;
 }
+.link_add:hover {
+	color: var(--main-text-color);
+}
 
 .program {
 	display: flex;
