@@ -25,6 +25,7 @@ a:hover {
 .container {
 	max-width: 100%;
 	margin: 25px 0 0;
+	padding: 0 0 25px;
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
