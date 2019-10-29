@@ -17,11 +17,13 @@ function Teacher(props) {
 					<a href={props.link} target='_new' className='sub_sub_title link_add'>
 						{props.name}
 					</a>
-					<p className='teacher_description'>{props.description}</p>
+					<p className='secondary_text teacher_description'>
+						{props.description}
+					</p>
 				</div>
 				<div>
 					{props.homepage && (
-						<a href={props.homepage} target='_new' className='teacher_homepage'>
+						<a href={props.homepage} target='_new' className='caption_text'>
 							Homepage of {props.name}
 						</a>
 					)}

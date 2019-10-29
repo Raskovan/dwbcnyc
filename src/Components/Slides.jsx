@@ -1,15 +1,30 @@
 import React from 'react'
 import ole from '../assets/ole_front.jpg'
+import karmapa from '../assets/karmapa_front.jpg'
+import buddha from '../assets/buddha_front_2.jpg'
 import '../styles/Slides.css'
 
-function Slides() {
+function Slides2() {
+	let imgHeight =
+		window.innerWidth > 414
+			? window.innerWidth / 1.5 - 100
+			: (window.innerWidth / 1.5) * 2
+
 	return (
-		<div className='fadein'>
-			<div className='div-img'>
-				<img src={ole} alt='ole' />
+		<div className='fadein' width='100%' style={{ height: `${imgHeight}px` }}>
+			<div id='f1'>
+				<img className='img_karmapa' src={karmapa} alt='17th Karmapa' />
+				<p className='slide_caption karmapa_caption'>{`H. H. 17th Karmapa`}</p>
+			</div>
+			<div id='f2'>
+				<img className='img_buddha' src={buddha} alt='Buddha' />
+			</div>
+			<div id='f3'>
+				<img src={ole} alt='Lama Ole' />
+				<p className='slide_caption ole_caption'>{`Lama Ole Nydahl`}</p>
 			</div>
 		</div>
 	)
 }
 
-export default Slides
+export default Slides2

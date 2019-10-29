@@ -27,7 +27,7 @@ export default function Center() {
 								alt='Manhattan Project Logo'
 							/>
 						</div>
-						<div style={{ alignSelf: 'flex-end' }}>
+						<div>
 							<p className='sub_sub_title'>THE MANHATTAN PROJECT</p>
 							<p className='body_text'>{mpText}</p>
 						</div>

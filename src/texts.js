@@ -75,3 +75,45 @@ export const teachersTexts = [
 		link: 'https://www.diamondway-buddhism.org/buddhist-teachers/hannah-nydahl/'
 	}
 ]
+
+export const usefulLinks = [
+	{
+		link: 'https://www.karmapa.org/',
+		text: 'Thaye Dorje, His Holiness the 17th Gyalwa Karmapa'
+	},
+	{
+		link: 'https://lama-ole-nydahl.org/',
+		text: 'Lama Ole Nydahl'
+	},
+	{
+		link:
+			'https://lama-ole-nydahl.org/teaching-schedule/download/lama-ole-teaching-schedule.pdf',
+		text: "Lama Ole's Travel Plan (PDF)"
+	},
+	{
+		link: 'https://www.diamondway-buddhism.org/',
+		text: 'Diamond Way Buddhism Worldwide'
+	},
+	{
+		link: 'https://buddhism-today.org',
+		text: 'Buddhism Today Magazine'
+	}
+]
+export const donationLinks = [
+	{
+		link: 'https://horatio.herokuapp.com/forms/30',
+		text: 'Make a one-time donation'
+	},
+	{
+		link: 'https://horatio.herokuapp.com/forms/78',
+		text: 'Make a payment'
+	},
+	{
+		link: 'https://horatio.herokuapp.com/forms/2',
+		text: 'Become a member'
+	},
+	{
+		link: 'https://horatio.herokuapp.com/organizations/1/lookups/new',
+		text: 'Diamond Way Buddhism Worldwide'
+	}
+]

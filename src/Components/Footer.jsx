@@ -1,5 +1,5 @@
 import React from 'react'
-// import flames from '../assets/flames.svg'
+import { usefulLinks, donationLinks } from '../texts.js'
 import '../styles/Footer.css'
 
 function Footer() {
@@ -12,99 +12,68 @@ function Footer() {
 			<div className='footer-column'>
 				<div className='footer_links'>
 					<p className='links'>Usefull Links</p>
-					<p className='link'>
-						<a href='https://www.karmapa.org/' target='_new'>
-							Thaye Dorje, His Holiness the 17th Gyalwa Karmapa
-						</a>
-						<br />
-						<a href='https://lama-ole-nydahl.org/' target='_new'>
-							Lama Ole Nydahl
-						</a>
-						<br />
-						<a
-							href='https://lama-ole-nydahl.org/teaching-schedule/download/lama-ole-teaching-schedule.pdf'
-							target='_new'>
-							Lama Ole's Travel Plan (PDF)
-						</a>
-						<br />
-						<a href='https://www.diamondway-buddhism.org/' target='_new'>
-							Diamond Way Buddhism Worldwide
-						</a>
-						<br />
-						<a href='https://buddhism-today.org' target='_new'>
-							{' '}
-							Buddhism Today Magazine
-						</a>
-					</p>
+					{usefulLinks.map((link, index) => (
+						<p key={index}>
+							<a
+								href={link.link}
+								target='_new'
+								className='caption_text footer_link'>
+								{link.text}
+							</a>
+						</p>
+					))}
 				</div>
 				<div className='footer_donations'>
 					<p className='links'>Make a Donation</p>
-					<p className='link'>
-						<a href='https://horatio.herokuapp.com/forms/30' target='_new'>
-							Make a one-time donation
-						</a>
-						<br />
-						<a href='https://horatio.herokuapp.com/forms/78' target='_new'>
-							Make a payment
-						</a>
-						<br />
-						<a href='https://horatio.herokuapp.com/forms/2' target='_new'>
-							Become a member
-						</a>
-						<br />
-						<a
-							href='https://horatio.herokuapp.com/organizations/1/lookups/new'
-							target='_new'>
-							Change your membership
-						</a>
-						<br />
-					</p>
-					<p className='note'>
+					{donationLinks.map((link, index) => (
+						<p key={index}>
+							<a
+								href={link.link}
+								target='_new'
+								key={index}
+								className='caption_text footer_link'>
+								{link.text}
+							</a>
+						</p>
+					))}
+					<p className='caption_text note'>
 						DWBC NYC is a 501(c)(3) volunteer-led, charitable entity in the USA
 					</p>
 				</div>
 			</div>
+
 			<div className='footer-column'>
 				<div className='subscribe_form'>
 					<p className='subscribe'>Subscribe to our Newsletter</p>
-					<form action='/action_page.php'>
-						<input type='text' id='email' placeholder='Your email' />
-						<input type='submit' value='Sign Up' />
+					<form
+						className='js-cm-form'
+						id='subForm'
+						action='https://www.createsend.com/t/subscribeerror?description='
+						method='post'
+						data-id='2BE4EF332AA2E32596E38B640E905619628477A51FE78EC2E33AB91CDFB166799B2CC791C4237FB40366AF66BBB135A5CD78D3139D08EE3B8F620A446B9F9B00'>
+						<input
+							aria-label='Email'
+							className='js-cm-email-input'
+							id='fieldEmail'
+							name='cm-ouded-ouded'
+							required=''
+							type='email'
+							placeholder='Your email'
+						/>
+						<button type='submit'>Sign Up</button>
 					</form>
 				</div>
-				<div
-					style={{
-						display: 'flex',
-						justifyContent: 'space-between',
-						alignItems: 'flex-end'
-					}}>
-					<div>
-						<p className='address'>
-							Diamond Way Buddhist Center NYC <br />
-							114 E 28th St Suite 1, New York, NY 10016
-							<br />
-							<a href='mailto:newyork@diamondway.org'>newyork@diamondway.org</a>
-						</p>
-						<p className='note'>
-							© {currentYear()} Diamond Way Buddhist Centers USA
-						</p>
-					</div>
-					<div
-						style={{
-							width: '25%'
-						}}>
-						<div className='mp-logo'>
-							<a
-								href='http://www.diamondway.org/manhattan-project/'
-								target='_new'>
-								<img
-									src={require(`../assets/mp_white.png`)}
-									width='100%'
-									alt='MP Logo'
-								/>
-							</a>
-						</div>
-					</div>
+
+				<div>
+					<p className='secondary_text address'>
+						<b>Diamond Way Buddhist Center NYC</b> <br />
+						114 E 28th St Suite 1, New York, NY 10016
+						<br />
+						<a href='mailto:newyork@diamondway.org'>newyork@diamondway.org</a>
+					</p>
+					<p className='caption_text note'>
+						© {currentYear()} Diamond Way Buddhist Centers USA
+					</p>
 				</div>
 			</div>
 		</div>

@@ -15,32 +15,23 @@
 	justify-content: space-between;
 }
 
-input[type='text'] {
-	-webkit-appearance: none;
+input[type='email'] {
 	padding: 14px 10px;
 	font-size: 1.3vmax;
-	flex-grow: 2;
+	flex-grow: 1;
 }
 
-input[type='button'],
-input[type='submit'],
-input[type='reset'] {
-	-webkit-appearance: none;
+button {
 	font-size: 1.3vmax;
 	background-color: #949494;
 	border: none;
 	color: white;
-	padding: 16px 32px;
-	font-weight: 500;
+	padding: 0 32px;
+	/* font-weight: 500; */
 	text-decoration: none;
 	margin: 0 2px;
 	cursor: pointer;
 	transition: 0.3s;
-}
-
-input[type='button'],
-input[type='submit']:hover {
-	background-color: #636363;
 }
 
 form {
@@ -55,86 +46,47 @@ form {
 }
 
 .address {
-	margin: 0;
-	color: rgb(222, 222, 222);
-	font-size: 1.2vmax;
-	font-weight: 400;
-	line-height: 1.8vmax;
+	color: var(--main-color-off-white) !important;
 }
 
 .address a {
-	color: rgb(222, 222, 222);
+	color: var(--main-color-off-white) !important;
 	margin: 0 0 15px 0;
 	transition: 0.3s;
 }
 
 .address a:hover {
-	color: #d22238;
+	color: #d22238 !important;
 }
 
 .links {
-	color: white;
+	color: var(--main-color-off-white);
 	font-size: 2vmax;
 	font-weight: 200;
-	margin: 0;
-}
-
-.link a:before {
-	content: '› ';
-	font-weight: 700;
-	color: #d22238;
-}
-
-.link a {
-	color: rgb(222, 222, 222);
-	font-size: 1.2vmax;
-	font-weight: 400;
-	line-height: 1.8vmax;
-	text-decoration: none;
-	transition: 0.3s;
-}
-
-.link {
-	padding: 10px 0 0;
-	margin: 0;
-	color: rgb(222, 222, 222);
-	font-size: 1.2vmax;
-	font-weight: 400;
-	line-height: 2vmax;
-}
-
-.link a:hover {
-	color: #d22238;
+	margin: 0 0 10px;
 }
 
 .note {
-	padding: 10px 0 0;
-	margin: 0;
-	color: rgb(222, 222, 222);
-	font-size: 1vmax;
-	font-weight: 400;
-	line-height: 2vmax;
+	color: var(--main-color-off-white) !important;
+	margin-top: 15px !important;
+}
+.note:before {
+	content: '' !important;
 }
 
 .caption {
-	color: rgb(222, 222, 222);
+	color: var(--main-color-off-white);
 	font-size: 1.2vmax;
 	text-align: center;
 }
 
-.mp-logo {
-	padding: 9px 10px;
-	border-radius: 50%;
-	background-color: #353535;
-	transition: 0.3s;
+.footer_links {
+	margin-bottom: 25px;
 }
 
-.mp-logo:hover {
-	box-shadow: 0 0 10px #767676;
-}
-
-.footer_donations {
-	margin-top: 25px;
+.footer_link {
+	color: var(--main-color-off-white) !important;
+	line-height: 2vmax !important;
 }
 
 @media only screen and (max-width: 414px) {
@@ -148,7 +100,27 @@ form {
 	.subscribe_form {
 		margin-bottom: 25px;
 	}
-	.footer_links {
-		margin-bottom: 25px;
+
+	button {
+		-webkit-appearance: none;
+		-webkit-border-radius: 0;
+		font-size: 1.8vmax;
+		margin: 2.5px 0;
+		padding: 0 20px;
+	}
+	input[type='email'] {
+		font-size: 1.8vmax;
+		-webkit-appearance: none;
+		-webkit-border-radius: 0;
+	}
+	.link a {
+		font-size: 1.4vmax;
+		line-height: 2.5vmax;
+	}
+	.link {
+		padding: 0;
+		margin: 0;
+		font-size: 1.4vmax;
+		line-height: 1.8vmax;
 	}
 }

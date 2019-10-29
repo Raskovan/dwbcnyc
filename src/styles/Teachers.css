@@ -18,10 +18,7 @@
 }
 
 .teacher_description {
-	font-size: 1.3vmax;
-	line-height: 2vmax;
-	margin: 10px 0 0 0;
-	color: var(--main-text-color);
+	margin: 10px 0 0 0 !important;
 	font-weight: 300;
 	white-space: pre-wrap;
 }
@@ -30,22 +27,6 @@
 	font-size: 1.5vmax;
 	color: var(--main-color-red);
 	font-weight: 500;
-}
-
-.teacher_homepage {
-	font-size: 1.2vmax;
-	text-decoration: none;
-	color: var(--main-text-color);
-}
-
-.teacher_homepage:hover {
-	color: var(--main-color-red);
-}
-
-.teacher_homepage:before {
-	content: '› ';
-	font-weight: 700;
-	color: var(--main-text-color);
 }
 
 .teacher_image_container {
@@ -69,8 +50,8 @@
 		margin-right: 0;
 	}
 	.teacher_description {
-		font-size: 1.6vmax;
-		line-height: 2.2vmax;
+		font-weight: 200;
+		margin: 10px 0 0 !important;
 	}
 	.teacher {
 		margin-bottom: 25px;

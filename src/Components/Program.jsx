@@ -69,7 +69,7 @@ function Program(props) {
 								<p className='program_about_p'>{programText}</p>
 							</div>
 							<div>
-								<p className='info_style'>
+								<p className='secondary_text'>
 									All events are offered free of charge unless otherwise noted.
 								</p>
 							</div>
