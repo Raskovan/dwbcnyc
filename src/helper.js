@@ -62,21 +62,36 @@ export function parseResponse(response) {
 		el.innerHTML = nycEvents[i].description
 
 		let divs = el.getElementsByTagName('div')
-		// let spans = el.getElementsByTagName('span')
 		for (let key in divs) {
+			if (!divs[key].id) continue
 			let day = {}
 			let spans
 			if (typeof divs[key] === 'object') {
 				let moreDivs = divs[key].getElementsByTagName('div')
 				spans = divs[key].getElementsByTagName('span')
-				if (Object.keys(moreDivs).length > 0)
+				if (Object.keys(moreDivs).length > 0) {
 					day['date'] = spans['date'].innerHTML
-				else {
+					let moreSpans = moreDivs[0].getElementsByTagName('span')
+					for (let c in moreSpans) {
+						if (moreSpans[c].id) {
+							if (day[moreSpans[c].id]) {
+								day[moreSpans[c].id].push(moreSpans[c].innerHTML)
+							} else {
+								day[moreSpans[c].id] = []
+								day[moreSpans[c].id].push(moreSpans[c].innerHTML)
+							}
+						}
+					}
+				} else {
 					for (let k in spans) {
 						if (typeof spans[k] === 'object')
 							if (spans[k].id === 'bio' || spans[k].id === 'eventbrite')
 								event[spans[k].id] = spans[k].innerHTML
-							else day[spans[k].id] = spans[k].innerHTML
+							else {
+								if (spans[k].id === 'date')
+									day[spans[k].id] = spans[k].innerHTML
+								else day[spans[k].id] = [spans[k].innerHTML]
+							}
 					}
 				}
 				if (Object.keys(day).length > 0) program.push(day)

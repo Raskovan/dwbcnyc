@@ -114,16 +114,16 @@ function Program(props) {
 												{day.date && (
 													<p className='date_time_style'>{day.date}</p>
 												)}
-												{day.time && (
-													<span className='date_time_style'>
-														{day.time} {'\u00A0'}
-													</span>
-												)}
-												{day.title && (
-													<span className='lecture_name_style'>
-														"{day.title}"
-													</span>
-												)}
+												{day.time.map((entry, index) => (
+													<p key={index}>
+														<span className='date_time_style'>
+															{day.time[index]} {'\u00A0'}
+														</span>
+														<span className='lecture_name_style'>
+															"{day.title[index]}"
+														</span>
+													</p>
+												))}
 											</div>
 										))}
 									</div>
