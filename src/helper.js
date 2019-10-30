@@ -74,7 +74,8 @@ export function parseResponse(response) {
 				else {
 					for (let k in spans) {
 						if (typeof spans[k] === 'object')
-							if (spans[k].id === 'bio') event[spans[k].id] = spans[k].innerHTML
+							if (spans[k].id === 'bio' || spans[k].id === 'eventbrite')
+								event[spans[k].id] = spans[k].innerHTML
 							else day[spans[k].id] = spans[k].innerHTML
 					}
 				}

@@ -30,11 +30,6 @@ function Program(props) {
 			.catch(error => console.error('Error fetching images:', error))
 	}, [])
 
-	const handleClick = () => {
-		window.location.href =
-			'https://www.eventbrite.com/e/introduction-to-diamond-way-buddhism-tickets-75976221925'
-	}
-
 	const getImageId = index => {
 		let name = nycEvents[index].title
 			.split(' ')
@@ -91,9 +86,12 @@ function Program(props) {
 							<p className='sub_sub_title'>FIRST TUESDAY @ 7.30 PM</p>
 						</div>
 						<div>
-							<button className='myButton' onClick={handleClick}>
+							<a
+								className='myButton'
+								href='https://www.eventbrite.com/e/79293602299'
+								target='_new'>
 								Reserve a Spot
-							</button>
+							</a>
 						</div>
 					</div>
 					{nycEvents.length > 0 &&
@@ -130,13 +128,13 @@ function Program(props) {
 										))}
 									</div>
 								</>
-								{/* <div style={{ transition: 'opacity 0.6s' }}>
-									<p className='info_style'>Suggested donation</p>
-								</div> */}
 								<div>
-									<button className='myButton' onClick={handleClick}>
+									<a
+										className='myButton'
+										href={event.description.eventbrite}
+										target='_new'>
 										Reserve a Spot
-									</button>
+									</a>
 								</div>
 							</div>
 						))}
