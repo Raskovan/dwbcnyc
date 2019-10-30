@@ -160,6 +160,7 @@ a.myButton {
 		padding: 15px;
 		border: solid 1px #797979;
 		margin-top: 25px;
+		flex-basis: auto;
 	}
 	.program > .program_event {
 		padding: 15px;
