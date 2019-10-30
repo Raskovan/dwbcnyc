@@ -1,7 +1,7 @@
 import React from 'react'
 import ole from '../assets/ole_front.jpg'
 import karmapa from '../assets/karmapa_front.jpg'
-import buddha from '../assets/buddha_front_2.jpg'
+import buddha from '../assets/buddha_front.jpg'
 import '../styles/Slides.css'
 
 function Slides2() {
