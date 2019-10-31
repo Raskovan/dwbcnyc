@@ -13,15 +13,15 @@ function Slides2() {
 	return (
 		<div className='fadein' width='100%' style={{ height: `${imgHeight}px` }}>
 			<div id='f1'>
+				<img src={ole} alt='Lama Ole' />
+				<p className='slide_caption ole_caption'>{`Lama Ole Nydahl`}</p>
+			</div>
+			<div id='f2'>
 				<img className='img_karmapa' src={karmapa} alt='17th Karmapa' />
 				<p className='slide_caption karmapa_caption'>{`H. H. 17th Karmapa`}</p>
 			</div>
-			<div id='f2'>
-				<img className='img_buddha' src={buddha} alt='Buddha' />
-			</div>
 			<div id='f3'>
-				<img src={ole} alt='Lama Ole' />
-				<p className='slide_caption ole_caption'>{`Lama Ole Nydahl`}</p>
+				<img className='img_buddha' src={buddha} alt='Buddha' />
 			</div>
 		</div>
 	)

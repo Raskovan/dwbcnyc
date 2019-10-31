@@ -6,7 +6,7 @@ import { centerText, mpText } from '../texts.js'
 export default function Center() {
 	return (
 		<>
-			<Subtitle text={'CENTER'} />
+			<Subtitle text={'ABOUT THE CENTER'} />
 			<div className='section_img center_img'>
 				<img
 					src={require(`../assets/center.jpg`)}

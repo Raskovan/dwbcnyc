@@ -83,14 +83,16 @@ function Program(props) {
 							<p className='title_style'>
 								Introduction to Diamond Way Buddhism
 							</p>
-							<p className='sub_sub_title'>FIRST TUESDAY @ 7.30 PM</p>
+							<p className='sub_sub_title'>
+								FIRST TUESDAY OF THE MONTH @ 7.30 PM
+							</p>
 						</div>
 						<div>
 							<a
 								className='myButton'
 								href='https://www.eventbrite.com/e/79293602299'
 								target='_new'>
-								Reserve a Spot
+								RSVP
 							</a>
 						</div>
 					</div>
@@ -133,7 +135,7 @@ function Program(props) {
 										className='myButton'
 										href={event.description.eventbrite}
 										target='_new'>
-										Reserve a Spot
+										RSVP
 									</a>
 								</div>
 							</div>
