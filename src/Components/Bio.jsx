@@ -16,8 +16,14 @@ function Bio(props) {
 			})
 		}
 		window.addEventListener('resize', handleResize)
-		const bioHeight = document.getElementById('bioBox').clientHeight
+		const bioHeight = document.getElementById('bioBox').offsetHeight
+		// const bioTextHeight = document.getElementById('bioText').clientHeight
 		setHeight(bioHeight)
+		const bound = document.getElementById('bioText')
+			? document.getElementById('bioText').getBoundingClientRect()
+			: null
+
+		console.log(bound)
 	}, [dimensions])
 	const name = title
 		.split(' ')
@@ -38,10 +44,14 @@ function Bio(props) {
 			className={transition}
 			style={{
 				background: '#f3f3f3',
-				maxHeight: showBio ? height : null
+				maxHeight: showBio
+					? dimensions.width > 414
+						? height
+						: height + height * (8.8 / 100)
+					: 0
 			}}>
 			<div id='bioBox' className={transitionText}>
-				<div>
+				<div ib='bioText'>
 					{imageId !== '' && (
 						<div
 							className='mobile_only'
@@ -58,9 +68,7 @@ function Bio(props) {
 					<p className='bio_p'>{bio}</p>
 				</div>
 				{imageId !== '' && (
-					<div
-						className='desktop_only'
-						style={{ width: '75%', marginLeft: '15px' }}>
+					<div className='desktop_only' style={{ marginLeft: '15px' }}>
 						<img
 							src={imageURL}
 							width='100%'
