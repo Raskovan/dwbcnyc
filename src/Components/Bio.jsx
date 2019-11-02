@@ -4,27 +4,12 @@ import '../styles/Bio.css'
 function Bio(props) {
 	const { bio, title, showBio, imageId } = props
 	const [height, setHeight] = useState(null)
-	const [dimensions, setDimensions] = useState({
-		height: window.innerHeight,
-		width: window.innerWidth
-	})
-	useEffect(() => {
-		function handleResize() {
-			setDimensions({
-				height: window.innerHeight,
-				width: window.innerWidth
-			})
-		}
-		window.addEventListener('resize', handleResize)
-		const bioHeight = document.getElementById('bioBox').offsetHeight
-		// const bioTextHeight = document.getElementById('bioText').clientHeight
-		setHeight(bioHeight)
-		const bound = document.getElementById('bioText')
-			? document.getElementById('bioText').getBoundingClientRect()
-			: null
 
-		console.log(bound)
-	}, [dimensions])
+	useEffect(() => {
+		const bioHeight = document.getElementById('bioBox').offsetHeight
+		setHeight(bioHeight)
+	}, [])
+
 	const name = title
 		.split(' ')
 		.slice(2)
@@ -44,11 +29,7 @@ function Bio(props) {
 			className={transition}
 			style={{
 				background: '#f3f3f3',
-				maxHeight: showBio
-					? dimensions.width > 414
-						? height
-						: height + height * (8.8 / 100)
-					: 0
+				maxHeight: showBio ? height : '0'
 			}}>
 			<div id='bioBox' className={transitionText}>
 				<div ib='bioText'>

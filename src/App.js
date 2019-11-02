@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Header from './Components/Header.jsx'
 import Buddhism from './Components/Buddhism.jsx'
 import Program from './Components/Program.jsx'
@@ -11,12 +11,17 @@ import Teachings from './Components/Teachings.jsx'
 import './styles/App.css'
 
 function App() {
-	const [showBio, setShowBio] = useState(false)
-	const [bioIndex, setBioIndex] = useState()
-	const bioModal = index => {
-		setShowBio(!showBio)
-		setBioIndex(index)
-	}
+	const [width, setWidth] = useState(window.innerWidth)
+
+	useEffect(() => {
+		window.addEventListener('resize', handleResize)
+		function handleResize() {
+			setWidth(window.innerWidth)
+		}
+		return () => {
+			window.removeEventListener('resize', handleResize)
+		}
+	}, [width])
 
 	return (
 		<div style={{ margin: '0' }}>
@@ -25,7 +30,7 @@ function App() {
 			<div className='window_pad'>
 				<Buddhism />
 				<Center />
-				<Program showBio={showBio} bioModal={bioModal} bioIndex={bioIndex} />
+				<Program />
 				<Teachings />
 				<Teachers />
 				<Quote />

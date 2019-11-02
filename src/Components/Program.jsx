@@ -8,7 +8,13 @@ import '../styles/Program.css'
 function Program(props) {
 	const [nycEvents, setNycEvents] = useState([])
 	const [ttImages, setTtImages] = useState({})
-	const { bioModal, showBio, bioIndex } = props
+	const [showBio, setShowBio] = useState(false)
+	const [bioIndex, setBioIndex] = useState()
+
+	const bioModal = index => {
+		setShowBio(!showBio)
+		setBioIndex(index)
+	}
 
 	// const [majorEvents, setMajorEvents] = useState([])
 
