@@ -108,9 +108,7 @@ function Program(props) {
 								<>
 									<p className='title_style'>Upcoming Event</p>
 									<p className='sub_sub_title'>
-										<span
-											className='sub_sub_title link_add'
-											onClick={() => bioModal(index)}>
+										<span className='link_add' onClick={() => bioModal(index)}>
 											{event.title.toUpperCase()}
 											{'\n'}
 										</span>

@@ -60,7 +60,7 @@ a.myButton {
 }
 
 .link_add {
-	text-decoration: underline;
+	border-bottom: 1px solid;
 	cursor: pointer;
 }
 .link_add:hover {
