@@ -11,7 +11,7 @@ function Footer() {
 		<div className='footer_container'>
 			<div className='footer-column'>
 				<div className='footer_links'>
-					<p className='links'>Usefull Links</p>
+					<p className='links'>Useful Links</p>
 					{usefulLinks.map((link, index) => (
 						<p key={index}>
 							<a

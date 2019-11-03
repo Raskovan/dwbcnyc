@@ -4,6 +4,7 @@ import '../styles/Center.css'
 import { centerText, mpText } from '../texts.js'
 
 export default function Center() {
+	const darkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
 	return (
 		<>
 			<Subtitle text={'ABOUT THE CENTER'} />
@@ -23,7 +24,9 @@ export default function Center() {
 						<div className='mp_img_container'>
 							<img
 								width='100%'
-								src={require('../assets/mp_logo_black.png')}
+								src={require(`../assets/${
+									darkMode ? 'mp_logo_white.png' : 'mp_logo_black.png'
+								}`)}
 								alt='Manhattan Project Logo'
 							/>
 						</div>

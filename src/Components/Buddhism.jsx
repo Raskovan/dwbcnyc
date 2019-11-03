@@ -1,5 +1,5 @@
 import React from 'react'
-import dorjeChang from '../assets/dorje_chang.jpg'
+import dorjeChang from '../assets/dorje_chang.png'
 import '../styles/Buddhism.css'
 import { buddhismText } from '../texts.js'
 

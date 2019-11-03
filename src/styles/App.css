@@ -130,3 +130,15 @@ a:hover {
 		padding: 0 7vmin;
 	}
 }
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--main-text-color: #d4d4d4;
+	}
+
+	body {
+		background: #272727;
+	}
+}
+@media (prefers-color-scheme: light) {
+}

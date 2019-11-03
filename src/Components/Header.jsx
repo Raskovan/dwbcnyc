@@ -1,8 +1,12 @@
 import React from 'react'
-import logo from '../assets/01-logo@2x.png'
+import logoWhite from '../assets/01-logo@2x.png'
+import logoBlack from '../assets/01-logo@2x_black.png'
 import '../styles/Header.css'
 
 function Header() {
+	const darkMode = window.matchMedia('(prefers-color-scheme: dark)')
+	let logo = darkMode.matches ? logoBlack : logoWhite
+
 	return (
 		<div className='header_container'>
 			<header className='content_container'>
@@ -10,8 +14,8 @@ function Header() {
 				<div
 					style={{
 						marginLeft: 'auto',
-						background: `url(${logo}) no-repeat left top`,
-						backgroundSize: '235px 47px',
+						background: `url(${logo}) no-repeat left top / 235px 47px`,
+						// backgroundSize: '235px 47px',
 						width: '235px',
 						position: 'relative',
 						top: '23px'

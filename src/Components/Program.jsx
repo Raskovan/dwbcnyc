@@ -54,7 +54,7 @@ function Program(props) {
 				{nycEvents.length >= 2 && (
 					<div className='program_about_wide'>
 						<div>
-							<p className='program_about_p'>{programText}</p>
+							<p className='body_text'>{programText}</p>
 						</div>
 						<div>
 							<p className='info_style'>
@@ -67,7 +67,7 @@ function Program(props) {
 					{nycEvents.length < 2 && (
 						<div className='program_about'>
 							<div>
-								<p className='program_about_p'>{programText}</p>
+								<p className='body_text'>{programText}</p>
 							</div>
 							<div>
 								<p className='secondary_text'>

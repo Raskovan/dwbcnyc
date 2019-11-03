@@ -12,6 +12,7 @@ import './styles/App.css'
 
 function App() {
 	const [width, setWidth] = useState(window.innerWidth)
+	const [mode, setMode] = useState()
 
 	useEffect(() => {
 		window.addEventListener('resize', handleResize)
@@ -22,6 +23,18 @@ function App() {
 			window.removeEventListener('resize', handleResize)
 		}
 	}, [width])
+
+	useEffect(() => {
+		const darkMode = window.matchMedia('(prefers-color-scheme: dark)')
+		function setThemeMode(e) {
+			if (e.matches) {
+				setMode('Dark')
+			} else {
+				setMode('Light')
+			}
+		}
+		darkMode.addListener(setThemeMode)
+	}, [mode])
 
 	return (
 		<div style={{ margin: '0' }}>

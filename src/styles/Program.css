@@ -2,6 +2,7 @@
 	padding: 0 0 5px;
 	font-size: 3vmax;
 	margin: 0;
+	color: var(--main-text-color);
 }
 .subtitle_style {
 	font-size: 1.5vmax;
@@ -17,6 +18,7 @@
 	font-size: 1.3vmax;
 	margin: 0;
 	text-transform: uppercase;
+	color: var(--main-text-color);
 }
 
 .day {
@@ -27,6 +29,7 @@
 	font-size: 1.8vmax;
 	line-height: 2.2vmax;
 	margin: 0;
+	color: var(--main-text-color);
 }
 .myButton {
 	width: 100%;
@@ -42,7 +45,6 @@
 	text-decoration: none;
 	transition: 0.3s;
 	opacity: 0.8;
-	/* margin-top: 15px; */
 }
 
 a.myButton {
@@ -86,13 +88,13 @@ a.myButton {
 	justify-content: space-between;
 }
 
-.program_about_p {
+/* .program_about_p {
 	font-size: var(--main-font-size);
 	line-height: var(--main-line-height);
 	color: var(--main-text-color);
 	font-weight: var(--main-font-weight);
 	margin: 0;
-}
+} */
 
 .program_daily {
 	/* width: 25%; */
@@ -185,5 +187,18 @@ a.myButton {
 	.myButton {
 		margin-top: 15px;
 		font-size: 1.8vmax;
+	}
+}
+
+@media (prefers-color-scheme: dark) {
+	.no_bio_container {
+		background: #272727;
+	}
+	.myButton {
+		background-color: #949494;
+		color: white;
+	}
+	.myButton:hover {
+		color: #949494;
 	}
 }

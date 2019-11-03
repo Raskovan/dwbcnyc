@@ -28,7 +28,6 @@ function Bio(props) {
 		<div
 			className={transition}
 			style={{
-				background: '#f3f3f3',
 				maxHeight: showBio ? height : '0'
 			}}>
 			<div id='bioBox' className={transitionText}>
