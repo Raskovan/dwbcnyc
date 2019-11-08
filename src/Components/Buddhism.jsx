@@ -6,8 +6,8 @@ export default function Buddhism(props) {
 	const { images } = props
 	const imageWidth = Math.floor(
 		window.innerWidth > window.innerHeight
-			? window.innerWidth / 2
-			: window.innerHeight / 2
+			? window.innerWidth / 3
+			: window.innerHeight / 3
 	)
 	const getLink = () => {
 		let buddhismPublicId = images[0].public_id
