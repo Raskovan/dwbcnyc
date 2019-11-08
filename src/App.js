@@ -13,6 +13,16 @@ import './styles/App.css'
 function App() {
 	const [width, setWidth] = useState(window.innerWidth)
 	const [mode, setMode] = useState()
+	const [imageArray, setImageArray] = useState([])
+
+	useEffect(() => {
+		fetch('https://res.cloudinary.com/diamondway/image/list/assets.json')
+			.then(res => res.json())
+			.then(response => {
+				setImageArray(response.resources)
+			})
+			.catch(error => console.error('Error fetching images:', error))
+	}, [])
 
 	useEffect(() => {
 		window.addEventListener('resize', handleResize)
@@ -39,16 +49,40 @@ function App() {
 	return (
 		<div style={{ margin: '0' }}>
 			<Header />
-			<Slides />
-			<div className='window_pad'>
-				<Buddhism />
-				<Center />
-				<Program />
-				<Teachings />
-				<Teachers />
-				<Quote />
-			</div>
-			<Footer />
+			{imageArray.length > 0 && (
+				<>
+					<Slides
+						images={imageArray.filter(
+							img => img.context.custom.position === 'slides'
+						)}
+					/>
+					<div className='window_pad'>
+						<Buddhism
+							images={imageArray.filter(
+								img => img.context.custom.position === 'buddhism'
+							)}
+						/>
+						<Center
+							images={imageArray.filter(
+								img => img.context.custom.position === 'center'
+							)}
+						/>
+						<Program />
+						<Teachings
+							images={imageArray.filter(
+								img => img.context.custom.position === 'teachings'
+							)}
+						/>
+						<Teachers
+							images={imageArray.filter(
+								img => img.context.custom.position === 'teachers'
+							)}
+						/>
+						<Quote />
+					</div>
+					<Footer />
+				</>
+			)}
 		</div>
 	)
 }
