@@ -61,6 +61,10 @@ a.myButton {
 	top: 1px;
 }
 
+.daily_button {
+	padding-top: 15px;
+}
+
 .link_add {
 	border-bottom: 1px solid;
 	cursor: pointer;
@@ -75,6 +79,9 @@ a.myButton {
 }
 
 .program_about {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
 	width: 30%;
 	padding: 0 45px 0 0;
 	flex-basis: 0;

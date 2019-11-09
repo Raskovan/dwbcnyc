@@ -2,10 +2,10 @@ import React from 'react'
 import Subtitle from './Subtitle'
 import Teacher from './Teacher'
 import '../styles/Teachers.css'
-import { teachersTexts } from '../texts.js'
+// import { teachersTexts } from '../texts.js'
 
 export default function Teachers(props) {
-	const { images } = props
+	const { images, text } = props
 	const imageWidth = Math.floor(
 		window.innerWidth > window.innerHeight
 			? Math.floor((window.innerWidth * 15) / 100)
@@ -22,14 +22,14 @@ export default function Teachers(props) {
 		<>
 			<Subtitle text={'DIAMOND WAY TEACHERS'} />
 			<div className='teachers'>
-				{teachersTexts.map((teacher, index) => (
+				{text.map((teacher, index) => (
 					<Teacher
 						key={index}
-						name={teacher.name}
-						description={teacher.description}
-						image={getLink(teacher.name)}
-						homepage={teacher.homepage}
-						link={teacher.link}
+						name={teacher.fields.name}
+						description={teacher.fields.description}
+						image={getLink(teacher.fields.name)}
+						homepage={teacher.fields.homepage}
+						link={teacher.fields.link}
 					/>
 				))}
 			</div>

@@ -59,6 +59,7 @@ a:hover {
 .secondary_text {
 	margin: 25px 0 0;
 	line-height: 2vmax;
+	letter-spacing: 0.1px;
 	color: var(--main-text-color);
 }
 

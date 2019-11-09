@@ -1,10 +1,10 @@
 import React from 'react'
 import Subtitle from './Subtitle'
 import '../styles/Center.css'
-import { centerText, mpText } from '../texts.js'
+// import { centerText, mpText } from '../texts.js'
 
 export default function Center(props) {
-	const { images } = props
+	const { images, text, textMP } = props
 	const imageWidth = Math.floor(
 		window.innerWidth > window.innerHeight
 			? window.innerWidth
@@ -18,14 +18,14 @@ export default function Center(props) {
 
 	return (
 		<>
-			<Subtitle text={'ABOUT THE CENTER'} />
+			<Subtitle text={text.fields.title} />
 			<div className='section_img center_img'>
 				<img src={getLink()} width='100%' alt='NYC Center' />
 			</div>
 			<div className='container'>
 				<div className='container_text'>
 					<div>
-						<p className='body_text'>{centerText}</p>
+						<p className='body_text'>{text.fields.text}</p>
 					</div>
 					<div className='mp_container'>
 						<div className='mp_img_container'>
@@ -38,8 +38,12 @@ export default function Center(props) {
 							/>
 						</div>
 						<div>
-							<p className='sub_sub_title'>THE MANHATTAN PROJECT</p>
-							<p className='body_text'>{mpText}</p>
+							<p className='sub_sub_title'>{textMP.fields.title}</p>
+							<p
+								className='body_text'
+								dangerouslySetInnerHTML={{ __html: textMP.fields.text }}>
+								{/* {textMP.fields.text} */}
+							</p>
 						</div>
 					</div>
 				</div>

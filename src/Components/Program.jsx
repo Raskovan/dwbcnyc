@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import Subtitle from './Subtitle'
 import Bio from './Bio'
-import { programText } from '../texts.js'
+// import { programText } from '../texts.js'
 import { getDates, parseResponse } from '../helper.js'
 import '../styles/Program.css'
 
@@ -10,6 +10,8 @@ function Program(props) {
 	const [ttImages, setTtImages] = useState({})
 	const [showBio, setShowBio] = useState(false)
 	const [bioIndex, setBioIndex] = useState()
+
+	const { text } = props
 
 	const bioModal = index => {
 		setShowBio(!showBio)
@@ -50,11 +52,11 @@ function Program(props) {
 	return (
 		<div className='program_container'>
 			<div className='no_bio_container'>
-				<Subtitle text={'PROGRAM'} />
+				<Subtitle text={text.fields.title} />
 				{nycEvents.length >= 2 && (
 					<div className='program_about_wide'>
 						<div>
-							<p className='body_text'>{programText}</p>
+							<p className='body_text'>{text.fields.text}</p>
 						</div>
 						<div>
 							<p className='info_style'>
@@ -67,7 +69,7 @@ function Program(props) {
 					{nycEvents.length < 2 && (
 						<div className='program_about'>
 							<div>
-								<p className='body_text'>{programText}</p>
+								<p className='body_text'>{text.fields.text}</p>
 							</div>
 							<div>
 								<p className='secondary_text'>
@@ -93,7 +95,7 @@ function Program(props) {
 								FIRST TUESDAY OF THE MONTH @ 7.30 PM
 							</p>
 						</div>
-						<div>
+						<div className='daily_button'>
 							<a
 								className='myButton'
 								href='https://www.eventbrite.com/e/79293602299'
