@@ -38,7 +38,7 @@
   },
   "git": {
     "scripts": {
-      "pre-push": "npm run build && surge --project ./build --domain https://dwbcnyc.surge.sh"
+      "pre-push": "npm run build && mv --project ./build/index.html --project ./build/200.html && surge --project ./build --domain https://dwbcnyc.surge.sh"
     }
   }
 }
