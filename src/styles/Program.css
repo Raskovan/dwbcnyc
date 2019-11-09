@@ -146,6 +146,11 @@ a.myButton {
 	margin: 0 -10vmin 0;
 }
 
+.ruler_style {
+	margin: 30px 0 20px;
+	border: 1px solid var(--main-text-color);
+}
+
 @media only screen and (max-width: 414px) {
 	.program {
 		flex-direction: column;

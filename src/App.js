@@ -108,7 +108,12 @@ function App() {
 							text={textArray.filter(text => text.fields.name === 'quote')[0]}
 						/>
 					</div>
-					<Footer />
+					<Footer
+						linksDonations={textArray.filter(
+							text => text.fields.id === 'donations'
+						)}
+						linksUseful={textArray.filter(text => text.fields.id === 'useful')}
+					/>
 				</>
 			)}
 		</div>

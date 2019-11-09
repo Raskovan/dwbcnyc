@@ -87,7 +87,7 @@ function Program(props) {
 						<div>
 							<p className='title_style'>Daily Meditation</p>
 							<p className='sub_sub_title'>MONDAY-FRIDAY @ 8PM</p>
-							<hr style={{ margin: '30px 0 20px' }} />
+							<hr className='ruler_style' />
 							<p className='title_style'>
 								Introduction to Diamond Way Buddhism
 							</p>
