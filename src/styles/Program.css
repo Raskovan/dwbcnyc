@@ -149,6 +149,7 @@ a.myButton {
 @media only screen and (max-width: 414px) {
 	.program {
 		flex-direction: column;
+		display: block;
 	}
 	.program_about {
 		width: 100%;
