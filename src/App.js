@@ -32,9 +32,8 @@ function App() {
 			.then(res => res.json())
 			.then(response => {
 				setTextArray(response.items)
-				console.log(response.items)
 			})
-			.catch(error => console.error('Error fetching images:', error))
+			.catch(error => console.error('Error fetching texts:', error))
 	}, [])
 
 	useEffect(() => {
