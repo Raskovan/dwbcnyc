@@ -1,24 +1,30 @@
 import React from 'react'
 import Subtitle from './Subtitle'
 import '../styles/Center.css'
-import { centerText, mpText } from '../texts.js'
 
-export default function Center() {
+export default function Center(props) {
+	const { images, text, textMP } = props
+	const imageWidth = Math.floor(
+		window.innerWidth > window.innerHeight
+			? window.innerWidth
+			: window.innerHeight
+	)
+	const getLink = () => {
+		let centerPublicId = images[0].public_id
+		return `${process.env.REACT_APP_IMAGE_BASE_URL}/w_${imageWidth},dpr_2.0/${centerPublicId}.jpg`
+	}
 	const darkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+
 	return (
 		<>
-			<Subtitle text={'ABOUT THE CENTER'} />
+			<Subtitle text={text.fields.title} />
 			<div className='section_img center_img'>
-				<img
-					src={require(`../assets/center.jpg`)}
-					width='100%'
-					alt='NYC Center'
-				/>
+				<img src={getLink()} width='100%' alt='NYC Center' />
 			</div>
 			<div className='container'>
 				<div className='container_text'>
 					<div>
-						<p className='body_text'>{centerText}</p>
+						<p className='body_text'>{text.fields.text}</p>
 					</div>
 					<div className='mp_container'>
 						<div className='mp_img_container'>
@@ -31,8 +37,10 @@ export default function Center() {
 							/>
 						</div>
 						<div>
-							<p className='sub_sub_title'>THE MANHATTAN PROJECT</p>
-							<p className='body_text'>{mpText}</p>
+							<p className='sub_sub_title'>{textMP.fields.title}</p>
+							<p
+								className='body_text'
+								dangerouslySetInnerHTML={{ __html: textMP.fields.text }}></p>
 						</div>
 					</div>
 				</div>

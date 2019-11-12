@@ -1,12 +1,15 @@
 import React from 'react'
-import { usefulLinks, donationLinks } from '../texts.js'
 import '../styles/Footer.css'
 
-function Footer() {
+function Footer(props) {
+	const { linksUseful, linksDonations } = props
 	const currentYear = () => {
 		let today = new Date()
 		return today.getFullYear()
 	}
+	let usefulLinks = linksUseful.reverse()
+	let donationLinks = linksDonations.reverse()
+
 	return (
 		<div className='footer_container'>
 			<div className='footer-column'>
@@ -15,10 +18,10 @@ function Footer() {
 					{usefulLinks.map((link, index) => (
 						<p key={index}>
 							<a
-								href={link.link}
+								href={link.fields.link}
 								target='_new'
 								className='caption_text footer_link'>
-								{link.text}
+								{link.fields.text}
 							</a>
 						</p>
 					))}
@@ -28,11 +31,11 @@ function Footer() {
 					{donationLinks.map((link, index) => (
 						<p key={index}>
 							<a
-								href={link.link}
+								href={link.fields.link}
 								target='_new'
 								key={index}
 								className='caption_text footer_link'>
-								{link.text}
+								{link.fields.text}
 							</a>
 						</p>
 					))}
