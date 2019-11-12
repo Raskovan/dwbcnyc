@@ -1,7 +1,6 @@
 import React from 'react'
 import Subtitle from './Subtitle'
 import '../styles/Teachings.css'
-// import { teachingsText } from '../texts.js'
 
 export default function Center(props) {
 	const { images, text } = props

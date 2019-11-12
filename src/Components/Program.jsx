@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import Subtitle from './Subtitle'
 import Bio from './Bio'
-// import { programText } from '../texts.js'
 import { getDates, parseResponse } from '../helper.js'
 import '../styles/Program.css'
 

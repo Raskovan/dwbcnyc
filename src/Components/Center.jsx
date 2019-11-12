@@ -1,7 +1,6 @@
 import React from 'react'
 import Subtitle from './Subtitle'
 import '../styles/Center.css'
-// import { centerText, mpText } from '../texts.js'
 
 export default function Center(props) {
 	const { images, text, textMP } = props
@@ -41,9 +40,7 @@ export default function Center(props) {
 							<p className='sub_sub_title'>{textMP.fields.title}</p>
 							<p
 								className='body_text'
-								dangerouslySetInnerHTML={{ __html: textMP.fields.text }}>
-								{/* {textMP.fields.text} */}
-							</p>
+								dangerouslySetInnerHTML={{ __html: textMP.fields.text }}></p>
 						</div>
 					</div>
 				</div>

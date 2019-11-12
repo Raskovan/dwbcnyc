@@ -1,6 +1,5 @@
 import React from 'react'
 import '../styles/Quote.css'
-// import { quoteText } from '../texts.js'
 
 export default function Quote(props) {
 	const { text } = props

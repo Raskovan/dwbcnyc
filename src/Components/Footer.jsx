@@ -1,5 +1,4 @@
 import React from 'react'
-// import { usefulLinks, donationLinks } from '../texts.js'
 import '../styles/Footer.css'
 
 function Footer(props) {

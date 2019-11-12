@@ -1,6 +1,5 @@
 import React from 'react'
 import '../styles/Buddhism.css'
-// import { buddhismText } from '../texts.js'
 
 export default function Buddhism(props) {
 	const { images, text } = props

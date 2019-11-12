@@ -2,7 +2,6 @@ import React from 'react'
 import Subtitle from './Subtitle'
 import Teacher from './Teacher'
 import '../styles/Teachers.css'
-// import { teachersTexts } from '../texts.js'
 
 export default function Teachers(props) {
 	const { images, text } = props
