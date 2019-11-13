@@ -1,26 +1,38 @@
 import React from 'react'
 import Subtitle from './Subtitle'
 import '../styles/Center.css'
+import { Parallax } from 'react-parallax'
 
 export default function Center(props) {
 	const { images, text, textMP } = props
 	const imageWidth = Math.floor(
 		window.innerWidth > window.innerHeight
 			? window.innerWidth
-			: window.innerHeight
+			: window.innerWidth * 2
 	)
+	const imageHeight = Math.floor(imageWidth / 2.93)
+	console.log(imageHeight)
 	const getLink = () => {
 		let centerPublicId = images[0].public_id
 		return `${process.env.REACT_APP_IMAGE_BASE_URL}/w_${imageWidth},dpr_2.0/${centerPublicId}.jpg`
 	}
 	const darkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
-
+	const twoStyles = ['section_img', 'center_img'].join(' ')
 	return (
 		<>
 			<Subtitle text={text.fields.title} />
-			<div className='section_img center_img'>
+			<Parallax
+				className={twoStyles}
+				bgImage={getLink()}
+				bgImageAlt='NYC Center'
+				strength={150}>
+				<div style={{ height: `${imageHeight}px` }} />
+			</Parallax>
+
+			{/* <div className='section_img center_img'>
 				<img src={getLink()} width='100%' alt='NYC Center' />
-			</div>
+			</div> */}
+
 			<div className='container'>
 				<div className='container_text'>
 					<div>

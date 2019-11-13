@@ -1,8 +1,19 @@
+.teachings_image img {
+	/* right: 50%;
+		transform: translate(-47%); */
+	height: 100%;
+	width: auto;
+	/* left: 5% !important; */
+	/* top: -15% !important; */
+}
+
 @media only screen and (max-width: 414px) {
 	.teachings_image img {
-		right: 50%;
-		transform: translate(-50%);
+		/* right: 50%;
+		transform: translate(-50%); */
 		height: 100%;
 		width: auto;
+		left: -5% !important;
+		top: 5% !important;
 	}
 }
