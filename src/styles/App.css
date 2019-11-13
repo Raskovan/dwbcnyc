@@ -57,6 +57,7 @@ a:hover {
 }
 
 .secondary_text {
+	font-size: 1.35vmax;
 	margin: 25px 0 0;
 	line-height: 2vmax;
 	letter-spacing: 0.1px;
