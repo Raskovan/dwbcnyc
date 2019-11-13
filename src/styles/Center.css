@@ -21,10 +21,11 @@
 	}
 
 	.center_img img {
-		right: 50%;
-		transform: translate(-47%);
+		/* right: 50%;
+		transform: translate(-47%); */
 		height: 100%;
 		width: auto;
+		left: 7% !important;
 	}
 
 	.mp_container {
