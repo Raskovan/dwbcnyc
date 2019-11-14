@@ -13,7 +13,7 @@
 		transform: translate(-50%); */
 		height: 100%;
 		width: auto;
-		left: 25% !important; /* -5% for parallax*/
+		left: 30% !important; /* -5% for parallax*/
 		top: 5% !important;
 	}
 }

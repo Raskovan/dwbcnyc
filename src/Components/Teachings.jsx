@@ -8,7 +8,7 @@ export default function Center(props) {
 	const imageWidth = Math.floor(
 		window.innerWidth > window.innerHeight
 			? window.innerWidth
-			: window.innerHeight
+			: window.innerWidth * 2
 	)
 	const imageHeight = Math.floor(imageWidth / 2.93)
 
