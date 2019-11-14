@@ -19,7 +19,11 @@ export default function Buddhism(props) {
 				<p className='body_text'>{text.fields.text}</p>
 			</div>
 			<div className='buddhism_img'>
-				<img src={getLink()} alt='Dorje Chang' width='100%' />
+				<img
+					src={getLink()}
+					alt={images[0].context.custom.caption}
+					width='100%'
+				/>
 			</div>
 		</div>
 	)
