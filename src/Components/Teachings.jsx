@@ -25,7 +25,7 @@ export default function Center(props) {
 				className={twoStyles}
 				bgImage={getLink()}
 				bgImageAlt='NYC Center'
-				strength={200}>
+				strength={0}>
 				<div style={{ height: `${imageHeight}px` }} />
 			</Parallax>
 			{/* <div className='section_img teachings_image'>

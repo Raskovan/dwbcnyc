@@ -14,6 +14,10 @@
 	width: 55%;
 	margin-right: 25px;
 }
+/* delete for parallax */
+.center_img img {
+	top: -15%;
+}
 
 @media only screen and (max-width: 414px) {
 	.center_map {
@@ -25,7 +29,8 @@
 		transform: translate(-47%); */
 		height: 100%;
 		width: auto;
-		left: 7% !important;
+		left: 39% !important; /* 7% for parallax*/
+		top: 0; /* delete for parallax*/
 	}
 
 	.mp_container {
