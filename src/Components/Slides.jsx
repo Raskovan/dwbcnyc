@@ -15,13 +15,10 @@ function Slides(props) {
 		return `${process.env.REACT_APP_IMAGE_BASE_URL}/w_${imageWidth},dpr_2.0/${slidePublicId}.jpg`
 	}
 
-	let imgHeight =
-		window.innerWidth > 414
-			? window.innerWidth / 1.5 - 100
-			: (window.innerWidth / 1.5) * 2
+	let imgHeight = window.innerWidth > 414 ? '80vh' : '61vh'
 
 	return (
-		<div className='fadein' width='100%' style={{ height: `${imgHeight}px` }}>
+		<div className='fadein' width='100%' style={{ height: `${imgHeight}` }}>
 			<div id='f1'>
 				<img src={getLink('Lama Ole')} alt='Lama Ole' />
 				<p className='slide_caption ole_caption'>{`Lama Ole Nydahl`}</p>
