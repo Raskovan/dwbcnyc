@@ -24,6 +24,7 @@
 	height: 100%;
 	width: 100%;
 	object-fit: cover;
+	object-position: top;
 }
 
 .slide_caption {
@@ -95,13 +96,13 @@
 		margin: 0;
 	}
 	.img_karmapa {
-		object-position: 85%;
+		object-position: 85% !important;
 	}
 	.img_buddha {
-		object-position: 33%;
+		object-position: 33% !important;
 	}
 	.slide_caption {
-		top: 60vmax;
+		top: 55vh;
 		right: 7vmin;
 		font-weight: 300;
 	}
