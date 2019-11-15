@@ -160,8 +160,7 @@ function Program(props) {
 								className='program_major'
 								key={index}
 								style={{
-									textAlign: majorEvents.length < 2 ? 'center' : '',
-									flexGrow: majorEvents.length < 2 ? '1' : '0'
+									textAlign: majorEvents.length < 2 ? 'center' : ''
 								}}>
 								<p className='sub_sub_title'>
 									{event.location_summary.toUpperCase()} |{' '}
