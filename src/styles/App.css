@@ -82,6 +82,8 @@ a:hover {
 
 .section_img {
 	margin: 0px -10vmin 45px;
+	overflow: hidden;
+	position: relative;
 }
 
 .window_pad {

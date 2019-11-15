@@ -44,16 +44,17 @@ export function getDates(event) {
 	return fullDate
 }
 
-export function parseResponse(response) {
+function splitResponce(response) {
 	let firstStr = response.split(
 		'/**/jQuery18203743304502847564_1570990678398'
 	)[1]
-	let result = JSON.parse(firstStr.substr(1).slice(0, -2))
-	let nycEvents = result.filter(
+	return JSON.parse(firstStr.substr(1).slice(0, -2))
+}
+
+export function parseResponse(response) {
+	let nycEvents = splitResponce(response).filter(
 		event => event.location_summary === 'New York, NY'
 	)
-	// let majorEvents = result.filter(event => event.major === true)
-
 	//Parsing HTML FROM RESPONSE
 	for (let i = 0; i < nycEvents.length; i++) {
 		let program = []
@@ -101,4 +102,11 @@ export function parseResponse(response) {
 		nycEvents[i].description = event
 	}
 	return nycEvents
+}
+
+export function parseRegularResponse(response) {
+	let majorEvents = splitResponce(response).filter(
+		event => event.major === true
+	)
+	return majorEvents
 }
