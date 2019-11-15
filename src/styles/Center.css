@@ -17,6 +17,7 @@
 /* delete for parallax */
 .center_img img {
 	top: -15%;
+	position: absolute;
 }
 
 @media only screen and (max-width: 414px) {
@@ -25,12 +26,10 @@
 	}
 
 	.center_img img {
-		/* right: 50%;
-		transform: translate(-47%); */
 		height: 100%;
 		width: auto;
-		left: 39% !important; /* 7% for parallax*/
-		top: 0; /* delete for parallax*/
+		left: -22% !important;
+		top: 0;
 	}
 
 	.mp_container {
