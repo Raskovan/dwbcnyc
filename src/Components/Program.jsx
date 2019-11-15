@@ -9,15 +9,14 @@ function Program(props) {
 	const [ttImages, setTtImages] = useState({})
 	const [showBio, setShowBio] = useState(false)
 	const [bioIndex, setBioIndex] = useState()
+	const [majorEvents, setMajorEvents] = useState([])
 
-	const { text } = props
+	const { text, programText } = props
 
 	const bioModal = index => {
 		setShowBio(!showBio)
 		setBioIndex(index)
 	}
-
-	const [majorEvents, setMajorEvents] = useState([])
 
 	useEffect(() => {
 		fetch(
@@ -28,7 +27,7 @@ function Program(props) {
 				setNycEvents(parseResponse(response))
 				setMajorEvents(parseRegularResponse(response))
 			})
-			.catch(error => console.error('Error fetching:', error))
+			.catch(error => console.error('Error fetching text:', error))
 		fetch('https://res.cloudinary.com/diamondway/image/list/tt.json')
 			.then(res => res.json())
 			.then(response => {
@@ -51,9 +50,12 @@ function Program(props) {
 	const getLink = text => {
 		let regex = /https?:\/\/(www\.)?[-a-zA-Z0-9@:%._+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_+.~#?&//=]*)/gi
 		let match = text.match(regex)
-		console.log(match)
 		return match[0]
 	}
+	let daily = programText.filter(text => text.fields.match === 'daily')[0]
+		.fields
+	let intro = programText.filter(text => text.fields.match === 'intro')[0]
+		.fields
 
 	return (
 		<div className='program_container'>
@@ -91,21 +93,14 @@ function Program(props) {
 								: 'program_daily'
 						}>
 						<div>
-							<p className='title_style'>Daily Meditation</p>
-							<p className='sub_sub_title'>MONDAY-FRIDAY @ 8PM</p>
+							<p className='title_style'>{daily.title}</p>
+							<p className='sub_sub_title'>{daily.date}</p>
 							<hr className='ruler_style' />
-							<p className='title_style'>
-								Introduction to Diamond Way Buddhism
-							</p>
-							<p className='sub_sub_title'>
-								FIRST TUESDAY OF THE MONTH @ 7.30 PM
-							</p>
+							<p className='title_style'>{intro.title}</p>
+							<p className='sub_sub_title'>{intro.date}</p>
 						</div>
 						<div className='daily_button'>
-							<a
-								className='myButton'
-								href='https://www.eventbrite.com/e/79293602299'
-								target='_new'>
+							<a className='myButton' href={intro.link} target='_new'>
 								RSVP
 							</a>
 						</div>

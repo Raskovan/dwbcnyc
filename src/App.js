@@ -86,6 +86,9 @@ function App() {
 						/>
 						<Program
 							text={textArray.filter(text => text.fields.name === 'program')[0]}
+							programText={textArray.filter(
+								text => text.fields.id === 'schedule'
+							)}
 						/>
 						<Teachings
 							text={
