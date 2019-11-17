@@ -30,18 +30,19 @@
 .slide_caption {
 	font-weight: 100;
 	font-size: 2vmax;
-	top: 52vmax;
-	right: 5vmin;
+	top: 73vh;
 	position: absolute;
 	margin: 0;
 }
 
 .karmapa_caption {
 	color: white;
+	right: 10vmin;
 }
 
 .ole_caption {
-	color: black;
+	color: rgb(94, 94, 94);
+	left: 10vmin;
 }
 
 @-webkit-keyframes fade {
@@ -97,6 +98,9 @@
 	}
 	.img_karmapa {
 		object-position: 15% !important;
+	}
+	.img_ole {
+		object-position: 43% !important;
 	}
 	.img_buddha {
 		object-position: 33% !important;

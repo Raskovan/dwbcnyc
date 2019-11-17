@@ -159,8 +159,8 @@ function Program(props) {
 								}}>
 								{/* <h4 class='ribbon'>Special Event</h4> */}
 								<div className='sub_sub_title with_ribbon_sub'>
-									<span class='token'>SPECIAL EVENT</span>
-									<span class='major_event_text'>
+									<span className='token'>SPECIAL EVENT</span>
+									<span className='major_event_text'>
 										{event.location_summary.toUpperCase()} |{' '}
 										{getDates(event).toUpperCase()}
 									</span>

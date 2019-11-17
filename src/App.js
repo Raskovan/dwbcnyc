@@ -20,7 +20,9 @@ function App() {
 		fetch('https://res.cloudinary.com/diamondway/image/list/assets.json')
 			.then(res => res.json())
 			.then(response => {
-				setImageArray(response.resources)
+				if (response.resources && response.resources.length)
+					setImageArray(response.resources)
+				else setImageArray([])
 			})
 			.catch(error => console.error('Error fetching images:', error))
 	}, [])
@@ -61,7 +63,7 @@ function App() {
 	return (
 		<div style={{ margin: '0' }}>
 			<Header />
-			{imageArray.length > 0 && textArray.length > 0 && (
+			{imageArray && imageArray.length && textArray.length > 0 && (
 				<>
 					<Slides
 						images={imageArray.filter(
