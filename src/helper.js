@@ -29,7 +29,7 @@ export function getDates(event) {
 			'-' +
 			endDay +
 			',' +
-			' ' +
+			'\u00A0' +
 			year
 	} else {
 		fullDate =
@@ -38,8 +38,11 @@ export function getDates(event) {
 			startDay +
 			'-' +
 			monthNames[endMonth] +
-			' ' +
-			endDay
+			'\u00A0' +
+			endDay +
+			',' +
+			'\u00A0' +
+			year
 	}
 	return fullDate
 }

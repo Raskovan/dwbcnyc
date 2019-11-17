@@ -1,6 +1,7 @@
 .title_style {
 	padding: 0 0 5px;
 	font-size: 3vmax;
+	font-weight: 200;
 	margin: 0;
 	color: var(--main-text-color);
 }
@@ -132,13 +133,16 @@ a.myButton {
 }
 
 .program_container {
-	font-weight: 200;
+	font-weight: 300;
 	margin: 0 -10vmin 0;
 }
 
 .ruler_style {
 	margin: 30px 0 20px;
-	border: 1px solid var(--main-text-color);
+	/* border: 1px solid var(--main-text-color); */
+	border: none;
+	height: 1px;
+	background-color: var(--main-text-color);
 }
 
 .major_container {
@@ -147,15 +151,39 @@ a.myButton {
 }
 
 .program_major {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
 	margin: 30px 0 0;
 	flex-grow: 1;
 	flex-basis: 0;
 	padding: 15px;
 	border: solid 1px #797979;
+	position: relative;
+	overflow: hidden;
 }
 .program_major:first-child {
 	width: 30%;
 	margin-right: 45px;
+}
+
+.with_ribbon_sub {
+	height: auto;
+	line-height: normal;
+}
+
+.token {
+	background-color: var(--main-color-red);
+	color: var(--main-text-color);
+	font-size: 0.7em;
+	padding: 0 5px;
+	margin-right: 10px;
+	font-weight: 500;
+	vertical-align: middle;
+}
+
+.major_event_text {
+	vertical-align: middle;
 }
 
 @media only screen and (max-width: 414px) {
@@ -213,10 +241,16 @@ a.myButton {
 	}
 	.program_major {
 		width: auto;
+		flex-basis: auto !important;
 	}
 	.program_major:first-child {
 		width: auto;
 		margin-right: 0;
+		flex-basis: auto !important;
+	}
+
+	.with_ribbon_sub {
+		display: inline-block;
 	}
 }
 

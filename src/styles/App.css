@@ -2,7 +2,7 @@
 	--main-font-size: 1.6vmax;
 	--main-line-height: 2.6vmax;
 	--main-text-color: #393939;
-	--main-font-weight: 200;
+	--main-font-weight: 300;
 	--main-color-red: #d22238;
 	--main-color-off-white: rgb(205, 205, 205);
 }
@@ -94,7 +94,7 @@ a:hover {
 	font-size: 1.5vmax;
 	margin: 0 0 5px 0;
 	color: var(--main-color-red);
-	font-weight: 200;
+	font-weight: 300;
 }
 
 @media only screen and (max-width: 414px) {
