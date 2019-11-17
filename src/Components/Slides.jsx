@@ -20,7 +20,7 @@ function Slides(props) {
 	return (
 		<div className='fadein' width='100%' style={{ height: `${imgHeight}` }}>
 			<div id='f1'>
-				<img src={getLink('Lama Ole')} alt='Lama Ole' />
+				<img className='img_ole' src={getLink('Lama Ole')} alt='Lama Ole' />
 				<p className='slide_caption ole_caption'>{`Lama Ole Nydahl`}</p>
 			</div>
 			<div id='f2'>
