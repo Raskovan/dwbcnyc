@@ -24,7 +24,7 @@ export function getDates(event) {
 	if (startMonth === endMonth) {
 		fullDate =
 			monthNames[startMonth].toUpperCase() +
-			' ' +
+			'\u00A0' +
 			startDay +
 			'-' +
 			endDay +
@@ -34,7 +34,7 @@ export function getDates(event) {
 	} else {
 		fullDate =
 			monthNames[startMonth] +
-			' ' +
+			'\u00A0' +
 			startDay +
 			'-' +
 			monthNames[endMonth] +
