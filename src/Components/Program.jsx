@@ -157,10 +157,14 @@ function Program(props) {
 								style={{
 									textAlign: majorEvents.length < 2 ? 'center' : ''
 								}}>
-								<p className='sub_sub_title'>
-									{event.location_summary.toUpperCase()} |{' '}
-									{getDates(event).toUpperCase()}
-								</p>
+								{/* <h4 class='ribbon'>Special Event</h4> */}
+								<div className='sub_sub_title with_ribbon_sub'>
+									<span class='token'>SPECIAL EVENT</span>
+									<span class='major_event_text'>
+										{event.location_summary.toUpperCase()} |{' '}
+										{getDates(event).toUpperCase()}
+									</span>
+								</div>
 								<p className='title_style'>{event.title}</p>
 								<div className='daily_button'>
 									<a
