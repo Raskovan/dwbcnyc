@@ -174,7 +174,7 @@ a.myButton {
 
 .token {
 	background-color: var(--main-color-red);
-	color: var(--main-text-color);
+	color: white;
 	font-size: 0.7em;
 	padding: 0 5px;
 	margin-right: 10px;
@@ -265,5 +265,8 @@ a.myButton {
 	.myButton:hover {
 		color: #949494;
 		background-color: #4c4c4c;
+	}
+	.token {
+		color: var(--main-text-color);
 	}
 }
