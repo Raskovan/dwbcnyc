@@ -63,7 +63,7 @@ function App() {
 	return (
 		<div style={{ margin: '0' }}>
 			<Header />
-			{imageArray && imageArray.length && textArray.length > 0 && (
+			{imageArray && imageArray.length > 0 && textArray.length > 0 && (
 				<>
 					<Slides
 						images={imageArray.filter(
