@@ -14,6 +14,20 @@ function Program(props) {
 	const { text, programText } = props
 
 	const bioModal = index => {
+		if (showBio) {
+			window.scrollTo({
+				top:
+					-positionSlides.top +
+					positionProgram.top +
+					positionProgram.height / 2,
+				behavior: 'smooth'
+			})
+		} else {
+			window.scrollTo({
+				top: position,
+				behavior: 'smooth'
+			})
+		}
 		setShowBio(!showBio)
 		setBioIndex(index)
 	}
@@ -57,140 +71,182 @@ function Program(props) {
 	let intro = programText.filter(text => text.fields.match === 'intro')[0]
 		.fields
 
+	let position
+	let positionSlides
+	let positionProgram
+	let slides = document.getElementById('slides')
+	let program = document.getElementById('program')
+	if (slides && program) {
+		positionSlides = slides.getBoundingClientRect()
+		positionProgram = program.getBoundingClientRect()
+		if (window.innerHeight > window.innerWidth)
+			position =
+				-positionSlides.top + positionProgram.top + positionProgram.height
+		else
+			position =
+				-positionSlides.top + positionProgram.top + positionProgram.height / 2
+	}
+
 	return (
-		<div className='program_container'>
-			<div className='no_bio_container'>
-				<Subtitle text={text.fields.title} />
-				{nycEvents.length >= 2 && (
-					<div className='program_about_wide'>
-						<div>
-							<p className='body_text'>{text.fields.text}</p>
-						</div>
-						<div>
-							<p className='info_style'>
-								All events are offered free of charge unless otherwise noted.
-							</p>
-						</div>
-					</div>
-				)}
-				<div className='program'>
-					{nycEvents.length < 2 && (
-						<div className='program_about'>
+		<>
+			<div className='program_container'>
+				<div className='no_bio_container'>
+					<Subtitle text={text.fields.title} />
+					{nycEvents.length >= 2 && (
+						<div className='program_about_wide'>
 							<div>
 								<p className='body_text'>{text.fields.text}</p>
 							</div>
 							<div>
-								<p className='secondary_text'>
+								<p className='info_style'>
 									All events are offered free of charge unless otherwise noted.
 								</p>
 							</div>
 						</div>
 					)}
-					<div
-						className={
-							nycEvents.length > 0
-								? 'program_daily add_padding'
-								: 'program_daily'
-						}>
-						<div>
-							<p className='title_style'>{daily.title}</p>
-							<p className='sub_sub_title'>{daily.date}</p>
-							<hr className='ruler_style' />
-							<p className='title_style'>{intro.title}</p>
-							<p className='sub_sub_title'>{intro.date}</p>
-						</div>
-						<div className='daily_button'>
-							<a className='myButton' href={intro.link} target='_new'>
-								RSVP
-							</a>
-						</div>
-					</div>
-					{nycEvents.length > 0 &&
-						nycEvents.map((event, index) => (
-							<div className='program_event' key={index}>
-								<>
-									<p className='title_style'>Upcoming Event</p>
-									<p className='sub_sub_title'>
-										<span className='link_add' onClick={() => bioModal(index)}>
-											{event.title.toUpperCase()}
-											{'\n'}
-										</span>
-										{getDates(event)}
-									</p>
-									<div style={{ flexGrow: '1', lineHeight: '2vmax' }}>
-										{event.description.program.map((day, index) => (
-											<div className='day' key={index}>
-												{day.date && (
-													<p className='date_time_style'>{day.date}</p>
-												)}
-												{day.time.map((entry, index) => (
-													<p key={index}>
-														<span className='date_time_style'>
-															{day.time[index]} {'\u00A0'}
-														</span>
-														<span className='lecture_name_style'>
-															"{day.title[index]}"
-														</span>
-													</p>
-												))}
-											</div>
-										))}
-									</div>
-								</>
+					<div id='program' className='program'>
+						{nycEvents.length < 2 && (
+							<div className='program_about'>
 								<div>
-									<a
-										className='myButton'
-										href={event.description.eventbrite}
-										target='_new'>
-										RSVP
-									</a>
+									<p className='body_text'>{text.fields.text}</p>
+								</div>
+								<div>
+									<p className='secondary_text'>
+										All events are offered free of charge unless otherwise
+										noted.
+									</p>
 								</div>
 							</div>
-						))}
-				</div>
-				{majorEvents.length > 0 && (
-					<div className='major_container'>
-						{majorEvents.map((event, index) => (
-							<div
-								className='program_major'
-								key={index}
-								style={{
-									textAlign: majorEvents.length < 2 ? 'center' : ''
-								}}>
-								{/* <h4 class='ribbon'>Special Event</h4> */}
-								<div className='sub_sub_title with_ribbon_sub'>
-									<span className='token'>SPECIAL EVENT</span>
-									<span className='major_event_text'>
-										{event.location_summary.toUpperCase()} |{' '}
-										{getDates(event).toUpperCase()}
-									</span>
-								</div>
-								<p className='title_style'>{event.title}</p>
-								<div className='daily_button'>
-									<a
-										className='myButton'
-										style={{
-											width: majorEvents.length < 2 ? '50%' : ''
-										}}
-										href={getLink(event.description)}
-										target='_new'>
-										DETAILS
-									</a>
-								</div>
+						)}
+						<div
+							className={
+								nycEvents.length > 0
+									? 'program_daily add_padding'
+									: 'program_daily'
+							}>
+							<div>
+								<p className='title_style'>{daily.title}</p>
+								<p className='sub_sub_title'>{daily.date}</p>
+								<hr className='ruler_style' />
+								<p className='title_style'>{intro.title}</p>
+								<p className='sub_sub_title'>{intro.date}</p>
 							</div>
-						))}
+							<div className='daily_button'>
+								<a className='myButton' href={intro.link} target='_new'>
+									RSVP
+								</a>
+							</div>
+						</div>
+						{nycEvents.length > 0 &&
+							nycEvents.map((event, index) => (
+								<div
+									className={
+										nycEvents.length === 1
+											? 'program_event single'
+											: 'program_event'
+									}
+									key={index}>
+									<>
+										<p className='title_style'>Upcoming Event</p>
+										<p className='sub_sub_title'>
+											<span
+												className='link_add'
+												onClick={() => bioModal(index)}>
+												{event.title.toUpperCase()}
+												{'\n'}
+											</span>
+											{getDates(event)}
+										</p>
+										<div
+											style={{
+												flexGrow: '1',
+												lineHeight: '2vmax',
+												display: 'flex',
+												flexDirection: 'column',
+												justifyContent: 'space-between'
+											}}>
+											{event.description.program.map((day, index) => (
+												<div className='day' key={index}>
+													{day.date && (
+														<p className='date_time_style'>{day.date}</p>
+													)}
+													{day.time.map((entry, index) => (
+														<p key={index}>
+															<span className='date_time_style'>
+																{day.time[index]} {'\u00A0'}
+															</span>
+															<span className='lecture_name_style'>
+																"{day.title[index]}"
+															</span>
+														</p>
+													))}
+												</div>
+											))}
+											<p
+												style={{ marginBottom: '25px' }}
+												className='secondary_text'>
+												Suggested donation: $10 per lecture
+											</p>
+										</div>
+									</>
+									<div>
+										<a
+											className='myButton'
+											href={event.description.eventbrite}
+											target='_new'>
+											RSVP
+										</a>
+									</div>
+								</div>
+							))}
 					</div>
+				</div>
+				{nycEvents[bioIndex] && nycEvents[bioIndex].title && (
+					<Bio
+						showBio={showBio}
+						imageId={getImageId(bioIndex)}
+						bio={nycEvents[bioIndex].description.bio}
+						title={nycEvents[bioIndex].title}
+					/>
 				)}
 			</div>
-			{nycEvents[bioIndex] && nycEvents[bioIndex].title && (
-				<Bio
-					showBio={showBio}
-					imageId={getImageId(bioIndex)}
-					bio={nycEvents[bioIndex].description.bio}
-					title={nycEvents[bioIndex].title}
-				/>
+			{majorEvents.length > 0 && (
+				<div className='major_container'>
+					{majorEvents.map((event, index) => (
+						<div
+							className={
+								majorEvents.length === 1
+									? 'program_major single'
+									: 'program_major'
+							}
+							key={index}
+							style={{
+								textAlign: majorEvents.length < 2 ? 'center' : ''
+							}}>
+							<div className='sub_sub_title'>
+								<span className='token'>SPECIAL EVENT</span>
+								<span className='major_event_text'>
+									{event.location_summary.toUpperCase()} |{' '}
+									{getDates(event).toUpperCase()}
+								</span>
+							</div>
+							<p className='title_style'>{event.title}</p>
+							<div className='daily_button'>
+								<a
+									className='myButton'
+									style={{
+										width: majorEvents.length < 2 ? '50%' : ''
+									}}
+									href={getLink(event.description)}
+									target='_new'>
+									DETAILS
+								</a>
+							</div>
+						</div>
+					))}
+				</div>
 			)}
-		</div>
+		</>
 	)
 }
 

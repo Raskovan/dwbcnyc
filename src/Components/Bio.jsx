@@ -7,7 +7,7 @@ function Bio(props) {
 
 	useEffect(() => {
 		const bioHeight = document.getElementById('bioBox').offsetHeight
-		setHeight(bioHeight)
+		setHeight(bioHeight + 100)
 	}, [])
 
 	const name = title

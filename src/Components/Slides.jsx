@@ -18,7 +18,11 @@ function Slides(props) {
 	let imgHeight = window.innerWidth > 414 ? '80vh' : '61vh'
 
 	return (
-		<div className='fadein' width='100%' style={{ height: `${imgHeight}` }}>
+		<div
+			id='slides'
+			className='fadein'
+			width='100%'
+			style={{ height: `${imgHeight}` }}>
 			<div id='f1'>
 				<img className='img_ole' src={getLink('Lama Ole')} alt='Lama Ole' />
 				<p className='slide_caption ole_caption'>{`Lama Ole Nydahl`}</p>
