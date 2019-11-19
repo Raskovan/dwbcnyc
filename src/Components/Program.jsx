@@ -16,10 +16,7 @@ function Program(props) {
 	const bioModal = index => {
 		if (showBio) {
 			window.scrollTo({
-				top:
-					-positionSlides.top +
-					positionProgram.top +
-					positionProgram.height / 2,
+				top: originalPosition,
 				behavior: 'smooth'
 			})
 		} else {
@@ -72,6 +69,7 @@ function Program(props) {
 		.fields
 
 	let position
+	let originalPosition
 	let positionSlides
 	let positionProgram
 	let slides = document.getElementById('slides')
@@ -79,6 +77,7 @@ function Program(props) {
 	if (slides && program) {
 		positionSlides = slides.getBoundingClientRect()
 		positionProgram = program.getBoundingClientRect()
+		originalPosition = -positionSlides.top + positionProgram.top
 		if (window.innerHeight > window.innerWidth)
 			position =
 				-positionSlides.top + positionProgram.top + positionProgram.height
