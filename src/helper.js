@@ -21,7 +21,15 @@ export function getDates(event) {
 	let endMonth = endDate.getUTCMonth()
 	let endDay = endDate.getUTCDate()
 	let year = startDate.getFullYear()
-	if (startMonth === endMonth) {
+	if (startMonth === endMonth && startDay === endDay) {
+		fullDate =
+			monthNames[startMonth].toUpperCase() +
+			'\u00A0' +
+			startDay +
+			',' +
+			'\u00A0' +
+			year
+	} else if (startMonth === endMonth) {
 		fullDate =
 			monthNames[startMonth].toUpperCase() +
 			'\u00A0' +

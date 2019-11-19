@@ -167,6 +167,11 @@ a.myButton {
 	margin-right: 45px;
 }
 
+.single {
+	margin-right: 0px !important;
+	padding-right: 0px !important;
+}
+
 .with_ribbon_sub {
 	height: auto;
 	line-height: normal;
@@ -249,8 +254,8 @@ a.myButton {
 		flex-basis: auto !important;
 	}
 
-	.with_ribbon_sub {
-		display: inline-block;
+	.single {
+		padding-right: 25px !important;
 	}
 }
 
