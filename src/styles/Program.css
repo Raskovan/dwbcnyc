@@ -48,6 +48,10 @@
 	opacity: 0.8;
 }
 
+.button_width {
+	width: 50%;
+}
+
 a.myButton {
 	margin: 0 !important;
 }
@@ -241,6 +245,9 @@ a.myButton {
 		margin-top: 15px;
 		font-size: 1.8vmax;
 	}
+	.button_width {
+		width: 100%;
+	}
 	.major_container {
 		flex-direction: column;
 	}
@@ -255,7 +262,7 @@ a.myButton {
 	}
 
 	.single {
-		padding-right: 25px !important;
+		padding-right: 15px !important;
 	}
 }
 
