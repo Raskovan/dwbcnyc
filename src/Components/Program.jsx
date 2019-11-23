@@ -77,13 +77,16 @@ function Program(props) {
 	if (slides && program) {
 		positionSlides = slides.getBoundingClientRect()
 		positionProgram = program.getBoundingClientRect()
-		originalPosition = -positionSlides.top + positionProgram.top
-		if (window.innerHeight > window.innerWidth)
+		if (window.innerHeight > window.innerWidth) {
+			originalPosition =
+				-positionSlides.top + positionProgram.top + positionProgram.height
 			position =
 				-positionSlides.top + positionProgram.top + positionProgram.height
-		else
+		} else {
+			originalPosition = -positionSlides.top + positionProgram.top
 			position =
 				-positionSlides.top + positionProgram.top + positionProgram.height / 2
+		}
 	}
 
 	return (
@@ -208,6 +211,8 @@ function Program(props) {
 				</div>
 				{nycEvents[bioIndex] && nycEvents[bioIndex].title && (
 					<Bio
+						bioModal={bioModal}
+						index={bioIndex}
 						showBio={showBio}
 						imageId={getImageId(bioIndex)}
 						bio={nycEvents[bioIndex].description.bio}

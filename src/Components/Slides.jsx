@@ -15,28 +15,22 @@ function Slides(props) {
 		return `${process.env.REACT_APP_IMAGE_BASE_URL}/w_${imageWidth},dpr_2.0/${slidePublicId}.jpg`
 	}
 
-	let imgHeight = window.innerWidth > 414 ? '80vh' : '61vh'
-
 	return (
-		<div
-			id='slides'
-			className='fadein'
-			width='100%'
-			style={{ height: `${imgHeight}` }}>
-			<div id='f1'>
-				<img className='img_ole' src={getLink('Lama Ole')} alt='Lama Ole' />
-				<p className='slide_caption ole_caption'>{`Lama Ole Nydahl`}</p>
+		<div id="slides" className="fadein" width="100%">
+			<div id="f1">
+				<img className="img_ole" src={getLink('Lama Ole')} alt="Lama Ole" />
+				<p className="slide_caption ole_caption">{`Lama Ole Nydahl`}</p>
 			</div>
-			<div id='f2'>
+			<div id="f2">
 				<img
-					className='img_karmapa'
+					className="img_karmapa"
 					src={getLink('17th Karmapa')}
-					alt='17th Karmapa'
+					alt="17th Karmapa"
 				/>
-				<p className='slide_caption karmapa_caption'>{`H. H. 17th Karmapa`}</p>
+				<p className="slide_caption karmapa_caption">{`H. H. 17th Karmapa`}</p>
 			</div>
-			<div id='f3'>
-				<img className='img_buddha' src={getLink('Buddha')} alt='Buddha' />
+			<div id="f3">
+				<img className="img_buddha" src={getLink('Buddha')} alt="Buddha" />
 			</div>
 		</div>
 	)
