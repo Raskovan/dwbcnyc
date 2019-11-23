@@ -111,3 +111,21 @@
 		font-weight: 300;
 	}
 }
+/* normal desktop */
+@media (max-aspect-ratio: 19/10) {
+	.fadein {
+		height: 80vh;
+	}
+}
+/* pnone */
+@media (max-aspect-ratio: 6/10) {
+	.fadein {
+		height: 61vh;
+	}
+}
+/* narrow desktop */
+@media (min-aspect-ratio: 19/10) {
+	.fadein {
+		height: 100vh;
+	}
+}
