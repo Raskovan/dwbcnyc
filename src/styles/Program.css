@@ -152,6 +152,7 @@ a.myButton {
 .major_container {
 	display: flex;
 	justify-content: space-between;
+	padding: 0 0 25px;
 }
 
 .program_major {
