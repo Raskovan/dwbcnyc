@@ -14,15 +14,15 @@ export default function Buddhism(props) {
 	}
 
 	return (
-		<div className='container'>
-			<div className='container_text'>
-				<p className='body_text'>{text.fields.text}</p>
+		<div className="container buddhism">
+			<div className="container_text buddhism_text">
+				<p className="body_text">{text.fields.text}</p>
 			</div>
-			<div className='buddhism_img'>
+			<div className="buddhism_img">
 				<img
 					src={getLink()}
 					alt={images[0].context.custom.caption}
-					width='100%'
+					width="100%"
 				/>
 			</div>
 		</div>
