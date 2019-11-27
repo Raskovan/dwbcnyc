@@ -55,7 +55,7 @@ function Program(props) {
 		let ttImage = ttImages.resources.filter(
 			image => image.context.custom.caption === name
 		)
-		return ttImage[0].public_id
+		return ttImage[0] && ttImage[0].public_id
 	}
 
 	const getLink = text => {
@@ -177,7 +177,7 @@ function Program(props) {
 														<p className="date_time_style">{day.date}</p>
 													)}
 													{day.time.map((entry, index) => (
-														<p key={index}>
+														<p key={index} className="day_style">
 															<span className="date_time_style">
 																{day.time[index]} {'\u00A0'}
 															</span>
@@ -188,23 +188,22 @@ function Program(props) {
 													))}
 												</div>
 											))}
-											<p
-												style={{ marginBottom: '25px' }}
-												className="secondary_text"
-											>
+											<p className="secondary_text">
 												Suggested donation: $10 per lecture
 											</p>
 										</div>
 									</>
-									<div>
-										<a
-											className="myButton"
-											href={event.description.eventbrite}
-											target="_new"
-										>
-											RSVP
-										</a>
-									</div>
+									{event.description.eventbrite && (
+										<div style={{ marginTop: '25px' }}>
+											<a
+												className="myButton"
+												href={event.description.eventbrite}
+												target="_new"
+											>
+												RSVP
+											</a>
+										</div>
+									)}
 								</div>
 							))}
 					</div>
