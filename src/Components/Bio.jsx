@@ -38,7 +38,7 @@ function Bio(props) {
 			) : null}
 			<div id="bioBox" className={transitionText}>
 				<div ib="bioText">
-					{imageId !== '' && (
+					{imageId && (
 						<div
 							className="mobile_only"
 							style={{ float: 'right', marginLeft: '15px', width: '150px' }}
@@ -51,19 +51,25 @@ function Bio(props) {
 							/>
 						</div>
 					)}
-					<p className="sub_sub_title">ABOUT {name.toUpperCase()}</p>
-					<p className="bio_p">{bio}</p>
-				</div>
-				{imageId !== '' && (
-					<div className="desktop_only" style={{ marginLeft: '15px' }}>
-						<img
-							src={imageURL}
-							width="100%"
-							alt={name}
-							style={{ borderRadius: '50%' }}
-						/>
+					<div className="text_desktop">
+						<p className="sub_sub_title">ABOUT {name.toUpperCase()}</p>
+						<p className="bio_p">{bio}</p>
 					</div>
-				)}
+					{imageId && (
+						<div className="desktop_only" style={{ marginLeft: '15px' }}>
+							<img
+								src={imageURL}
+								// width="100%"
+								alt={name}
+								style={{
+									borderRadius: '50%',
+									width: '20%',
+									marginLeft: '15px'
+								}}
+							/>
+						</div>
+					)}
+				</div>
 			</div>
 		</div>
 	)
