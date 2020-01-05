@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import PropTypes from 'prop-types'
 import '../styles/Bio.css'
 
 function Bio(props) {
@@ -73,6 +74,15 @@ function Bio(props) {
 			</div>
 		</div>
 	)
+}
+
+Bio.propTypes = {
+	bio: PropTypes.string,
+	title: PropTypes.string,
+	showBio: PropTypes.bool,
+	imageId: PropTypes.string,
+	bioModal: PropTypes.bool,
+	index: PropTypes.number
 }
 
 export default Bio

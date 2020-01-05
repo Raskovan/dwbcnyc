@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import '../styles/Slides.css'
 
 function Slides(props) {
@@ -9,7 +10,7 @@ function Slides(props) {
 			: window.innerHeight
 	)
 	const getLink = name => {
-		let slidePublicId = images.filter(
+		const slidePublicId = images.filter(
 			image => image.context.custom.caption === name
 		)[0].public_id
 		return `${process.env.REACT_APP_IMAGE_BASE_URL}/w_${imageWidth},dpr_2.0/${slidePublicId}.jpg`
@@ -34,6 +35,10 @@ function Slides(props) {
 			</div>
 		</div>
 	)
+}
+
+Slides.propTypes = {
+	images: PropTypes.array
 }
 
 export default Slides

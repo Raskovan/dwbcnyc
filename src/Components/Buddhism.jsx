@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import '../styles/Buddhism.css'
 
 export default function Buddhism(props) {
@@ -9,7 +10,7 @@ export default function Buddhism(props) {
 			: window.innerHeight / 3
 	)
 	const getLink = () => {
-		let buddhismPublicId = images[0].public_id
+		const buddhismPublicId = images[0].public_id
 		return `${process.env.REACT_APP_IMAGE_BASE_URL}/w_${imageWidth},dpr_2.0/${buddhismPublicId}.png`
 	}
 
@@ -27,4 +28,9 @@ export default function Buddhism(props) {
 			</div>
 		</div>
 	)
+}
+
+Buddhism.propTypes = {
+	images: PropTypes.arrayOf(PropTypes.object),
+	text: PropTypes.object
 }

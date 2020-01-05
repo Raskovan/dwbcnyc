@@ -1,14 +1,15 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import '../styles/Footer.css'
 
 function Footer(props) {
 	const { linksUseful, linksDonations } = props
 	const currentYear = () => {
-		let today = new Date()
+		const today = new Date()
 		return today.getFullYear()
 	}
-	let usefulLinks = linksUseful.reverse()
-	let donationLinks = linksDonations.reverse()
+	const usefulLinks = linksUseful.reverse()
+	const donationLinks = linksDonations.reverse()
 
 	return (
 		<div className="footer_container">
@@ -85,6 +86,11 @@ function Footer(props) {
 			</div>
 		</div>
 	)
+}
+
+Footer.propTypes = {
+	linksUseful: PropTypes.array,
+	linksDonations: PropTypes.array
 }
 
 export default Footer
