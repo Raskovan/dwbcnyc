@@ -70,7 +70,7 @@ function App() {
 							img => img.context.custom.position === 'slides'
 						)}
 					/>
-					<div className='window_pad'>
+					<div className="window_pad">
 						<Buddhism
 							text={
 								textArray.filter(text => text.fields.name === 'buddhism')[0]
