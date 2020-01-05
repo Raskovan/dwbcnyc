@@ -4,6 +4,11 @@ import '../styles/Quote.css'
 
 export default function Quote(props) {
 	const { text } = props
+	console.log(`
+  ╦╔═┌─┐┬─┐┌┬┐┌─┐┌─┐┌─┐┌─┐┬ ┬┌─┐┌┐┌┐┌┌─┐
+  ╠╩╗├─┤├┬┘│││├─┤├─┘├─┤│  ├─┤├┤ ││││││ │
+  ╩ ╩┴ ┴┴└─┴ ┴┴ ┴┴  ┴ ┴└─┘┴ ┴└─┘┘└┘└┘└─┘
+`)
 	return <div className="quote">{text.fields.text}</div>
 }
 
