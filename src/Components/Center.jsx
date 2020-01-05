@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import Subtitle from './Subtitle'
 import '../styles/Center.css'
 
@@ -12,7 +13,7 @@ export default function Center(props) {
 	const imageHeight = Math.floor(imageWidth / 2.93)
 
 	const getLink = () => {
-		let centerPublicId = images[0].public_id
+		const centerPublicId = images[0].public_id
 		return `${process.env.REACT_APP_IMAGE_BASE_URL}/w_${imageWidth},dpr_2.0/${centerPublicId}.jpg`
 	}
 	const darkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
@@ -73,4 +74,10 @@ export default function Center(props) {
 			</div>
 		</>
 	)
+}
+
+Center.propTypes = {
+	images: PropTypes.array,
+	text: PropTypes.object,
+	textMP: PropTypes.object
 }

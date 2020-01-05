@@ -5,7 +5,7 @@ import '../styles/Header.css'
 
 function Header() {
 	const darkMode = window.matchMedia('(prefers-color-scheme: dark)')
-	let logo = darkMode.matches ? logoBlack : logoWhite
+	const logo = darkMode.matches ? logoBlack : logoWhite
 
 	return (
 		<div className="header_container">

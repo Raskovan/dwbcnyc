@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import PropTypes from 'prop-types'
 import Subtitle from './Subtitle'
 import Bio from './Bio'
 import { getDates, parseResponse, parseRegularResponse } from '../helper.js'
@@ -48,32 +49,36 @@ function Program(props) {
 	}, [])
 
 	const getImageId = index => {
-		let name = nycEvents[index].title
+		const name = nycEvents[index].title
 			.split(' ')
 			.slice(2)
 			.join(' ')
-		let ttImage = ttImages.resources.filter(
+		const ttImage = ttImages.resources.filter(
 			image => image.context.custom.caption === name
 		)
 		return ttImage[0] && ttImage[0].public_id
 	}
 
 	const getLink = text => {
-		let regex = /https?:\/\/(www\.)?[-a-zA-Z0-9@:%._+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_+.~#?&//=]*)/gi
-		let match = text.match(regex)
-		return match[0]
+		const emailRegex = /(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/g
+		const webRegex = /https?:\/\/(www\.)?[-a-zA-Z0-9@:%._+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_+.~#?&//=]*)/gi
+		const emailMatch = text.match(emailRegex)
+		const webMatch = text.match(webRegex)
+		if (webMatch) return webMatch[0]
+		else if (emailMatch) return `mailto:${emailMatch[0]}`
+		else return
 	}
-	let daily = programText.filter(text => text.fields.match === 'daily')[0]
+	const daily = programText.filter(text => text.fields.match === 'daily')[0]
 		.fields
-	let intro = programText.filter(text => text.fields.match === 'intro')[0]
+	const intro = programText.filter(text => text.fields.match === 'intro')[0]
 		.fields
 
 	let position
 	let originalPosition
 	let positionSlides
 	let positionProgram
-	let slides = document.getElementById('slides')
-	let program = document.getElementById('program')
+	const slides = document.getElementById('slides')
+	const program = document.getElementById('program')
 	if (slides && program) {
 		positionSlides = slides.getBoundingClientRect()
 		positionProgram = program.getBoundingClientRect()
@@ -260,6 +265,11 @@ function Program(props) {
 			)}
 		</>
 	)
+}
+
+Program.propTypes = {
+	text: PropTypes.object,
+	programText: PropTypes.array
 }
 
 export default Program
