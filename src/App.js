@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import Header from './Components/Header.jsx'
 import Buddhism from './Components/Buddhism.jsx'
 import Program from './Components/Program.jsx'
@@ -10,67 +10,19 @@ import Quote from './Components/Quote.jsx'
 import Teachings from './Components/Teachings.jsx'
 import './styles/App.css'
 
-function App() {
-	const [width, setWidth] = useState(window.innerWidth)
-	const [mode, setMode] = useState()
-	const [imageArray, setImageArray] = useState([])
-	const [textArray, setTextArray] = useState([])
-
-	useEffect(() => {
-		fetch('https://res.cloudinary.com/diamondway/image/list/assets.json')
-			.then(res => res.json())
-			.then(response => {
-				if (response.resources && response.resources.length)
-					setImageArray(response.resources)
-				else setImageArray([])
-			})
-			.catch(error => console.error('Error fetching images:', error))
-	}, [])
-
-	useEffect(() => {
-		fetch(
-			`https://cdn.contentful.com/spaces/${process.env.REACT_APP_CONTENTFUL_SPACE_ID}/entries?access_token=${process.env.REACT_APP_CONTENTFUL_API_KEY}`
-		)
-			.then(res => res.json())
-			.then(response => {
-				setTextArray(response.items)
-			})
-			.catch(error => console.error('Error fetching texts:', error))
-	}, [])
-
-	useEffect(() => {
-		window.addEventListener('resize', handleResize)
-		function handleResize() {
-			setWidth(window.innerWidth)
-		}
-		return () => {
-			window.removeEventListener('resize', handleResize)
-		}
-	}, [width])
-
-	useEffect(() => {
-		const darkMode = window.matchMedia('(prefers-color-scheme: dark)')
-		function setThemeMode(e) {
-			if (e.matches) {
-				setMode('Dark')
-			} else {
-				setMode('Light')
-			}
-		}
-		darkMode.addListener(setThemeMode)
-	}, [mode])
-
+function App(props) {
+	const { textArray, imageArray } = props
 	return (
 		<div style={{ margin: '0' }}>
 			<Header />
 			{imageArray && imageArray.length > 0 && textArray.length > 0 && (
-				<>
+				<div>
 					<Slides
 						images={imageArray.filter(
 							img => img.context.custom.position === 'slides'
 						)}
 					/>
-					<div className='window_pad'>
+					<div className="window_pad">
 						<Buddhism
 							text={
 								textArray.filter(text => text.fields.name === 'buddhism')[0]
@@ -86,12 +38,12 @@ function App() {
 								img => img.context.custom.position === 'center'
 							)}
 						/>
-						<Program
+						{/* <Program
 							text={textArray.filter(text => text.fields.name === 'program')[0]}
 							programText={textArray.filter(
 								text => text.fields.id === 'schedule'
 							)}
-						/>
+						/> */}
 						<Teachings
 							text={
 								textArray.filter(text => text.fields.name === 'teachings')[0]
@@ -118,7 +70,7 @@ function App() {
 						)}
 						linksUseful={textArray.filter(text => text.fields.id === 'useful')}
 					/>
-				</>
+				</div>
 			)}
 		</div>
 	)

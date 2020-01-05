@@ -12,12 +12,12 @@ export default function Center(props) {
 	const imageHeight = Math.floor(imageWidth / 2.93)
 
 	const getLink = () => {
-		let centerPublicId = images[0].public_id
+		const centerPublicId = images[0].public_id
 		return `${process.env.REACT_APP_IMAGE_BASE_URL}/w_${imageWidth},dpr_2.0/${centerPublicId}.jpg`
 	}
 	const darkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
 	return (
-		<>
+		<div>
 			<Subtitle text={text.fields.title} />
 			<div
 				className="section_img center_img"
@@ -71,6 +71,6 @@ export default function Center(props) {
 					</div>
 				</div>
 			</div>
-		</>
+		</div>
 	)
 }

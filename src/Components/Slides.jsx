@@ -9,7 +9,7 @@ function Slides(props) {
 			: window.innerHeight
 	)
 	const getLink = name => {
-		let slidePublicId = images.filter(
+		const slidePublicId = images.filter(
 			image => image.context.custom.caption === name
 		)[0].public_id
 		return `${process.env.REACT_APP_IMAGE_BASE_URL}/w_${imageWidth},dpr_2.0/${slidePublicId}.jpg`

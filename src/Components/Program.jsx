@@ -48,32 +48,32 @@ function Program(props) {
 	}, [])
 
 	const getImageId = index => {
-		let name = nycEvents[index].title
+		const name = nycEvents[index].title
 			.split(' ')
 			.slice(2)
 			.join(' ')
-		let ttImage = ttImages.resources.filter(
+		const ttImage = ttImages.resources.filter(
 			image => image.context.custom.caption === name
 		)
 		return ttImage[0] && ttImage[0].public_id
 	}
 
 	const getLink = text => {
-		let regex = /https?:\/\/(www\.)?[-a-zA-Z0-9@:%._+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_+.~#?&//=]*)/gi
-		let match = text.match(regex)
+		const regex = /https?:\/\/(www\.)?[-a-zA-Z0-9@:%._+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_+.~#?&//=]*)/gi
+		const match = text.match(regex)
 		return match[0]
 	}
-	let daily = programText.filter(text => text.fields.match === 'daily')[0]
+	const daily = programText.filter(text => text.fields.match === 'daily')[0]
 		.fields
-	let intro = programText.filter(text => text.fields.match === 'intro')[0]
+	const intro = programText.filter(text => text.fields.match === 'intro')[0]
 		.fields
 
 	let position
 	let originalPosition
 	let positionSlides
 	let positionProgram
-	let slides = document.getElementById('slides')
-	let program = document.getElementById('program')
+	const slides = document.getElementById('slides')
+	const program = document.getElementById('program')
 	if (slides && program) {
 		positionSlides = slides.getBoundingClientRect()
 		positionProgram = program.getBoundingClientRect()
@@ -90,7 +90,7 @@ function Program(props) {
 	}
 
 	return (
-		<>
+		<div>
 			<div className="program_container">
 				<div className="no_bio_container">
 					<Subtitle text={text.fields.title} />
@@ -150,7 +150,7 @@ function Program(props) {
 									}
 									key={index}
 								>
-									<>
+									<div>
 										<p className="title_style">Upcoming Event</p>
 										<p className="sub_sub_title">
 											<span
@@ -192,7 +192,7 @@ function Program(props) {
 												Suggested donation: $10 per lecture
 											</p>
 										</div>
-									</>
+									</div>
 									{event.description.eventbrite && (
 										<div style={{ marginTop: '25px' }}>
 											<a
@@ -258,7 +258,7 @@ function Program(props) {
 					))}
 				</div>
 			)}
-		</>
+		</div>
 	)
 }
 
