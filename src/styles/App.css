@@ -64,6 +64,10 @@ a:hover {
 	color: var(--main-text-color);
 }
 
+.no_margin {
+	margin: 0 !important;
+}
+
 .caption_text {
 	font-size: 1.2vmax;
 	border-bottom: none;

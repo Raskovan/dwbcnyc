@@ -27,7 +27,7 @@ export default function Center(props) {
 				<img src={getLink()} width="100%" alt="NYC Center" />
 			</div>
 
-			<div className="container" contentEditable="true">
+			<div className="container">
 				<div className="container_text">
 					<div>
 						<p className="body_text">{text.fields.text}</p>
@@ -53,6 +53,13 @@ export default function Center(props) {
 						</p>
 					</div>
 					<div className="mp_container">
+						<div>
+							<p className="sub_sub_title no_margin">{textMP.fields.title}</p>
+							<p
+								className="secondary_text no_margin"
+								dangerouslySetInnerHTML={{ __html: textMP.fields.text }}
+							></p>
+						</div>
 						<div className="mp_img_container">
 							<img
 								width="100%"
@@ -61,13 +68,6 @@ export default function Center(props) {
 								}`)}
 								alt="Manhattan Project Logo"
 							/>
-						</div>
-						<div contentEditable="true">
-							<p className="sub_sub_title">{textMP.fields.title}</p>
-							<p
-								className="secondary_text"
-								dangerouslySetInnerHTML={{ __html: textMP.fields.text }}
-							></p>
 						</div>
 					</div>
 				</div>
