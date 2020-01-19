@@ -1,7 +1,9 @@
 .title_style {
 	padding: 0 0 5px;
 	font-size: 3vmax;
+	font-weight: 200;
 	margin: 0;
+	color: var(--main-text-color);
 }
 .subtitle_style {
 	font-size: 1.5vmax;
@@ -15,8 +17,10 @@
 }
 .date_time_style {
 	font-size: 1.3vmax;
+	font-weight: 500;
 	margin: 0;
 	text-transform: uppercase;
+	color: var(--main-text-color);
 }
 
 .day {
@@ -27,6 +31,7 @@
 	font-size: 1.8vmax;
 	line-height: 2.2vmax;
 	margin: 0;
+	color: var(--main-text-color);
 }
 .myButton {
 	width: 100%;
@@ -42,7 +47,10 @@
 	text-decoration: none;
 	transition: 0.3s;
 	opacity: 0.8;
-	/* margin-top: 15px; */
+}
+
+.button_width {
+	width: 50%;
 }
 
 a.myButton {
@@ -51,12 +59,15 @@ a.myButton {
 
 .myButton:hover {
 	opacity: 1;
-	/* background: linear-gradient(to bottom, #8c8c8c 100%, #636363 5%); */
 	background-color: #e4e4e4;
 }
 .myButton:active {
 	position: relative;
 	top: 1px;
+}
+
+.daily_button {
+	padding-top: 15px;
 }
 
 .link_add {
@@ -73,6 +84,9 @@ a.myButton {
 }
 
 .program_about {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
 	width: 30%;
 	padding: 0 45px 0 0;
 	flex-basis: 0;
@@ -86,16 +100,7 @@ a.myButton {
 	justify-content: space-between;
 }
 
-.program_about_p {
-	font-size: var(--main-font-size);
-	line-height: var(--main-line-height);
-	color: var(--main-text-color);
-	font-weight: var(--main-font-weight);
-	margin: 0;
-}
-
 .program_daily {
-	/* width: 25%; */
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
@@ -133,13 +138,73 @@ a.myButton {
 }
 
 .program_container {
-	font-weight: 200;
+	font-weight: 300;
 	margin: 0 -10vmin 0;
+}
+
+.ruler_style {
+	margin: 30px 0 20px;
+	/* border: 1px solid var(--main-text-color); */
+	border: none;
+	height: 1px;
+	background-color: var(--main-text-color);
+}
+
+.major_container {
+	display: flex;
+	justify-content: space-between;
+	padding: 0 0 25px;
+}
+
+.program_major {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	/* margin: 30px 0 0; */
+	flex-grow: 1;
+	flex-basis: 0;
+	padding: 15px;
+	border: solid 1px #797979;
+	position: relative;
+	overflow: hidden;
+}
+.program_major:first-child {
+	width: 30%;
+	margin-right: 45px;
+}
+
+.single {
+	margin-right: 0px !important;
+	padding-right: 0px !important;
+}
+
+.with_ribbon_sub {
+	height: auto;
+	line-height: normal;
+}
+
+.token {
+	background-color: var(--main-color-red);
+	color: white;
+	font-size: 0.7em;
+	padding: 0 5px;
+	margin-right: 10px;
+	font-weight: 500;
+	vertical-align: middle;
+}
+
+.major_event_text {
+	vertical-align: middle;
+}
+
+.day_style:nth-child(odd) {
+	margin-top: 10px;
 }
 
 @media only screen and (max-width: 414px) {
 	.program {
 		flex-direction: column;
+		display: block;
 	}
 	.program_about {
 		width: 100%;
@@ -185,5 +250,41 @@ a.myButton {
 	.myButton {
 		margin-top: 15px;
 		font-size: 1.8vmax;
+	}
+	.button_width {
+		width: 100%;
+	}
+	.major_container {
+		flex-direction: column;
+	}
+	.program_major {
+		width: auto;
+		flex-basis: auto !important;
+	}
+	.program_major:first-child {
+		width: auto;
+		margin-right: 0;
+		flex-basis: auto !important;
+	}
+
+	.single {
+		padding-right: 15px !important;
+	}
+}
+
+@media (prefers-color-scheme: dark) {
+	.no_bio_container {
+		background: #272727;
+	}
+	.myButton {
+		background-color: transparent;
+		color: white;
+	}
+	.myButton:hover {
+		color: #949494;
+		background-color: #4c4c4c;
+	}
+	.token {
+		color: var(--main-text-color);
 	}
 }

@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from 'react'
+import PropTypes from 'prop-types'
 import '../styles/Bio.css'
 
 function Bio(props) {
-	const { bio, title, showBio, imageId } = props
+	const { bio, title, showBio, imageId, bioModal, index } = props
 	const [height, setHeight] = useState(null)
 
 	useEffect(() => {
 		const bioHeight = document.getElementById('bioBox').offsetHeight
-		setHeight(bioHeight)
+		setHeight(bioHeight + 100)
 	}, [])
 
 	const name = title
@@ -28,39 +29,60 @@ function Bio(props) {
 		<div
 			className={transition}
 			style={{
-				background: '#f3f3f3',
 				maxHeight: showBio ? height : '0'
-			}}>
-			<div id='bioBox' className={transitionText}>
-				<div ib='bioText'>
-					{imageId !== '' && (
+			}}
+		>
+			{showBio ? (
+				<span onClick={() => bioModal(index)} className="bio_close_button">
+					&#10005;
+				</span>
+			) : null}
+			<div id="bioBox" className={transitionText}>
+				<div ib="bioText">
+					{imageId && (
 						<div
-							className='mobile_only'
-							style={{ float: 'right', marginLeft: '15px', width: '150px' }}>
+							className="mobile_only"
+							style={{ float: 'right', marginLeft: '15px', width: '150px' }}
+						>
 							<img
 								src={imageURL}
-								width='100%'
+								width="100%"
 								alt={name}
 								style={{ borderRadius: '50%' }}
 							/>
 						</div>
 					)}
-					<p className='sub_sub_title'>ABOUT {name.toUpperCase()}</p>
-					<p className='bio_p'>{bio}</p>
-				</div>
-				{imageId !== '' && (
-					<div className='desktop_only' style={{ marginLeft: '15px' }}>
-						<img
-							src={imageURL}
-							width='100%'
-							alt={name}
-							style={{ borderRadius: '50%' }}
-						/>
+					<div className="text_desktop">
+						<p className="sub_sub_title">ABOUT {name.toUpperCase()}</p>
+						<p className="bio_p">{bio}</p>
 					</div>
-				)}
+					{imageId && (
+						<div className="desktop_only" style={{ marginLeft: '15px' }}>
+							<img
+								src={imageURL}
+								// width="100%"
+								alt={name}
+								style={{
+									borderRadius: '50%',
+									width: '20%',
+									marginLeft: '15px'
+								}}
+							/>
+						</div>
+					)}
+				</div>
 			</div>
 		</div>
 	)
+}
+
+Bio.propTypes = {
+	bio: PropTypes.string,
+	title: PropTypes.string,
+	showBio: PropTypes.bool,
+	imageId: PropTypes.string,
+	bioModal: PropTypes.bool,
+	index: PropTypes.number
 }
 
 export default Bio

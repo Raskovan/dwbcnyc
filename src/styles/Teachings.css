@@ -1,8 +1,13 @@
+.teachings_image img {
+	top: -25%;
+	position: absolute;
+}
+
 @media only screen and (max-width: 414px) {
 	.teachings_image img {
-		right: 50%;
-		transform: translate(-50%);
 		height: 100%;
 		width: auto;
+		left: -40% !important;
+		top: 5% !important;
 	}
 }

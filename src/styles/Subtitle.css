@@ -22,4 +22,7 @@
 	.subtitle_text {
 		font-size: 2.7vmax;
 	}
+	.subtitle_container {
+		font-weight: 300;
+	}
 }

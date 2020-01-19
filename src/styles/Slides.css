@@ -24,23 +24,25 @@
 	height: 100%;
 	width: 100%;
 	object-fit: cover;
+	object-position: top;
 }
 
 .slide_caption {
 	font-weight: 100;
 	font-size: 2vmax;
-	top: 52vmax;
-	right: 5vmin;
+	top: 73vh;
 	position: absolute;
 	margin: 0;
 }
 
 .karmapa_caption {
 	color: white;
+	right: 10vmin;
 }
 
 .ole_caption {
-	color: black;
+	color: rgb(94, 94, 94);
+	left: 10vmin;
 }
 
 @-webkit-keyframes fade {
@@ -95,14 +97,35 @@
 		margin: 0;
 	}
 	.img_karmapa {
-		object-position: 90%;
+		object-position: 15% !important;
+	}
+	.img_ole {
+		object-position: 43% !important;
 	}
 	.img_buddha {
-		object-position: 33%;
+		object-position: 33% !important;
 	}
 	.slide_caption {
-		top: 60vmax;
+		top: 55vh;
 		right: 7vmin;
 		font-weight: 300;
+	}
+}
+/* normal desktop */
+@media (max-aspect-ratio: 19/10) {
+	.fadein {
+		height: 80vh;
+	}
+}
+/* pnone */
+@media (max-aspect-ratio: 6/10) {
+	.fadein {
+		height: 61vh;
+	}
+}
+/* narrow desktop */
+@media (min-aspect-ratio: 19/10) {
+	.fadein {
+		height: 100vh;
 	}
 }

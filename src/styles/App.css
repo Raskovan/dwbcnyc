@@ -2,7 +2,7 @@
 	--main-font-size: 1.6vmax;
 	--main-line-height: 2.6vmax;
 	--main-text-color: #393939;
-	--main-font-weight: 200;
+	--main-font-weight: 300;
 	--main-color-red: #d22238;
 	--main-color-off-white: rgb(205, 205, 205);
 }
@@ -53,12 +53,19 @@ a:hover {
 	color: var(--main-text-color);
 	font-weight: var(--main-font-weight);
 	margin: 0;
+	letter-spacing: 0.5px;
 }
 
 .secondary_text {
+	font-size: 1.35vmax;
 	margin: 25px 0 0;
 	line-height: 2vmax;
+	letter-spacing: 0.1px;
 	color: var(--main-text-color);
+}
+
+.no_margin {
+	margin: 0 !important;
 }
 
 .caption_text {
@@ -79,6 +86,8 @@ a:hover {
 
 .section_img {
 	margin: 0px -10vmin 45px;
+	overflow: hidden;
+	position: relative;
 }
 
 .window_pad {
@@ -89,7 +98,7 @@ a:hover {
 	font-size: 1.5vmax;
 	margin: 0 0 5px 0;
 	color: var(--main-color-red);
-	font-weight: 200;
+	font-weight: 300;
 }
 
 @media only screen and (max-width: 414px) {
@@ -129,4 +138,16 @@ a:hover {
 	.window_pad {
 		padding: 0 7vmin;
 	}
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--main-text-color: #d4d4d4;
+	}
+
+	body {
+		background: #272727;
+	}
+}
+@media (prefers-color-scheme: light) {
 }
