@@ -12,6 +12,31 @@ import './styles/App.css'
 
 function App() {
 	const [width, setWidth] = useState(window.innerWidth)
+	const [mode, setMode] = useState()
+	const [imageArray, setImageArray] = useState([])
+	const [textArray, setTextArray] = useState([])
+
+	useEffect(() => {
+		fetch('https://res.cloudinary.com/diamondway/image/list/assets.json')
+			.then(res => res.json())
+			.then(response => {
+				if (response.resources && response.resources.length)
+					setImageArray(response.resources)
+				else setImageArray([])
+			})
+			.catch(error => console.error('Error fetching images:', error))
+	}, [])
+
+	useEffect(() => {
+		fetch(
+			`https://cdn.contentful.com/spaces/${process.env.REACT_APP_CONTENTFUL_SPACE_ID}/entries?access_token=${process.env.REACT_APP_CONTENTFUL_API_KEY}`
+		)
+			.then(res => res.json())
+			.then(response => {
+				setTextArray(response.items)
+			})
+			.catch(error => console.error('Error fetching texts:', error))
+	}, [])
 
 	useEffect(() => {
 		window.addEventListener('resize', handleResize)
@@ -23,19 +48,78 @@ function App() {
 		}
 	}, [width])
 
+	useEffect(() => {
+		const darkMode = window.matchMedia('(prefers-color-scheme: dark)')
+		function setThemeMode(e) {
+			if (e.matches) {
+				setMode('Dark')
+			} else {
+				setMode('Light')
+			}
+		}
+		darkMode.addListener(setThemeMode)
+	}, [mode])
+
 	return (
 		<div style={{ margin: '0' }}>
 			<Header />
-			<Slides />
-			<div className='window_pad'>
-				<Buddhism />
-				<Center />
-				<Program />
-				<Teachings />
-				<Teachers />
-				<Quote />
-			</div>
-			<Footer />
+			{imageArray && imageArray.length > 0 && textArray.length > 0 && (
+				<>
+					<Slides
+						images={imageArray.filter(
+							img => img.context.custom.position === 'slides'
+						)}
+					/>
+					<div className="window_pad">
+						<Buddhism
+							text={
+								textArray.filter(text => text.fields.name === 'buddhism')[0]
+							}
+							images={imageArray.filter(
+								img => img.context.custom.position === 'buddhism'
+							)}
+						/>
+						<Center
+							textMP={textArray.filter(text => text.fields.name === 'mp')[0]}
+							text={textArray.filter(text => text.fields.name === 'center')[0]}
+							images={imageArray.filter(
+								img => img.context.custom.position === 'center'
+							)}
+						/>
+						<Program
+							text={textArray.filter(text => text.fields.name === 'program')[0]}
+							programText={textArray.filter(
+								text => text.fields.id === 'schedule'
+							)}
+						/>
+						<Teachings
+							text={
+								textArray.filter(text => text.fields.name === 'teachings')[0]
+							}
+							images={imageArray.filter(
+								img => img.context.custom.position === 'teachings'
+							)}
+						/>
+						<Teachers
+							text={textArray.filter(
+								text => text.sys.contentType.sys.id === 'teacher'
+							)}
+							images={imageArray.filter(
+								img => img.context.custom.position === 'teachers'
+							)}
+						/>
+						<Quote
+							text={textArray.filter(text => text.fields.name === 'quote')[0]}
+						/>
+					</div>
+					<Footer
+						linksDonations={textArray.filter(
+							text => text.fields.id === 'donations'
+						)}
+						linksUseful={textArray.filter(text => text.fields.id === 'useful')}
+					/>
+				</>
+			)}
 		</div>
 	)
 }

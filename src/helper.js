@@ -14,65 +14,77 @@ export function getDates(event) {
 		'December'
 	]
 	let fullDate
-	let startDate = new Date(event.start_date)
-	let endDate = new Date(event.end_date)
-	let startMonth = startDate.getUTCMonth()
-	let startDay = startDate.getUTCDate()
-	let endMonth = endDate.getUTCMonth()
-	let endDay = endDate.getUTCDate()
-	let year = startDate.getFullYear()
-	if (startMonth === endMonth) {
+	const startDate = new Date(event.start_date)
+	const endDate = new Date(event.end_date)
+	const startMonth = startDate.getUTCMonth()
+	const startDay = startDate.getUTCDate()
+	const endMonth = endDate.getUTCMonth()
+	const endDay = endDate.getUTCDate()
+	const year = startDate.getFullYear()
+	if (startMonth === endMonth && startDay === endDay) {
 		fullDate =
 			monthNames[startMonth].toUpperCase() +
-			' ' +
+			'\u00A0' +
+			startDay +
+			',' +
+			'\u00A0' +
+			year
+	} else if (startMonth === endMonth) {
+		fullDate =
+			monthNames[startMonth].toUpperCase() +
+			'\u00A0' +
 			startDay +
 			'-' +
 			endDay +
 			',' +
-			' ' +
+			'\u00A0' +
 			year
 	} else {
 		fullDate =
 			monthNames[startMonth] +
-			' ' +
+			'\u00A0' +
 			startDay +
 			'-' +
 			monthNames[endMonth] +
-			' ' +
-			endDay
+			'\u00A0' +
+			endDay +
+			',' +
+			'\u00A0' +
+			year
 	}
 	return fullDate
 }
 
-export function parseResponse(response) {
-	let firstStr = response.split(
+function splitResponce(response) {
+	const firstStr = response.split(
 		'/**/jQuery18203743304502847564_1570990678398'
 	)[1]
-	let result = JSON.parse(firstStr.substr(1).slice(0, -2))
-	let nycEvents = result.filter(
+	return JSON.parse(firstStr.substr(1).slice(0, -2))
+}
+
+export function parseResponse(response) {
+	const nycEvents = splitResponce(response).filter(
 		event => event.location_summary === 'New York, NY'
 	)
-	// let majorEvents = result.filter(event => event.major === true)
-
 	//Parsing HTML FROM RESPONSE
 	for (let i = 0; i < nycEvents.length; i++) {
-		let program = []
-		let event = {}
-		let el = document.createElement('html')
+		const program = []
+		const event = {}
+		const el = document.createElement('html')
 		el.innerHTML = nycEvents[i].description
 
-		let divs = el.getElementsByTagName('div')
-		for (let key in divs) {
+		const divs = el.getElementsByTagName('div')
+		for (const key in divs) {
 			if (!divs[key].id) continue
-			let day = {}
+			const day = {}
 			let spans
 			if (typeof divs[key] === 'object') {
-				let moreDivs = divs[key].getElementsByTagName('div')
+				const moreDivs = divs[key].getElementsByTagName('div')
 				spans = divs[key].getElementsByTagName('span')
 				if (Object.keys(moreDivs).length > 0) {
 					day['date'] = spans['date'].innerHTML
-					let moreSpans = moreDivs[0].getElementsByTagName('span')
-					for (let c in moreSpans) {
+					const moreSpans = moreDivs[0].getElementsByTagName('span')
+					for (const c in moreSpans) {
 						if (moreSpans[c].id) {
 							if (day[moreSpans[c].id]) {
 								day[moreSpans[c].id].push(moreSpans[c].innerHTML)
@@ -83,7 +95,7 @@ export function parseResponse(response) {
 						}
 					}
 				} else {
-					for (let k in spans) {
+					for (const k in spans) {
 						if (typeof spans[k] === 'object')
 							if (spans[k].id === 'bio' || spans[k].id === 'eventbrite')
 								event[spans[k].id] = spans[k].innerHTML
@@ -101,4 +113,11 @@ export function parseResponse(response) {
 		nycEvents[i].description = event
 	}
 	return nycEvents
+}
+
+export function parseRegularResponse(response) {
+	const majorEvents = splitResponce(response).filter(
+		event => event.major === true
+	)
+	return majorEvents
 }

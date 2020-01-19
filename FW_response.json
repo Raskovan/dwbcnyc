@@ -1,30 +1,30 @@
 /**/jQuery18203743304502847564_1570990678398(
 [
-  {
-id: 2275,
-url: "https://firewheel.herokuapp.com/events/2275",
-major: false,
-title: "Program with Claudia Faiguenboim",
-location_summary: "New York, NY",
-location: "114 East 28th Street, Suite #1, New York, NY 10016",
-venue: "New York",
-start_date: "2019-10-24T00:00:00.000Z",
-end_date: "2019-10-26T00:00:00.000Z",
-time: "8 PM",
-description: "<div id="day"><span id="date">Thursday, October 24th</span> <span id="time">8pm</span> <i><span id="title">Transforming Disturbing Emotions into Buddha Wisdoms</span></i> </div><div id="day"> <span id="date">Friday, October 25th</span> <span id="time">8pm</span> <i><span id="title">The Meaning of the Sangha</span></i> </div><div id="day"> <span id="date">Saturday, October 26th</span> <span id="time">8pm</span> <i><span id="title">Teacher and Student Relationship</span></i></div> <div> <span id="bio">Claudia is originally from Brazil, and currently lives in Palm Springs, CA, where she works as a Health Coach. She took refuge in 2003 and following Lama Ole and Hannah's wishes, she helped establish the Diamond Way Buddhist center in Barcelona, Spain. In 2010, she moved to BogotÃ¡, Colombia, where, together with a few idealistic friends, she helped establish the first DWB living center in Colombia as well as its retreat center.</span> </div>"
-  },
-  {
-id: 2276,
-url: "https://firewheel.herokuapp.com/events/2276",
-major: false,
-title: "Program with Eugene Trak",
-location_summary: "New York, NY",
-location: "114 East 28th Street, Suite #1, New York, NY 10016",
-venue: "New York",
-start_date: "2019-11-06T00:00:00.000Z",
-end_date: "2019-11-07T00:00:00.000Z",
-time: "8 PM",
-description: "<div id="day"><span id="date">Wednesday, November 6th</span> <span id="time">8pm</span> <i><span id="title">View, Meditation & Action</span></i> </div><div id="day"> <span id="date">Thursday, November 7th</span> <span id="time">8pm</span> <i><span id="title">The Life Stories of Kagyu and Karma Kagyu Masters</i></span> </div><div> <span id="bio">Eugene started practicing Diamond Way Buddhism after meeting Lama Ole Nydahl in San Francisco in 1995. Since then, he has helped establish Buddhist centers in Minnesota, Colorado and California. He and his wife Lara run a web design company and currently live on the Central Coast of California, where they are actively involved in the development of the Western Retreat Center - WRC.</span> </div>"
-  }
+	{
+		"id": 2275,
+		"url": "https://firewheel.herokuapp.com/events/2275",
+		"major": false,
+		"title": "Program with Claudia Faiguenboim",
+		"location_summary": "New York, NY",
+		"location": "114 East 28th Street, Suite #1, New York, NY 10016",
+		"venue": "New York",
+		"start_date": "2019-10-24T00:00:00.000Z",
+		"end_date": "2019-10-26T00:00:00.000Z",
+		"time": "8 PM",
+		"description": "<div id="day"><span id="date">Thursday, October 24th</span> <span id="time">8pm</span> <i><span id="title">Transforming Disturbing Emotions into Buddha Wisdoms</span></i> </div><div id="day"> <span id="date">Friday, October 25th</span> <span id="time">8pm</span> <i><span id="title">The Meaning of the Sangha</span></i> </div><div id="day"> <span id="date">Saturday, October 26th</span> <span id="time">8pm</span> <i><span id="title">Teacher and Student Relationship</span></i></div> <div> <span id="bio">Claudia is originally from Brazil, and currently lives in Palm Springs, CA, where she works as a Health Coach. She took refuge in 2003 and following Lama Ole and Hannah's wishes, she helped establish the Diamond Way Buddhist center in Barcelona, Spain. In 2010, she moved to BogotÃ¡, Colombia, where, together with a few idealistic friends, she helped establish the first DWB living center in Colombia as well as its retreat center.</span> </div>"
+	},
+	{
+		"id": 2276,
+		"url": "https://firewheel.herokuapp.com/events/2276",
+		"major": false,
+		"title": "Program with Eugene Trak",
+		"location_summary": "New York, NY",
+		"location": "114 East 28th Street, Suite #1, New York, NY 10016",
+		"venue": "New York",
+		"start_date": "2019-11-06T00:00:00.000Z",
+		"end_date": "2019-11-07T00:00:00.000Z",
+		"time": "8 PM",
+		"description": "<div id="day"><span id="date">Wednesday, November 6th</span> <span id="time">8pm</span> <i><span id="title">View, Meditation & Action</span></i> </div><div id="day"> <span id="date">Thursday, November 7th</span> <span id="time">8pm</span> <i><span id="title">The Life Stories of Kagyu and Karma Kagyu Masters</i></span> </div><div> <span id="bio">Eugene started practicing Diamond Way Buddhism after meeting Lama Ole Nydahl in San Francisco in 1995. Since then, he has helped establish Buddhist centers in Minnesota, Colorado and California. He and his wife Lara run a web design company and currently live on the Central Coast of California, where they are actively involved in the development of the Western Retreat Center - WRC.</span> </div>"
+	}
 ]
 )

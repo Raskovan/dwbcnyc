@@ -8,19 +8,21 @@
 
 .section {
 	overflow: hidden;
-	-webkit-transition: max-height 0.6s, box-shadow 0.6s;
-	transition: max-height 0.6s, box-shadow 0.6s;
+	-webkit-transition: max-height 0.3s, box-shadow 0.3s;
+	transition: max-height 0.3s, box-shadow 0.3s;
 	box-shadow: inset 0px 0px 0px 0px #b3b3b3;
 	max-height: 0;
+	background: #f3f3f3;
 }
 .section.show {
 	box-shadow: inset 0px 5px 10px -5px #b3b3b3;
 	height: auto;
+	margin-bottom: 25px;
 }
 
 .section_text {
-	transition: -webkit-transform 0.6s;
-	-webkit-transition: -webkit-transform 0.6s;
+	transition: -webkit-transform 0.2s;
+	-webkit-transition: -webkit-transform 0.2s;
 	transform: translate3d(0%, -100%, 0);
 	-webkit-transform: translate3d(0%, -100%, 0);
 	padding: 40px 10vmin;
@@ -34,6 +36,24 @@
 .mobile_only {
 	display: none;
 }
+.desktop_only {
+	width: 100%;
+}
+
+.bio_close_button {
+	position: absolute;
+	right: 0;
+	padding: 25px;
+	color: var(--main-color-red);
+	z-index: 5;
+	cursor: pointer;
+	font-size: 1.5em;
+}
+
+.text_desktop {
+	width: 78%;
+	float: left;
+}
 
 @media only screen and (max-width: 414px) {
 	.section_text {
@@ -45,5 +65,18 @@
 	}
 	.desktop_only {
 		display: none;
+	}
+	.text_desktop {
+		width: auto;
+		float: none;
+	}
+}
+
+@media (prefers-color-scheme: dark) {
+	.section {
+		background: #3f3f3f;
+	}
+	.section.show {
+		box-shadow: inset 0px 5px 10px -5px #838383;
 	}
 }

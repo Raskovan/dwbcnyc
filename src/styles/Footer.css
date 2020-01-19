@@ -130,3 +130,10 @@ form {
 		line-height: 1.8vmax;
 	}
 }
+
+@media (prefers-color-scheme: dark) {
+	.footer_container {
+		background: #131313;
+		background-image: url('../assets/flames_dark.svg');
+	}
+}
