@@ -66,7 +66,7 @@ function Root() {
 						exact
 						render={props => (
 							<Admin
-								nodes={App}
+								nodes={<App imageArray={imageArray} textArray={textArray} />}
 								textArray={textArray}
 								imageArray={imageArray}
 								{...props}

@@ -3,14 +3,11 @@ import traverse, { wrapRender, transformComponents } from 'react-traverse'
 
 function Admin(props) {
 	const { textArray, imageArray } = props
-	const [myState, setState] = useState({})
+	const [myState, setState] = useState()
 
 	const changeValue = e => {
-		console.log('CHANGE', { [e.target.name]: e.target.value })
-		// setState({
-		// 	...myState,
-		// 	[e.target.name]: e.target.value
-		// })
+		console.log('CHANGE', { [e.target.id]: e.target.innerText })
+		// setState(e.target.innerText)
 	}
 
 	const focusInput = elementsRef => {
@@ -31,13 +28,29 @@ function Admin(props) {
 			DOMElement(path) {
 				keyCount++
 				if (path.node.type === 'form') console.log('Orig', path.node)
-				if (
-					path.node.type === 'p' ||
-					(path.node.type === 'form' && path.node.props.children)
-				) {
+				if (path.node.type === 'p') {
 					const elementsRef = createRef()
 					// allNodesToChange.push(elementsRef)
-
+					console.log('ORIGIN', path.node)
+					const fieldId =
+						path.node._owner.stateNode &&
+						path.node._owner.stateNode.props &&
+						path.node._owner.stateNode.props.text &&
+						path.node._owner.stateNode.props.text.fields
+							? path.node._owner.stateNode.props.text.fields.name
+							: null
+					console.log(fieldId)
+					const elementCopy = React.createElement('p', {
+						...path.node.props,
+						key: path.node.key,
+						contentEditable: true,
+						id: fieldId,
+						// defaultValue: path.node.props.children,
+						onInput: e => changeValue(e)
+					})
+					// elementCopy.props.contentEditable = true
+					// console.log('ORIG', path)
+					console.log('COPY', elementCopy)
 					// console.log('P', path.node)
 					// console.log(path.node.props.dangerouslySetInnerHTML.__html)
 					const inputProps = {
@@ -80,7 +93,7 @@ function Admin(props) {
 						submit
 					)
 					keyCount++
-					return form
+					return elementCopy
 				}
 				keyCount++
 				return React.cloneElement(
@@ -91,24 +104,24 @@ function Admin(props) {
 			}
 		})
 
-	const origWithProps = React.cloneElement(
-		props.nodes({
-			imageArray: imageArray,
-			textArray: textArray
-		})
-	)
-	const replaced = wrapRender(replacePsWithInputs)(
-		props.nodes({
-			imageArray: imageArray,
-			textArray: textArray
-		})
-	)
+	// const origWithProps = React.cloneElement(
+	// 	props.nodes({
+	// 		imageArray: imageArray,
+	// 		textArray: textArray
+	// 	})
+	// )
+	// const replaced = wrapRender(replacePsWithInputs)(
+	// 	props.nodes({
+	// 		imageArray: imageArray,
+	// 		textArray: textArray
+	// 	})
+	// )
 	// console.log('>>>>', React.createElement(replaced))
 
 	const updatedNodes = transformComponents(wrapRender(replacePsWithInputs))(
-		origWithProps
+		props.nodes
 	)
-	// console.log('>', allNodesToChange)
+	// console.log('>', props.nodes)
 	return updatedNodes
 }
 
