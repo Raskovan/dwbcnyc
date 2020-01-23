@@ -261,10 +261,11 @@ a.myButton {
 		width: auto;
 		flex-basis: auto !important;
 	}
-	.program_major:first-child {
+	.program_major:nth-child(odd) {
 		width: auto;
 		margin-right: 0;
 		flex-basis: auto !important;
+		margin-bottom: 25px;
 	}
 
 	.single {
