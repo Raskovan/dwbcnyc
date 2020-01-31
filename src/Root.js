@@ -61,18 +61,7 @@ function Root() {
 						exact
 						render={() => <App imageArray={imageArray} textArray={textArray} />}
 					/>
-					<Route
-						path="/admin"
-						exact
-						render={props => (
-							<Admin
-								nodes={<App imageArray={imageArray} textArray={textArray} />}
-								textArray={textArray}
-								imageArray={imageArray}
-								{...props}
-							/>
-						)}
-					/>
+					<Route path="/admin" exact render={props => <Admin nodes={App} />} />
 				</Router>
 			)}
 		</div>

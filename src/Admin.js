@@ -2,12 +2,12 @@ import React, { useState, useRef, createRef } from 'react'
 import traverse, { wrapRender, transformComponents } from 'react-traverse'
 
 function Admin(props) {
-	const { textArray, imageArray } = props
-	const [myState, setState] = useState()
+	// const { textArray, imageArray } = props
+	const [myState, setState] = useState({})
 
 	const changeValue = e => {
-		console.log('CHANGE', { [e.target.id]: e.target.innerText })
-		// setState(e.target.innerText)
+		console.log('>>>', myState)
+		setState({ ...myState, [e.target.id]: e.target.innerText })
 	}
 
 	const focusInput = elementsRef => {
@@ -27,7 +27,7 @@ function Admin(props) {
 		traverse(node, {
 			DOMElement(path) {
 				keyCount++
-				if (path.node.type === 'form') console.log('Orig', path.node)
+				// if (path.node.type === 'form') console.log('Orig', path.node)
 				if (path.node.type === 'p') {
 					const elementsRef = createRef()
 					// allNodesToChange.push(elementsRef)
@@ -39,18 +39,18 @@ function Admin(props) {
 						path.node._owner.stateNode.props.text.fields
 							? path.node._owner.stateNode.props.text.fields.name
 							: null
-					console.log(fieldId)
+					// console.log(fieldId)
 					const elementCopy = React.createElement('p', {
 						...path.node.props,
 						key: path.node.key,
 						contentEditable: true,
 						id: fieldId,
-						// defaultValue: path.node.props.children,
+						html: myState[fieldId],
 						onInput: e => changeValue(e)
 					})
 					// elementCopy.props.contentEditable = true
 					// console.log('ORIG', path)
-					console.log('COPY', elementCopy)
+					// console.log('COPY', elementCopy)
 					// console.log('P', path.node)
 					// console.log(path.node.props.dangerouslySetInnerHTML.__html)
 					const inputProps = {
@@ -118,10 +118,12 @@ function Admin(props) {
 	// )
 	// console.log('>>>>', React.createElement(replaced))
 
-	const updatedNodes = transformComponents(wrapRender(replacePsWithInputs))(
-		props.nodes
-	)
-	// console.log('>', props.nodes)
+	// const updatedNodes = transformComponents(wrapRender(replacePsWithInputs))(
+	// 	props.nodes()
+	// )
+
+	const updatedNodes = replacePsWithInputs(props.nodes())
+	console.log('CHANGE', myState)
 	return updatedNodes
 }
 

@@ -11,19 +11,20 @@ import Teachings from './Components/Teachings.jsx'
 import './styles/App.css'
 
 function App(props) {
-	const { textArray, imageArray } = props
+	// const { textArray, imageArray } = props
 	return (
 		<div style={{ margin: '0' }}>
-			<Header />
-			{imageArray && imageArray.length > 0 && textArray.length > 0 && (
-				<div>
-					<Slides
+			<p>HELLO</p>
+			{/* <Header /> */}
+			{/* {imageArray && imageArray.length > 0 && textArray.length > 0 && ( */}
+			<div>
+				{/* <Slides
 						images={imageArray.filter(
 							img => img.context.custom.position === 'slides'
 						)}
-					/>
-					<div className="window_pad">
-						<Buddhism
+					/> */}
+				<div className="window_pad">
+					{/* <Buddhism
 							text={
 								textArray.filter(text => text.fields.name === 'buddhism')[0]
 							}
@@ -37,14 +38,14 @@ function App(props) {
 							images={imageArray.filter(
 								img => img.context.custom.position === 'center'
 							)}
-						/>
-						{/* <Program
+						/> */}
+					{/* <Program
 							text={textArray.filter(text => text.fields.name === 'program')[0]}
 							programText={textArray.filter(
 								text => text.fields.id === 'schedule'
 							)}
 						/> */}
-						<Teachings
+					{/* <Teachings
 							text={
 								textArray.filter(text => text.fields.name === 'teachings')[0]
 							}
@@ -62,16 +63,16 @@ function App(props) {
 						/>
 						<Quote
 							text={textArray.filter(text => text.fields.name === 'quote')[0]}
-						/>
-					</div>
-					<Footer
+						/> */}
+				</div>
+				{/* <Footer
 						linksDonations={textArray.filter(
 							text => text.fields.id === 'donations'
 						)}
 						linksUseful={textArray.filter(text => text.fields.id === 'useful')}
-					/>
-				</div>
-			)}
+					/> */}
+			</div>
+			{/* )} */}
 		</div>
 	)
 }
