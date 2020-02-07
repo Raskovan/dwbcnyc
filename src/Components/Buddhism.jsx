@@ -16,8 +16,11 @@ export default function Buddhism(props) {
 
 	return (
 		<div className="container buddhism">
-			<div className="container_text buddhism_text">
-				<p className="body_text">{text.fields.text}</p>
+			<div className="buddhism_text">
+				<p
+					className="body_text"
+					dangerouslySetInnerHTML={{ __html: text.fields.text }}
+				/>
 			</div>
 			<div className="buddhism_img">
 				<img

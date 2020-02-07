@@ -30,7 +30,10 @@ export default function Center(props) {
 			<div className="container">
 				<div className="container_text">
 					<div>
-						<p className="body_text">{text.fields.text}</p>
+						<p
+							className="body_text"
+							dangerouslySetInnerHTML={{ __html: text.fields.text }}
+						/>
 					</div>
 				</div>
 				<div className="container_img center_map">

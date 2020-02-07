@@ -28,6 +28,10 @@
 		height: 300px;
 	}
 
+	.center_map {
+		margin: 15px auto 0 !important;
+	}
+
 	.center_img img {
 		height: 100%;
 		width: auto;

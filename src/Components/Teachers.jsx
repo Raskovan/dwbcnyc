@@ -27,7 +27,7 @@ export default function Teachers(props) {
 
 	return (
 		<>
-			<Subtitle text={'DIAMOND WAY TEACHERS'} />
+			<Subtitle text={'TEACHERS'} />
 			<div className="teachers">
 				{text.map((teacher, index) => (
 					<Teacher

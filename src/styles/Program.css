@@ -172,6 +172,9 @@ a.myButton {
 	width: 30%;
 	margin-right: 45px;
 }
+.program_major:last-child {
+	margin-left: 45px;
+}
 
 .single {
 	margin-right: 0px !important;
@@ -266,6 +269,10 @@ a.myButton {
 		margin-right: 0;
 		flex-basis: auto !important;
 		margin-bottom: 25px;
+	}
+
+	.program_major:last-child {
+		margin: 25px 0 0 0;
 	}
 
 	.single {
