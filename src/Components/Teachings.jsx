@@ -27,7 +27,10 @@ export default function Center(props) {
 				<img src={getLink()} width="100%" alt="NYC Center" />
 			</div>
 			<div className="container">
-				<p className="body_text">{text.fields.text}</p>
+				<p
+					className="body_text"
+					dangerouslySetInnerHTML={{ __html: text.fields.text }}
+				/>
 			</div>
 		</>
 	)

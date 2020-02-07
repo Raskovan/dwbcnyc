@@ -1,9 +1,11 @@
 .buddhism_img {
-	/* width: 38%; */
+	flex-basis: 35%;
+	margin-left: 25px;
 }
 
 .buddhism_text {
 	width: auto !important;
+	flex-basis: 80%;
 }
 
 .buddhism {
