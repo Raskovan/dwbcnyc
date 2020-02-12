@@ -175,7 +175,8 @@ function Program(props) {
 												lineHeight: '2vmax',
 												display: 'flex',
 												flexDirection: 'column',
-												justifyContent: 'space-between'
+												justifyContent: 'space-between',
+												marginTop: '15px'
 											}}
 										>
 											{event.description.program.map((day, index) => (
