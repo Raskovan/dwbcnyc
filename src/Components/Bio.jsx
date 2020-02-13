@@ -24,7 +24,7 @@ function Bio(props) {
 	if (imageId !== '') {
 		imageURL = `https://res.cloudinary.com/diamondway/image/upload/t_square_crop/${imageId}.jpg`
 	}
-	console.log(imageURL)
+
 	return (
 		<div
 			className={transition}
@@ -81,7 +81,7 @@ Bio.propTypes = {
 	title: PropTypes.string,
 	showBio: PropTypes.bool,
 	imageId: PropTypes.string,
-	bioModal: PropTypes.bool,
+	bioModal: PropTypes.func,
 	index: PropTypes.number
 }
 

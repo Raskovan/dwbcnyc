@@ -21,8 +21,8 @@
 }
 
 .section_text {
-	transition: -webkit-transform 0.2s;
-	-webkit-transition: -webkit-transform 0.2s;
+	transition: -webkit-transform 0.3s;
+	-webkit-transition: -webkit-transform 0.3s;
 	transform: translate3d(0%, -100%, 0);
 	-webkit-transform: translate3d(0%, -100%, 0);
 	padding: 40px 10vmin;
@@ -32,6 +32,8 @@
 .section_text.show_text {
 	-webkit-transform: translate3d(0%, 0, 0);
 	transform: translate3d(0%, 0, 0);
+	transition: -webkit-transform 0.2s;
+	-webkit-transition: -webkit-transform 0.2s;
 }
 .mobile_only {
 	display: none;

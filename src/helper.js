@@ -21,7 +21,7 @@ export function getDates(event) {
 	const endMonth = endDate.getUTCMonth()
 	const endDay = endDate.getUTCDate()
 	const year = startDate.getFullYear()
-	if (startMonth === endMonth && startDay === endDay) {
+	if ((startMonth === endMonth && startDay === endDay) || !event.end_date) {
 		fullDate =
 			monthNames[startMonth].toUpperCase() +
 			'\u00A0' +
@@ -116,8 +116,6 @@ export function parseResponse(response) {
 }
 
 export function parseRegularResponse(response) {
-	const majorEvents = splitResponce(response).filter(
-		event => event.major === true
-	)
+	const majorEvents = splitResponce(response).filter(event => event.major)
 	return majorEvents
 }
