@@ -53,7 +53,6 @@ function Program(props) {
 			.split(' ')
 			.slice(2)
 			.join(' ')
-		console.log(nycEvents[index].title)
 		const ttImage = ttImages.resources.filter(
 			image => image.context.custom.caption === name
 		)
