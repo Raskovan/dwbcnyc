@@ -47,7 +47,7 @@ function Footer(props) {
 						<a href="https://diamondway.org/" target="_new">
 							DWB-USA
 						</a>
-						, a volunteer 501(c)(3) non-profit organization
+						, a volunteer 501(c)3 non-profit organization
 					</p>
 				</div>
 			</div>
