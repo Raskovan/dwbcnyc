@@ -43,8 +43,11 @@ function Footer(props) {
 						</p>
 					))}
 					<p className="caption_text note">
-						DWBC-NYC is part of DWBC-USA, a volunteer 501(c)(3) non-profit
-						organization
+						DWB-NYC is part of{' '}
+						<a href="https://diamondway.org/" target="_new">
+							DWB-USA
+						</a>
+						, a volunteer 501(c)(3) non-profit organization
 					</p>
 				</div>
 			</div>
