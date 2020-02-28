@@ -27,7 +27,7 @@ jobs:
       - name: FTP-Deploy-Action
         uses: SamKirkland/FTP-Deploy-Action@3.0.0
         with:
-          ftp-server: sftp://diamondway.org/var/www/vhosts/diamondway.org/httpdocs/ny/test
+          ftp-server: sftp://diamondway.org/var/www/vhosts/diamondway.org/httpdocs/ny
           ftp-username: alexk
           ftp-password: 2JpdKyq2fKpPjf
           git-ftp-args: --insecure
