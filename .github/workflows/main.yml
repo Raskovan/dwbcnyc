@@ -32,4 +32,3 @@ jobs:
           ftp-password: 2JpdKyq2fKpPjf
           git-ftp-args: --insecure
           local-dir: build/
-          git-ftp-args: --dry-run
