@@ -19,9 +19,7 @@ jobs:
       - name: Build Project
         run: |
           npm install
-          REACT_APP_CONTENTFUL_SPACE_ID = ${{ secrets.CONTENTFUL_SPACE_ID }} REACT_APP_CONTENTFUL_API_KEY = ${{ secrets.CONTENTFUL_API_KEY }}
-          REACT_APP_IMAGE_BASE_URL = ${{ secrets.IMAGE_BASE_URL }}
-          REACT_APP_GOOGLE_MAPS = ${{ secrets.GOOGLE_MAPS }} && npm run build --if-present
+          set REACT_APP_CONTENTFUL_SPACE_ID = ${{ secrets.CONTENTFUL_SPACE_ID }} && set REACT_APP_CONTENTFUL_API_KEY = ${{ secrets.CONTENTFUL_API_KEY }} && set REACT_APP_IMAGE_BASE_URL = ${{ secrets.IMAGE_BASE_URL }} && set REACT_APP_GOOGLE_MAPS = ${{ secrets.GOOGLE_MAPS }} && npm run build --if-present
 
       - name: List output files
         run: ls
