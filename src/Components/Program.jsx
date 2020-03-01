@@ -84,7 +84,6 @@ function Program(props) {
 				-positionSlides.top + positionProgram.top + positionProgram.height / 2
 		}
 	}
-
 	return (
 		<>
 			<div className="program_container">
