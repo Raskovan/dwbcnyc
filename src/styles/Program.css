@@ -160,7 +160,6 @@ a.myButton {
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
-	/* margin: 30px 0 0; */
 	flex-grow: 1;
 	flex-basis: 0;
 	padding: 15px;
@@ -168,12 +167,11 @@ a.myButton {
 	position: relative;
 	overflow: hidden;
 }
-.program_major:first-child {
-	width: 30%;
-	margin-right: 45px;
+.program_major:nth-child(odd) {
+	margin-right: 22.5px;
 }
-.program_major:last-child {
-	margin-left: 45px;
+.program_major:nth-child(even) {
+	margin-left: 22.5px;
 }
 
 .single {
@@ -268,11 +266,11 @@ a.myButton {
 		width: auto;
 		margin-right: 0;
 		flex-basis: auto !important;
-		margin-bottom: 25px;
+		margin-bottom: 12.5px;
 	}
 
-	.program_major:last-child {
-		margin: 25px 0 0 0;
+	.program_major:nth-child(even) {
+		margin: 12.5px 0 0 0;
 	}
 
 	.single {
