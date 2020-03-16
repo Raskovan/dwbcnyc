@@ -58,12 +58,13 @@ function Program(props) {
 		)
 		return ttImage[0] && ttImage[0].public_id
 	}
-
-	const daily = programText.filter(text => text.fields.match === 'daily')[0]
-		.fields
-	const intro = programText.filter(text => text.fields.match === 'intro')[0]
-		.fields
-
+	let daily
+	let intro
+	console.log(programText)
+	if (programText.length > 0) {
+		daily = programText.filter(text => text.fields.match === 'daily')[0].fields
+		intro = programText.filter(text => text.fields.match === 'intro')[0].fields
+	}
 	let position
 	let originalPosition
 	let positionSlides
@@ -108,33 +109,35 @@ function Program(props) {
 									<p className="body_text">{text.fields.text}</p>
 								</div>
 								<div>
-									<p className="secondary_text">
+									{/* <p className="secondary_text">
 										All events are offered free of charge unless otherwise
 										noted.
-									</p>
+									</p> */}
 								</div>
 							</div>
 						)}
-						<div
-							className={
-								nycEvents.length > 0
-									? 'program_daily add_padding'
-									: 'program_daily'
-							}
-						>
-							<div>
-								<p className="title_style">{daily.title}</p>
-								<p className="sub_sub_title">{daily.date}</p>
-								<hr className="ruler_style" />
-								<p className="title_style">{intro.title}</p>
-								<p className="sub_sub_title">{intro.date}</p>
+						{daily && intro ? (
+							<div
+								className={
+									nycEvents.length > 0
+										? 'program_daily add_padding'
+										: 'program_daily'
+								}
+							>
+								<div>
+									<p className="title_style">{daily.title}</p>
+									<p className="sub_sub_title">{daily.date}</p>
+									<hr className="ruler_style" />
+									<p className="title_style">{intro.title}</p>
+									<p className="sub_sub_title">{intro.date}</p>
+								</div>
+								<div className="daily_button">
+									<a className="myButton" href={intro.link} target="_new">
+										RSVP
+									</a>
+								</div>
 							</div>
-							<div className="daily_button">
-								<a className="myButton" href={intro.link} target="_new">
-									RSVP
-								</a>
-							</div>
-						</div>
+						) : null}
 						{nycEvents.length > 0 &&
 							nycEvents.map((event, index) => (
 								<div
@@ -215,7 +218,7 @@ function Program(props) {
 					/>
 				)}
 			</div>
-			{majorEvents.length > 0 && (
+			{/* {majorEvents.length > 0 && (
 				<div className="major_container">
 					{majorEvents.map((event, index) => (
 						<div
@@ -253,7 +256,7 @@ function Program(props) {
 						</div>
 					))}
 				</div>
-			)}
+			)} */}
 		</>
 	)
 }
