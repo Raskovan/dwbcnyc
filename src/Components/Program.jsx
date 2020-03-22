@@ -60,7 +60,6 @@ function Program(props) {
 	}
 	let daily
 	let intro
-	console.log(programText)
 	if (programText.length > 0) {
 		daily = programText.filter(text => text.fields.match === 'daily')[0].fields
 		intro = programText.filter(text => text.fields.match === 'intro')[0].fields
@@ -106,7 +105,12 @@ function Program(props) {
 						{nycEvents.length < 2 && (
 							<div className="program_about">
 								<div>
-									<p className="body_text">{text.fields.text}</p>
+									<p
+										className="body_text"
+										dangerouslySetInnerHTML={{ __html: text.fields.text }}
+									>
+										{/* {text.fields.text} */}
+									</p>
 								</div>
 								<div>
 									{/* <p className="secondary_text">
