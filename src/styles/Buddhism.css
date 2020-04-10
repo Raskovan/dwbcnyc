@@ -1,21 +1,21 @@
 .buddhism_img {
-	flex-basis: 35%;
-	margin-left: 25px;
+  flex-basis: 35%;
+  margin-left: 25px;
 }
 
 .buddhism_text {
-	width: auto !important;
-	flex-basis: 80%;
+  width: auto !important;
+  flex-basis: 80%;
 }
 
 .buddhism {
-	align-items: center;
+  align-items: center;
 }
 
 @media only screen and (max-width: 414px) {
-	.buddhism_img {
-		width: 60%;
-		margin: 0 auto;
-		padding-top: 25px;
-	}
+  .buddhism_img {
+    width: 60%;
+    margin: 0 auto;
+    padding-top: 25px;
+  }
 }

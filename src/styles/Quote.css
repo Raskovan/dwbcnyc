@@ -1,14 +1,14 @@
 .quote {
-	margin: 15px 45px 55px;
-	font-size: 3.5vmax;
-	color: #d22238;
-	text-align: center;
-	font-weight: 200;
-	line-height: 5vmax;
+  margin: 15px 45px 55px;
+  font-size: 3.5vmax;
+  color: #d22238;
+  text-align: center;
+  font-weight: 200;
+  line-height: 5vmax;
 }
 
 @media only screen and (max-width: 414px) {
-	.quote {
-		margin: 15px 0 55px;
-	}
+  .quote {
+    margin: 15px 0 55px;
+  }
 }

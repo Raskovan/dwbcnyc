@@ -1,139 +1,139 @@
 .footer_container {
-	height: auto;
-	background: #353535;
-	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
-	padding: 5vmin 10vmin;
-	background-image: require('../assets/flames.svg');
+  height: auto;
+  background: #353535;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 5vmin 10vmin;
+  background-image: require('../assets/flames.svg');
 }
 
 .footer-column {
-	width: 50%;
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 input[type='email'] {
-	padding: 14px 10px;
-	font-size: 1.3vmax;
-	flex-grow: 1;
+  padding: 14px 10px;
+  font-size: 1.3vmax;
+  flex-grow: 1;
 }
 
 button {
-	font-size: 1.3vmax;
-	background-color: #949494;
-	border: none;
-	color: white;
-	padding: 0 32px;
-	/* font-weight: 500; */
-	text-decoration: none;
-	margin: 0 2px;
-	cursor: pointer;
-	transition: 0.3s;
+  font-size: 1.3vmax;
+  background-color: #949494;
+  border: none;
+  color: white;
+  padding: 0 32px;
+  /* font-weight: 500; */
+  text-decoration: none;
+  margin: 0 2px;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
 form {
-	display: flex;
+  display: flex;
 }
 
 .subscribe {
-	color: white;
-	font-size: 2.5vmax;
-	font-weight: 200;
-	margin: 0 0 20px 0;
+  color: white;
+  font-size: 2.5vmax;
+  font-weight: 200;
+  margin: 0 0 20px 0;
 }
 
 .address {
-	color: var(--main-color-off-white) !important;
+  color: var(--main-color-off-white) !important;
 }
 
 .address a {
-	color: var(--main-color-off-white) !important;
-	margin: 0 0 15px 0;
-	transition: 0.3s;
+  color: var(--main-color-off-white) !important;
+  margin: 0 0 15px 0;
+  transition: 0.3s;
 }
 
 .address a:hover {
-	color: var(--main-color-red) !important;
+  color: var(--main-color-red) !important;
 }
 
 .links {
-	color: var(--main-color-off-white);
-	font-size: 2vmax;
-	font-weight: 200;
-	margin: 0 0 10px;
+  color: var(--main-color-off-white);
+  font-size: 2vmax;
+  font-weight: 200;
+  margin: 0 0 10px;
 }
 
 .note {
-	color: var(--main-color-off-white) !important;
-	margin-top: 15px !important;
+  color: var(--main-color-off-white) !important;
+  margin-top: 15px !important;
 }
 .note:before {
-	content: '' !important;
+  content: '' !important;
 }
 .note:hover {
-	content: '' !important;
+  content: '' !important;
 }
 
 .caption {
-	color: var(--main-color-off-white);
-	font-size: 1.2vmax;
-	text-align: center;
+  color: var(--main-color-off-white);
+  font-size: 1.2vmax;
+  text-align: center;
 }
 
 .footer_links {
-	margin-bottom: 25px;
+  margin-bottom: 25px;
 }
 
 .footer_link {
-	color: var(--main-color-off-white) !important;
-	line-height: 2vmax !important;
+  color: var(--main-color-off-white) !important;
+  line-height: 2vmax !important;
 }
 .footer_link:hover {
-	color: var(--main-color-red) !important;
+  color: var(--main-color-red) !important;
 }
 
 @media only screen and (max-width: 414px) {
-	.footer_container {
-		flex-direction: column-reverse;
-	}
-	.footer-column {
-		width: auto;
-		margin-bottom: 25px;
-	}
-	.subscribe_form {
-		margin-bottom: 25px;
-	}
+  .footer_container {
+    flex-direction: column-reverse;
+  }
+  .footer-column {
+    width: auto;
+    margin-bottom: 25px;
+  }
+  .subscribe_form {
+    margin-bottom: 25px;
+  }
 
-	button {
-		-webkit-appearance: none;
-		-webkit-border-radius: 0;
-		font-size: 1.8vmax;
-		margin: 2.5px 0;
-		padding: 0 20px;
-	}
-	input[type='email'] {
-		font-size: 1.8vmax;
-		-webkit-appearance: none;
-		-webkit-border-radius: 0;
-	}
-	.link a {
-		font-size: 1.4vmax;
-		line-height: 2.5vmax;
-	}
-	.link {
-		padding: 0;
-		margin: 0;
-		font-size: 1.4vmax;
-		line-height: 1.8vmax;
-	}
+  button {
+    -webkit-appearance: none;
+    -webkit-border-radius: 0;
+    font-size: 1.8vmax;
+    margin: 2.5px 0;
+    padding: 0 20px;
+  }
+  input[type='email'] {
+    font-size: 1.8vmax;
+    -webkit-appearance: none;
+    -webkit-border-radius: 0;
+  }
+  .link a {
+    font-size: 1.4vmax;
+    line-height: 2.5vmax;
+  }
+  .link {
+    padding: 0;
+    margin: 0;
+    font-size: 1.4vmax;
+    line-height: 1.8vmax;
+  }
 }
 
 @media (prefers-color-scheme: dark) {
-	.footer_container {
-		background: #131313;
-		background-image: url('../assets/flames_dark.svg');
-	}
+  .footer_container {
+    background: #131313;
+    background-image: url('../assets/flames_dark.svg');
+  }
 }
