@@ -9,8 +9,10 @@ import Slides from './Components/Slides.jsx'
 import Quote from './Components/Quote.jsx'
 import Teachings from './Components/Teachings.jsx'
 import './styles/App.css'
+const config = window.config
 
 function App() {
+	const vars = config ? config : process.env
 	const [width, setWidth] = useState(window.innerWidth)
 	const [mode, setMode] = useState()
 	const [imageArray, setImageArray] = useState([])
@@ -29,7 +31,7 @@ function App() {
 
 	useEffect(() => {
 		fetch(
-			`https://cdn.contentful.com/spaces/${process.env.REACT_APP_CONTENTFUL_SPACE_ID}/entries?access_token=${process.env.REACT_APP_CONTENTFUL_API_KEY}`
+			`https://cdn.contentful.com/spaces/${vars.REACT_APP_CONTENTFUL_SPACE_ID}/entries?access_token=${vars.REACT_APP_CONTENTFUL_API_KEY}`
 		)
 			.then(res => res.json())
 			.then(response => {

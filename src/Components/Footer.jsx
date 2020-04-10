@@ -2,7 +2,10 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import '../styles/Footer.css'
 
+const config = window.config
+
 function Footer(props) {
+	const vars = config ? config : process.env
 	const { linksUseful, linksDonations } = props
 	const currentYear = () => {
 		const today = new Date()
@@ -77,10 +80,12 @@ function Footer(props) {
 
 				<div>
 					<p className="secondary_text address">
-						<b>Diamond Way Buddhist Center NYC</b> <br />
-						114 E 28th Street, Suite 1, New York, NY 10016
+						<b>Diamond Way Buddhist Center {vars.REACT_APP_CITY}</b> <br />
+						{vars.REACT_APP_ADDRESS}
 						<br />
-						<a href="mailto:newyork@diamondway.org">newyork@diamondway.org</a>
+						<a href={`mailto:${vars.REACT_APP_EMAIL}`}>
+							{vars.REACT_APP_EMAIL}
+						</a>
 					</p>
 					<p className="caption_text note">
 						© {currentYear()} Diamond Way Buddhist Centers USA

@@ -5,7 +5,7 @@
 	flex-direction: row;
 	justify-content: space-between;
 	padding: 5vmin 10vmin;
-	background-image: url('../assets/flames.svg');
+	background-image: require('../assets/flames.svg');
 }
 
 .footer-column {

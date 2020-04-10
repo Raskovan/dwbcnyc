@@ -3,7 +3,10 @@ import PropTypes from 'prop-types'
 import Subtitle from './Subtitle'
 import '../styles/Center.css'
 
+const config = window.config
+
 export default function Center(props) {
+	const vars = config ? config : process.env
 	const { images, text, textMP } = props
 	const imageWidth = Math.floor(
 		window.innerWidth > window.innerHeight
@@ -14,7 +17,7 @@ export default function Center(props) {
 
 	const getLink = () => {
 		const centerPublicId = images[0].public_id
-		return `${process.env.REACT_APP_IMAGE_BASE_URL}/w_${imageWidth},dpr_2.0/${centerPublicId}.jpg`
+		return `${vars.REACT_APP_IMAGE_BASE_URL}/w_${imageWidth},dpr_2.0/${centerPublicId}.jpg`
 	}
 	const darkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
 	return (
@@ -44,15 +47,18 @@ export default function Center(props) {
 							height="100%"
 							frameBorder="0"
 							style={{ border: '0' }}
-							src={`https://www.google.com/maps/embed/v1/place?q=place_id:ChIJHdOJgadZwokReTcfF04Wu4g&key=${process.env.REACT_APP_GOOGLE_MAPS}`}
+							src={`https://www.google.com/maps/embed/v1/place?q=place_id:ChIJHdOJgadZwokReTcfF04Wu4g&key=${vars.REACT_APP_GOOGLE_MAPS}`}
 							allowFullScreen
 						></iframe>
 					</div>
 					<div>
 						<p className="secondary_text">
 							Our Center Location:{'\n'}
-							114 East 28th Street, Suite #1 New York, NY 10016 {'\n'}
-							<a href="mailto:newyork@diamondway.org">newyork@diamondway.org</a>
+							{vars.REACT_APP_ADDRESS}
+							{'\n'}
+							<a href={`mailto:${vars.REACT_APP_EMAIL}`}>
+								{vars.REACT_APP_EMAIL}
+							</a>
 						</p>
 					</div>
 					<div className="mp_container">

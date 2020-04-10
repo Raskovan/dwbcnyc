@@ -3,7 +3,10 @@ import PropTypes from 'prop-types'
 import Subtitle from './Subtitle'
 import '../styles/Teachings.css'
 
+const config = window.config
+
 export default function Center(props) {
+	const vars = config ? config : process.env
 	const { images, text } = props
 	const imageWidth = Math.floor(
 		window.innerWidth > window.innerHeight
@@ -14,7 +17,7 @@ export default function Center(props) {
 
 	const getLink = () => {
 		const teachingsPublicId = images[0].public_id
-		return `${process.env.REACT_APP_IMAGE_BASE_URL}/w_${imageWidth},dpr_2.0/${teachingsPublicId}.jpg`
+		return `${vars.REACT_APP_IMAGE_BASE_URL}/w_${imageWidth},dpr_2.0/${teachingsPublicId}.jpg`
 	}
 
 	return (

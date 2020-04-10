@@ -4,7 +4,10 @@ import Subtitle from './Subtitle'
 import Teacher from './Teacher'
 import '../styles/Teachers.css'
 
+const config = window.config
+
 export default function Teachers(props) {
+	const vars = config ? config : process.env
 	const { images, text } = props
 	const imageWidth = Math.floor(
 		window.innerWidth > window.innerHeight
@@ -15,7 +18,7 @@ export default function Teachers(props) {
 		const teacherPublicId = images.filter(
 			image => image.context.custom.caption === name
 		)[0].public_id
-		return `${process.env.REACT_APP_IMAGE_BASE_URL}/w_${imageWidth},dpr_2.0/${teacherPublicId}.jpg`
+		return `${vars.REACT_APP_IMAGE_BASE_URL}/w_${imageWidth},dpr_2.0/${teacherPublicId}.jpg`
 	}
 
 	const compare = (a, b) => {

@@ -1,0 +1,3 @@
+[Diamond Way Buddhism](https://www.diamondway-buddhism.org/buddhism/) provides easy access to authentic Buddhist teachings and meditations for use in contemporary life. The goal of Buddhism is the full development of mind — the state of timeless, unconditional happiness known as enlightenment. To bring us to this state, Buddhism points us to lasting values in this impermanent world and gives us valuable information about how things really are.
+
+Through understanding the law of cause and effect, using practical tools like meditation to gain insight and to develop compassion and wisdom, we — all of us — can tap into our potential to realize the ultimate goal of enlightenment.
