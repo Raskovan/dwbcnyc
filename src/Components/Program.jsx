@@ -18,12 +18,12 @@ function Program(props) {
 		if (showBio) {
 			window.scrollTo({
 				top: originalPosition,
-				behavior: 'smooth',
+				behavior: 'smooth'
 			})
 		} else {
 			window.scrollTo({
 				top: position,
-				behavior: 'smooth',
+				behavior: 'smooth'
 			})
 		}
 		setShowBio(!showBio)
@@ -32,7 +32,7 @@ function Program(props) {
 
 	useEffect(() => {
 		fetch(
-			'https://firewheel.herokuapp.com/widgets/79/full_events.json?callback=jQuery18203743304502847564_1570990678398&hostname=www.diamondway.org&version=1.0.1&_=1570990678529',
+			'https://firewheel.herokuapp.com/widgets/79/full_events.json?callback=jQuery18203743304502847564_1570990678398&hostname=www.diamondway.org&version=1.0.1&_=1570990678529'
 		)
 			.then(res => res.text())
 			.then(response => {
@@ -49,9 +49,12 @@ function Program(props) {
 	}, [])
 
 	const getImageId = index => {
-		const name = nycEvents[index].title.split(' ').slice(2).join(' ')
+		// const name = nycEvents[index].title.split(' ').slice(2).join(' ')
+		const name = nycEvents[index].title
+		console.log(nycEvents[index].title)
+		console.log(ttImages.resources)
 		const ttImage = ttImages.resources.filter(
-			image => image.context.custom.caption === name,
+			image => image.context.custom.caption === name
 		)
 		return ttImage[0] && ttImage[0].public_id
 	}
@@ -81,6 +84,8 @@ function Program(props) {
 				-positionSlides.top + positionProgram.top + positionProgram.height / 2
 		}
 	}
+	console.log(nycEvents)
+	console.log(bioIndex)
 	return (
 		<>
 			<div className="program_container">
@@ -166,7 +171,7 @@ function Program(props) {
 												display: 'flex',
 												flexDirection: 'column',
 												justifyContent: 'space-between',
-												marginTop: '15px',
+												marginTop: '15px'
 											}}
 										>
 											{event.description.program.map((day, index) => (
@@ -228,7 +233,7 @@ function Program(props) {
 							}
 							key={index}
 							style={{
-								textAlign: majorEvents.length < 2 ? 'center' : '',
+								textAlign: majorEvents.length < 2 ? 'center' : ''
 							}}
 						>
 							<div className="sub_sub_title">
@@ -262,7 +267,7 @@ function Program(props) {
 
 Program.propTypes = {
 	text: PropTypes.object,
-	programText: PropTypes.array,
+	programText: PropTypes.array
 }
 
 export default Program
