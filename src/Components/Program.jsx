@@ -49,8 +49,8 @@ function Program(props) {
 	}, [])
 
 	const getImageId = index => {
-		// const name = nycEvents[index].title.split(' ').slice(2).join(' ')
-		const name = nycEvents[index].title
+		const name = nycEvents[index].title.split(' ').slice(2).join(' ')
+		// const name = nycEvents[index].title
 		console.log(nycEvents[index].title)
 		console.log(ttImages.resources)
 		const ttImage = ttImages.resources.filter(

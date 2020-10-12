@@ -11,10 +11,7 @@ function Bio(props) {
 		setHeight(bioHeight + 100)
 	}, [])
 
-	const name = title
-	// .split(' ')
-	// .slice(2)
-	// .join(' ')
+	const name = title.split(' ').slice(2).join(' ')
 	const transition = showBio ? ['section', 'show'].join(' ') : 'section'
 	const transitionText = showBio
 		? ['section_text', 'show_text'].join(' ')
