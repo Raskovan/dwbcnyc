@@ -60,10 +60,10 @@ function Program(props) {
 	}
 	// let daily
 	// let intro
-	if (programText.length > 0) {
-		daily = programText.filter(text => text.fields.match === 'daily')[0].fields
-		intro = programText.filter(text => text.fields.match === 'intro')[0].fields
-	}
+	// if (programText.length > 0) {
+	// 	daily = programText.filter(text => text.fields.match === 'daily')[0].fields
+	// 	intro = programText.filter(text => text.fields.match === 'intro')[0].fields
+	// }
 	let position
 	let originalPosition
 	let positionSlides
