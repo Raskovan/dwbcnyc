@@ -58,8 +58,8 @@ function Program(props) {
 		)
 		return ttImage[0] && ttImage[0].public_id
 	}
-	let daily
-	let intro
+	// let daily
+	// let intro
 	if (programText.length > 0) {
 		daily = programText.filter(text => text.fields.match === 'daily')[0].fields
 		intro = programText.filter(text => text.fields.match === 'intro')[0].fields
