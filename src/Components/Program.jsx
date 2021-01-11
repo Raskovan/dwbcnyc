@@ -84,8 +84,7 @@ function Program(props) {
 				-positionSlides.top + positionProgram.top + positionProgram.height / 2
 		}
 	}
-	console.log(nycEvents)
-	console.log(bioIndex)
+
 	return (
 		<>
 			<div className="program_container">
@@ -112,15 +111,17 @@ function Program(props) {
 										dangerouslySetInnerHTML={{ __html: text.fields.text }}
 									/>
 								</div>
-								<div>
+								{/* <div>
 									<p className="secondary_text">
 										All events are offered free of charge unless otherwise
 										noted.
 									</p>
-								</div>
+								</div> */}
 							</div>
 						)}
-						{daily && intro ? (
+
+						{/* Suspend until further notice */}
+						{/* {daily && intro ? (
 							<div
 								className={
 									nycEvents.length > 0
@@ -141,7 +142,8 @@ function Program(props) {
 									</a>
 								</div>
 							</div>
-						) : null}
+						) : null} */}
+
 						{nycEvents.length > 0 &&
 							nycEvents.map((event, index) => (
 								<div
