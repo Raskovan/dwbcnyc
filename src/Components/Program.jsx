@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import PropTypes from 'prop-types'
+// import PropTypes from 'prop-types'
 import Subtitle from './Subtitle'
 import Bio from './Bio'
 import { getDates, parseResponse, parseRegularResponse } from '../helper.js'
@@ -12,7 +12,8 @@ function Program(props) {
 	const [bioIndex, setBioIndex] = useState()
 	const [majorEvents, setMajorEvents] = useState([])
 
-	const { text, programText } = props
+	const { text } = props
+	// const { text, programText } = props
 
 	const bioModal = index => {
 		if (showBio) {
@@ -267,9 +268,9 @@ function Program(props) {
 	)
 }
 
-Program.propTypes = {
-	text: PropTypes.object,
-	programText: PropTypes.array
-}
+// Program.propTypes = {
+// 	text: PropTypes.object,
+// 	programText: PropTypes.array
+// }
 
 export default Program
