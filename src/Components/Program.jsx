@@ -12,8 +12,8 @@ function Program(props) {
 	const [bioIndex, setBioIndex] = useState()
 	const [majorEvents, setMajorEvents] = useState([])
 
-	const { text } = props
-	// const { text, programText } = props
+	// const { text } = props
+	const { text, programText } = props
 
 	const bioModal = index => {
 		if (showBio) {
@@ -59,12 +59,12 @@ function Program(props) {
 		)
 		return ttImage[0] && ttImage[0].public_id
 	}
-	// let daily
-	// let intro
-	// if (programText.length > 0) {
-	// 	daily = programText.filter(text => text.fields.match === 'daily')[0].fields
-	// 	intro = programText.filter(text => text.fields.match === 'intro')[0].fields
-	// }
+	let daily
+	let intro
+	if (programText.length > 0) {
+		daily = programText.filter(text => text.fields.match === 'daily')[0].fields
+		intro = programText.filter(text => text.fields.match === 'intro')[0].fields
+	}
 	let position
 	let originalPosition
 	let positionSlides
@@ -122,7 +122,7 @@ function Program(props) {
 						)}
 
 						{/* Suspend until further notice */}
-						{/* {daily && intro ? (
+						{daily && intro ? (
 							<div
 								className={
 									nycEvents.length > 0
@@ -143,7 +143,7 @@ function Program(props) {
 									</a>
 								</div>
 							</div>
-						) : null} */}
+						) : null}
 
 						{nycEvents.length > 0 &&
 							nycEvents.map((event, index) => (
