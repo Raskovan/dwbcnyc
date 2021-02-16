@@ -112,12 +112,12 @@ function Program(props) {
 										dangerouslySetInnerHTML={{ __html: text.fields.text }}
 									/>
 								</div>
-								{/* <div>
+								<div>
 									<p className="secondary_text">
 										All events are offered free of charge unless otherwise
 										noted.
 									</p>
-								</div> */}
+								</div>
 							</div>
 						)}
 
