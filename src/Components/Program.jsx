@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react'
-// import PropTypes from 'prop-types'
 import Subtitle from './Subtitle'
 import Bio from './Bio'
 import { getDates, parseResponse, parseRegularResponse } from '../helper.js'
@@ -52,8 +51,8 @@ function Program(props) {
 	const getImageId = index => {
 		const name = nycEvents[index].title.split(' ').slice(2).join(' ')
 		// const name = nycEvents[index].title
-		console.log(nycEvents[index].title)
-		console.log(ttImages.resources)
+		// console.log(nycEvents[index].title)
+		// console.log(ttImages.resources)
 		const ttImage = ttImages.resources.filter(
 			image => image.context.custom.caption === name
 		)
@@ -267,10 +266,5 @@ function Program(props) {
 		</>
 	)
 }
-
-// Program.propTypes = {
-// 	text: PropTypes.object,
-// 	programText: PropTypes.array
-// }
 
 export default Program

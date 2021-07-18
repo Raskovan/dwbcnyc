@@ -3,8 +3,8 @@ name: Build and Publish Front End Framework Website
 on: [push]
 
 jobs:
-  FTP-Deploy-Action:
-    name: FTP-Deploy-Action
+  Build-and-Deploy:
+    name: Build-and-Deploy
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
@@ -24,11 +24,12 @@ jobs:
       - name: List output files
         run: ls
 
-      - name: FTP-Deploy-Action
-        uses: SamKirkland/FTP-Deploy-Action@3.0.0
-        with:
-          ftp-server: ${{ secrets.FTP_URL }}
-          ftp-username: ${{ secrets.FTP_USERNAME }}
-          ftp-password: ${{ secrets.FTP_PASSWORD }}
-          git-ftp-args: --insecure
-          local-dir: build/
+      - name: Deploy to server
+        uses: easingthemes/ssh-deploy@main
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.SERVER_SSH_KEY }}
+          ARGS: '-rltgoDzvviOc --delete'
+          SOURCE: 'build/'
+          REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
+          REMOTE_USER: ${{ secrets.REMOTE_USER }}
+          TARGET: ${{ secrets.REMOTE_TARGET }}
