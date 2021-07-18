@@ -168,7 +168,7 @@ function Program(props) {
 										</p>
 										<div
 											style={{
-												flexGrow: '1',
+												// flexGrow: '1',
 												lineHeight: '2vmax',
 												display: 'flex',
 												flexDirection: 'column',
