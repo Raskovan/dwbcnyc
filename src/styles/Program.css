@@ -167,10 +167,10 @@ a.myButton {
 	position: relative;
 	overflow: hidden;
 }
-.program_major:nth-child(odd) {
-	margin-right: 22.5px;
-}
+/* .program_major:nth-child(odd) {
+} */
 .program_major:nth-child(even) {
+	margin-right: 22.5px;
 	margin-left: 22.5px;
 }
 
