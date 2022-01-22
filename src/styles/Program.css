@@ -58,8 +58,8 @@ a.myButton {
 }
 
 .myButton:hover {
-	opacity: 1;
-	background-color: #e4e4e4;
+	color: white;
+	background-color: var(--main-color-red);
 }
 .myButton:active {
 	position: relative;
@@ -287,8 +287,7 @@ a.myButton {
 		color: white;
 	}
 	.myButton:hover {
-		color: #949494;
-		background-color: #4c4c4c;
+		background-color: var(--main-color-red);
 	}
 	.token {
 		color: var(--main-text-color);
