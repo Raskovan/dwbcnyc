@@ -199,7 +199,7 @@ function Program(props) {
 										</div>
 									</>
 									{event.description.eventbrite && (
-										<div style={{ marginTop: '25px' }}>
+										<div style={{ marginTop: 'auto' }}>
 											<a
 												className="myButton"
 												href={event.description.eventbrite}
