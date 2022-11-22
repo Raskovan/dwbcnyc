@@ -1,34 +1,34 @@
-import React, { useState, useEffect } from 'react'
-import Subtitle from './Subtitle'
-import Bio from './Bio'
-import { getDates, parseResponse, parseRegularResponse } from '../helper.js'
-import '../styles/Program.css'
+import React, { useState, useEffect } from 'react';
+import Subtitle from './Subtitle';
+import Bio from './Bio';
+import { getDates, parseResponse, parseRegularResponse } from '../helper.js';
+import '../styles/Program.css';
 
 function Program(props) {
-	const [nycEvents, setNycEvents] = useState([])
-	const [ttImages, setTtImages] = useState({})
-	const [showBio, setShowBio] = useState(false)
-	const [bioIndex, setBioIndex] = useState()
-	const [majorEvents, setMajorEvents] = useState([])
+	const [nycEvents, setNycEvents] = useState([]);
+	const [ttImages, setTtImages] = useState({});
+	const [showBio, setShowBio] = useState(false);
+	const [bioIndex, setBioIndex] = useState();
+	const [majorEvents, setMajorEvents] = useState([]);
 
 	// const { text } = props
-	const { text, programText } = props
+	const { text, programText } = props;
 
 	const bioModal = index => {
 		if (showBio) {
 			window.scrollTo({
 				top: originalPosition,
 				behavior: 'smooth'
-			})
+			});
 		} else {
 			window.scrollTo({
 				top: position,
 				behavior: 'smooth'
-			})
+			});
 		}
-		setShowBio(!showBio)
-		setBioIndex(index)
-	}
+		setShowBio(!showBio);
+		setBioIndex(index);
+	};
 
 	useEffect(() => {
 		fetch(
@@ -36,52 +36,52 @@ function Program(props) {
 		)
 			.then(res => res.text())
 			.then(response => {
-				setNycEvents(parseResponse(response))
-				setMajorEvents(parseRegularResponse(response))
+				setNycEvents(parseResponse(response));
+				setMajorEvents(parseRegularResponse(response));
 			})
-			.catch(error => console.error('Error fetching text:', error))
+			.catch(error => console.error('Error fetching text:', error));
 		fetch('https://res.cloudinary.com/diamondway/image/list/tt.json')
 			.then(res => res.json())
 			.then(response => {
-				setTtImages(response)
+				setTtImages(response);
 			})
-			.catch(error => console.error('Error fetching images:', error))
-	}, [])
+			.catch(error => console.error('Error fetching images:', error));
+	}, []);
 
 	const getImageId = index => {
-		const name = nycEvents[index].title.split(' ').slice(2).join(' ')
+		const name = nycEvents[index].title.split(' ').slice(2).join(' ');
 		// const name = nycEvents[index].title
 		// console.log(nycEvents[index].title)
 		// console.log(ttImages.resources)
 		const ttImage = ttImages.resources.filter(
 			image => image.context.custom.caption === name
-		)
-		return ttImage[0] && ttImage[0].public_id
-	}
-	let daily
-	let intro
+		);
+		return ttImage[0] && ttImage[0].public_id;
+	};
+	let daily;
+	let intro;
 	if (programText.length > 0) {
-		daily = programText.filter(text => text.fields.match === 'daily')[0].fields
-		intro = programText.filter(text => text.fields.match === 'intro')[0].fields
+		daily = programText.filter(text => text.fields.match === 'daily')[0].fields;
+		intro = programText.filter(text => text.fields.match === 'intro')[0].fields;
 	}
-	let position
-	let originalPosition
-	let positionSlides
-	let positionProgram
-	const slides = document.getElementById('slides')
-	const program = document.getElementById('program')
+	let position;
+	let originalPosition;
+	let positionSlides;
+	let positionProgram;
+	const slides = document.getElementById('slides');
+	const program = document.getElementById('program');
 	if (slides && program) {
-		positionSlides = slides.getBoundingClientRect()
-		positionProgram = program.getBoundingClientRect()
+		positionSlides = slides.getBoundingClientRect();
+		positionProgram = program.getBoundingClientRect();
 		if (window.innerHeight > window.innerWidth) {
 			originalPosition =
-				-positionSlides.top + positionProgram.top + positionProgram.height
+				-positionSlides.top + positionProgram.top + positionProgram.height;
 			position =
-				-positionSlides.top + positionProgram.top + positionProgram.height
+				-positionSlides.top + positionProgram.top + positionProgram.height;
 		} else {
-			originalPosition = -positionSlides.top + positionProgram.top
+			originalPosition = -positionSlides.top + positionProgram.top;
 			position =
-				-positionSlides.top + positionProgram.top + positionProgram.height / 2
+				-positionSlides.top + positionProgram.top + positionProgram.height / 2;
 		}
 	}
 
@@ -267,7 +267,7 @@ function Program(props) {
 				</div>
 			)}
 		</>
-	)
+	);
 }
 
-export default Program
+export default Program;

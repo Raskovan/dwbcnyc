@@ -5,16 +5,19 @@
 	margin: 0;
 	color: var(--main-text-color);
 }
+
 .subtitle_style {
 	font-size: 1.5vmax;
 	margin: 0 0 15px;
 	color: var(--main-color-red);
 }
+
 .info_style {
 	font-size: 1.2vmax;
 	color: #4e4e4e;
 	margin: 10px 0 0 0;
 }
+
 .date_time_style {
 	font-size: 1.3vmax;
 	font-weight: 500;
@@ -33,6 +36,7 @@
 	margin: 0;
 	color: var(--main-text-color);
 }
+
 .myButton {
 	width: 100%;
 	background-color: white;
@@ -61,6 +65,7 @@ a.myButton {
 	color: white;
 	background-color: var(--main-color-red);
 }
+
 .myButton:active {
 	position: relative;
 	top: 1px;
@@ -74,6 +79,7 @@ a.myButton {
 	border-bottom: 1px solid;
 	cursor: pointer;
 }
+
 .link_add:hover {
 	color: var(--main-text-color);
 }
@@ -122,11 +128,11 @@ a.myButton {
 	flex-grow: 1;
 }
 
-.program > .program_event {
+.program>.program_event {
 	padding: 0 25px 0 25px;
 }
 
-.program > .program_event ~ .program_event {
+.program>.program_event~.program_event {
 	padding: 0 0 0 25px;
 }
 
@@ -167,6 +173,7 @@ a.myButton {
 	position: relative;
 	overflow: hidden;
 }
+
 /* .program_major:nth-child(odd) {
 } */
 .program_major:nth-child(even) {
@@ -212,13 +219,16 @@ a.myButton {
 		flex-direction: column;
 		display: block;
 	}
+
 	.program_about {
 		width: 100%;
 		padding: 0;
 	}
+
 	.program_about_wide {
 		margin-bottom: 0;
 	}
+
 	.program_daily {
 		flex-basis: auto;
 		width: auto;
@@ -226,6 +236,7 @@ a.myButton {
 		border: solid 1px #797979;
 		margin-top: 25px;
 	}
+
 	.program_event {
 		width: auto;
 		padding: 15px;
@@ -233,40 +244,52 @@ a.myButton {
 		margin-top: 25px;
 		flex-basis: auto;
 	}
-	.program > .program_event {
+
+	.program>.program_event {
 		padding: 15px;
 	}
-	.program > .program_event ~ .program_event {
+
+	.program>.program_event~.program_event {
 		padding: 15px;
 	}
+
 	.no_bio_container {
 		padding: 0 7vmin 25px;
 	}
+
 	.program_container {
 		margin: 0 -7vmin 0;
 	}
+
 	.date_time_style {
 		font-size: 1.6vmax;
 		line-height: 2vmax;
 	}
+
 	.lecture_name_style {
 		font-size: 2.1vmax;
 		line-height: 2.5vmax;
 	}
+
 	.myButton {
 		margin-top: 15px;
 		font-size: 1.8vmax;
 	}
+
 	.button_width {
 		width: 100%;
 	}
+
 	.major_container {
 		flex-direction: column;
 	}
+
 	.program_major {
 		width: auto;
 		flex-basis: auto !important;
+		margin-left: 0 !important;
 	}
+
 	.program_major:nth-child(odd) {
 		width: auto;
 		margin-right: 0;
@@ -287,13 +310,16 @@ a.myButton {
 	.no_bio_container {
 		background: #272727;
 	}
+
 	.myButton {
 		background-color: transparent;
 		color: white;
 	}
+
 	.myButton:hover {
 		background-color: var(--main-color-red);
 	}
+
 	.token {
 		color: var(--main-text-color);
 	}
