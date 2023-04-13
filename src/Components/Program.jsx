@@ -53,9 +53,7 @@ function Program(props) {
 		// const name = nycEvents[index].title
 		// console.log(nycEvents[index].title)
 		// console.log(ttImages.resources)
-		const ttImage = ttImages.resources.filter(
-			image => image.context.custom.caption === name
-		);
+		const ttImage = ttImages.resources.filter(image => image.context.custom.caption === name);
 		return ttImage[0] && ttImage[0].public_id;
 	};
 	let daily;
@@ -74,14 +72,11 @@ function Program(props) {
 		positionSlides = slides.getBoundingClientRect();
 		positionProgram = program.getBoundingClientRect();
 		if (window.innerHeight > window.innerWidth) {
-			originalPosition =
-				-positionSlides.top + positionProgram.top + positionProgram.height;
-			position =
-				-positionSlides.top + positionProgram.top + positionProgram.height;
+			originalPosition = -positionSlides.top + positionProgram.top + positionProgram.height;
+			position = -positionSlides.top + positionProgram.top + positionProgram.height;
 		} else {
 			originalPosition = -positionSlides.top + positionProgram.top;
-			position =
-				-positionSlides.top + positionProgram.top + positionProgram.height / 2;
+			position = -positionSlides.top + positionProgram.top + positionProgram.height / 2;
 		}
 	}
 
@@ -96,9 +91,7 @@ function Program(props) {
 								<p className="body_text">{text.fields.text}</p>
 							</div>
 							<div>
-								<p className="info_style">
-									All events are offered free of charge unless otherwise noted.
-								</p>
+								<p className="info_style">All events are offered free of charge unless otherwise noted.</p>
 							</div>
 						</div>
 					)}
@@ -106,29 +99,17 @@ function Program(props) {
 						{nycEvents.length < 2 && (
 							<div className="program_about">
 								<div>
-									<p
-										className="body_text"
-										dangerouslySetInnerHTML={{ __html: text.fields.text }}
-									/>
+									<p className="body_text" dangerouslySetInnerHTML={{ __html: text.fields.text }} />
 								</div>
 								<div>
-									<p className="secondary_text">
-										All events are offered free of charge unless otherwise
-										noted.
-									</p>
+									<p className="secondary_text">All events are offered free of charge unless otherwise noted.</p>
 								</div>
 							</div>
 						)}
 
 						{/* Suspend until further notice */}
 						{daily && intro ? (
-							<div
-								className={
-									nycEvents.length > 0
-										? 'program_daily add_padding'
-										: 'program_daily'
-								}
-							>
+							<div className={nycEvents.length > 0 ? 'program_daily add_padding' : 'program_daily'}>
 								<div>
 									<p className="title_style">{daily.title}</p>
 									<p className="sub_sub_title">{daily.date}</p>
@@ -146,21 +127,11 @@ function Program(props) {
 
 						{nycEvents.length > 0 &&
 							nycEvents.map((event, index) => (
-								<div
-									className={
-										nycEvents.length === 1
-											? 'program_event single'
-											: 'program_event'
-									}
-									key={index}
-								>
+								<div className={nycEvents.length === 1 ? 'program_event single' : 'program_event'} key={index}>
 									<>
 										<p className="title_style">Upcoming Event</p>
 										<p className="sub_sub_title">
-											<span
-												className="link_add"
-												onClick={() => bioModal(index)}
-											>
+											<span className="link_add" onClick={() => bioModal(index)}>
 												{event.title.toUpperCase()}
 												{'\n'}
 											</span>
@@ -178,36 +149,27 @@ function Program(props) {
 										>
 											{event.description.program.map((day, index) => (
 												<div className="day" key={index}>
-													{day.date && (
-														<p className="date_time_style">{day.date}</p>
-													)}
-													{day.time.map((entry, index) => (
-														<p key={index} className="day_style">
-															<span className="date_time_style">
-																{day.time[index]} {'\u00A0'}
-															</span>
-															<span className="lecture_name_style">
-																"{day.title[index]}"
-															</span>
-														</p>
-													))}
+													{day && day.date && <p className="date_time_style">{day.date}</p>}
+													{day &&
+														day.time &&
+														day.time.map((entry, index) => (
+															<p key={index} className="day_style">
+																<span className="date_time_style">
+																	{day.time[index]} {'\u00A0'}
+																</span>
+																<span className="lecture_name_style">"{day.title[index]}"</span>
+															</p>
+														))}
 												</div>
 											))}
-											<p
-												className="secondary_text"
-												style={{ marginBottom: '25px' }}
-											>
+											<p className="secondary_text" style={{ marginBottom: '25px' }}>
 												Suggested donation: $10 per lecture
 											</p>
 										</div>
 									</>
 									{event.description.eventbrite && (
 										<div style={{ marginTop: 'auto' }}>
-											<a
-												className="myButton"
-												href={event.description.eventbrite}
-												target="_new"
-											>
+											<a className="myButton" href={event.description.eventbrite} target="_new">
 												RSVP
 											</a>
 										</div>
@@ -231,11 +193,7 @@ function Program(props) {
 				<div className="major_container">
 					{majorEvents.map((event, index) => (
 						<div
-							className={
-								majorEvents.length === 1
-									? 'program_major single'
-									: 'program_major'
-							}
+							className={majorEvents.length === 1 ? 'program_major single' : 'program_major'}
 							key={index}
 							style={{
 								textAlign: majorEvents.length < 2 ? 'center' : ''
@@ -244,21 +202,12 @@ function Program(props) {
 							<div className="sub_sub_title">
 								<span className="token">SPECIAL EVENT</span>
 								<span className="major_event_text">
-									{event.location_summary.toUpperCase()} |{' '}
-									{getDates(event).toUpperCase()}
+									{event.location_summary.toUpperCase()} | {getDates(event).toUpperCase()}
 								</span>
 							</div>
 							<p className="title_style">{event.title}</p>
 							<div className="daily_button">
-								<a
-									className={
-										majorEvents.length < 2
-											? 'myButton button_width'
-											: 'myButton'
-									}
-									href={event.url}
-									target="_new"
-								>
+								<a className={majorEvents.length < 2 ? 'myButton button_width' : 'myButton'} href={event.url} target="_new">
 									DETAILS
 								</a>
 							</div>
