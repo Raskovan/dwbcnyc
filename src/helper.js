@@ -52,8 +52,6 @@ export function parseResponse(response) {
 			if (typeof divs[key] === 'object') {
 				const moreDivs = divs[key].getElementsByTagName('div');
 				spans = divs[key].getElementsByTagName('span');
-				console.log(spans['date']);
-				console.log(nycEvents[i]);
 				if (Object.keys(moreDivs).length > 0) {
 					day['date'] = spans['date'] && spans['date'].innerHTML;
 					const moreSpans = moreDivs[0].getElementsByTagName('span');
@@ -80,7 +78,7 @@ export function parseResponse(response) {
 				if (Object.keys(day).length > 0) program.push(day);
 			}
 		}
-		console.log(program);
+
 		event.program = program;
 		nycEvents[i].description = event;
 	}
