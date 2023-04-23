@@ -163,7 +163,7 @@ function Program(props) {
 												</div>
 											))}
 											<p className="secondary_text" style={{ marginBottom: '25px' }}>
-												Suggested donation: $10 per lecture
+												Suggested donation: $12 per lecture
 											</p>
 										</div>
 									</>
