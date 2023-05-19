@@ -2,7 +2,7 @@
 	"name": "dwbcnyc",
 	"version": "0.1.0",
 	"private": true,
-	"homepage": "./",
+	"homepage": "https://diamondway.org/nrcstupa/",
 	"dependencies": {
 		"prop-types": "^15.7.2",
 		"react": "^16.14.0",
