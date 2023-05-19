@@ -1,18 +1,13 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import '../styles/Teachers.css'
+import React from 'react';
+import PropTypes from 'prop-types';
+import '../styles/Teachers.css';
 
 function Teacher(props) {
-	const { image, name, link, description, homepage } = props
+	const { image, name, link, description, homepage } = props;
 	return (
 		<div className="teacher">
 			<div className="teacher_image_container">
-				<img
-					src={image}
-					width="100%"
-					alt={name}
-					style={{ filter: 'grayscale(100%)' }}
-				/>
+				<img src={image} width="100%" alt={name} style={{ filter: 'grayscale(100%)' }} />
 			</div>
 			<div className="teacher_description_container">
 				<div>
@@ -30,7 +25,7 @@ function Teacher(props) {
 				</div>
 			</div>
 		</div>
-	)
+	);
 }
 
 Teacher.propTypes = {
@@ -39,6 +34,6 @@ Teacher.propTypes = {
 	link: PropTypes.string,
 	description: PropTypes.string,
 	homepage: PropTypes.string
-}
+};
 
-export default Teacher
+export default Teacher;
