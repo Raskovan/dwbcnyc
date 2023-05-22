@@ -86,6 +86,8 @@ export function parseResponse(response) {
 }
 
 export function parseRegularResponse(response) {
-	const majorEvents = splitResponce(response).filter(event => event.major);
+	const majorEvents = splitResponce(response)
+		.filter(event => event.major)
+		.filter(item => new Date(item.start_date).getMonth() - new Date().getMonth() < 4);
 	return majorEvents;
 }
