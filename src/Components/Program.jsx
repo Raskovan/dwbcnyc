@@ -51,8 +51,7 @@ function Program(props) {
 	const getImageId = index => {
 		const name = nycEvents[index].title.split(' ').slice(2).join(' ');
 		// const name = nycEvents[index].title
-		// console.log(nycEvents[index].title)
-		// console.log(ttImages.resources)
+
 		const ttImage = ttImages.resources.filter(image => image.context.custom.caption === name);
 		return ttImage[0] && ttImage[0].public_id;
 	};
@@ -79,7 +78,7 @@ function Program(props) {
 			position = -positionSlides.top + positionProgram.top + positionProgram.height / 2;
 		}
 	}
-	console.log(majorEvents);
+
 	return (
 		<>
 			<div className="program_container">
@@ -131,7 +130,7 @@ function Program(props) {
 									<>
 										<p className="title_style">Upcoming Event</p>
 										<p className="sub_sub_title">
-											<span className="link_add" onClick={() => bioModal(index)}>
+											<span className="link_add" onClick={() => (event.description.program.length > 0 ? bioModal(index) : null)}>
 												{event.title.toUpperCase()}
 												{'\n'}
 											</span>
@@ -178,7 +177,7 @@ function Program(props) {
 							))}
 					</div>
 				</div>
-				{nycEvents[bioIndex] && nycEvents[bioIndex].title && (
+				{nycEvents[bioIndex] && nycEvents[bioIndex].title && nycEvents[bioIndex].description.bio && (
 					<Bio
 						bioModal={bioModal}
 						index={bioIndex}

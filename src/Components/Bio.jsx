@@ -1,25 +1,23 @@
-import React, { useEffect, useState } from 'react'
-import PropTypes from 'prop-types'
-import '../styles/Bio.css'
+import React, { useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
+import '../styles/Bio.css';
 
 function Bio(props) {
-	const { bio, title, showBio, imageId, bioModal, index } = props
-	const [height, setHeight] = useState(null)
+	const { bio, title, showBio, imageId, bioModal, index } = props;
+	const [height, setHeight] = useState(null);
 
 	useEffect(() => {
-		const bioHeight = document.getElementById('bioBox').offsetHeight
-		setHeight(bioHeight + 100)
-	}, [])
+		const bioHeight = document.getElementById('bioBox').offsetHeight;
+		setHeight(bioHeight + 100);
+	}, []);
 
-	const name = title.split(' ').slice(2).join(' ')
-	const transition = showBio ? ['section', 'show'].join(' ') : 'section'
-	const transitionText = showBio
-		? ['section_text', 'show_text'].join(' ')
-		: 'section_text'
+	const name = title.split(' ').slice(2).join(' ');
+	const transition = showBio ? ['section', 'show'].join(' ') : 'section';
+	const transitionText = showBio ? ['section_text', 'show_text'].join(' ') : 'section_text';
 
-	let imageURL
+	let imageURL;
 	if (imageId !== '') {
-		imageURL = `https://res.cloudinary.com/diamondway/image/upload/t_square_crop/${imageId}.jpg`
+		imageURL = `https://res.cloudinary.com/diamondway/image/upload/t_square_crop/${imageId}.jpg`;
 	}
 
 	return (
@@ -37,16 +35,8 @@ function Bio(props) {
 			<div id="bioBox" className={transitionText}>
 				<div ib="bioText">
 					{imageId && (
-						<div
-							className="mobile_only"
-							style={{ float: 'right', marginLeft: '15px', width: '150px' }}
-						>
-							<img
-								src={imageURL}
-								width="100%"
-								alt={name}
-								style={{ borderRadius: '50%' }}
-							/>
+						<div className="mobile_only" style={{ float: 'right', marginLeft: '15px', width: '150px' }}>
+							<img src={imageURL} width="100%" alt={name} style={{ borderRadius: '50%' }} />
 						</div>
 					)}
 					<div className="text_desktop">
@@ -70,7 +60,7 @@ function Bio(props) {
 				</div>
 			</div>
 		</div>
-	)
+	);
 }
 
 Bio.propTypes = {
@@ -80,6 +70,6 @@ Bio.propTypes = {
 	imageId: PropTypes.string,
 	bioModal: PropTypes.func,
 	index: PropTypes.number
-}
+};
 
-export default Bio
+export default Bio;
