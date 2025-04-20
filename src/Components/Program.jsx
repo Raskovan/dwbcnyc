@@ -161,9 +161,11 @@ function Program(props) {
 														))}
 												</div>
 											))}
-											<p className="secondary_text" style={{ marginBottom: '25px' }}>
-												Suggested donation: $15 per lecture
-											</p>
+											{event.title.toUpperCase !== 'OPEN HOUSE' && (
+												<p className="secondary_text" style={{ marginBottom: '25px' }}>
+													Suggested donation: $15 per lecture
+												</p>
+											)}
 										</div>
 									</>
 									{event.description.eventbrite && (
