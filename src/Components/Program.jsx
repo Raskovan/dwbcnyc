@@ -161,7 +161,7 @@ function Program(props) {
 														))}
 												</div>
 											))}
-											{event.title.toUpperCase !== 'OPEN HOUSE' && (
+											{event.title.toUpperCase() !== 'OPEN HOUSE' && (
 												<p className="secondary_text" style={{ marginBottom: '25px' }}>
 													Suggested donation: $15 per lecture
 												</p>
